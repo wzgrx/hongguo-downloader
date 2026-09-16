@@ -66,6 +66,14 @@ function download(url, dest, redirects = 0) {
   const ffmpegExe = path.join(DEST, 'ffmpeg.exe');
   const ffprobeExe = path.join(DEST, 'ffprobe.exe');
 
+  // 许可证文本随源码入库，这里只做一次存在性校验（合规需要）
+  const requiredLicenses = ['COPYING.GPLv3', 'COPYING.GPLv2', 'COPYING.LGPLv2.1', 'LICENSE.md', 'FFMPEG-NOTICE.txt'];
+  const missing = requiredLicenses.filter((f) => !fs.existsSync(path.join(DEST, f)));
+  if (missing.length) {
+    console.warn('警告：build/ffmpeg/ 缺少以下许可文件，分发前请补回：');
+    missing.forEach((f) => console.warn('  - ' + f));
+  }
+
   if (exists(ffmpegExe) && exists(ffprobeExe)) {
     console.log('ffmpeg 已就绪：' + DEST);
     return;

@@ -1,0 +1,44 @@
+FFmpeg —— 第三方组件许可说明
+================================
+
+本目录下的 ffmpeg.exe 与 ffprobe.exe 是随本软件一起分发的第三方程序，
+用于「一键合并」的分片拼接与「兼容模式」的格式转码。
+
+构建信息
+--------
+版本       : FFmpeg 7.1-essentials_build
+来源       : https://www.gyan.dev/ffmpeg/builds/
+官方源码   : https://ffmpeg.org/download.html
+             https://github.com/FFmpeg/FFmpeg
+版权       : Copyright (c) 2000-2024 the FFmpeg developers
+
+许可证
+------
+该构建的配置中包含 `--enable-gpl --enable-version3`，因此其许可证为
+**GNU General Public License version 3（GPLv3）**。
+
+随本目录附带的许可证全文：
+
+  COPYING.GPLv3      GPLv3 全文（本构建适用的主许可证）
+  COPYING.GPLv2      GPLv2 全文（FFmpeg 部分文件的许可证）
+  COPYING.LGPLv2.1   LGPLv2.1 全文（FFmpeg 部分文件的许可证）
+  LICENSE.md         FFmpeg 官方的许可证说明
+
+获取对应源码
+------------
+GPLv3 要求分发二进制时提供对应的完整源码。FFmpeg 的源码可从以下地址免费获取：
+
+  https://ffmpeg.org/download.html
+  https://github.com/FFmpeg/FFmpeg
+
+如需与本软件所附带二进制完全对应的源码，可联系本软件的分发者索取，
+或按照 gyan.dev 公布的构建配置自行编译：
+
+  --enable-gpl --enable-version3 --enable-libx264 --enable-libx265 ...
+
+（完整配置见 `ffmpeg -version` 输出的 configuration 一行）
+
+说明
+----
+FFmpeg 是独立的第三方程序，与本软件之间通过命令行调用交互。
+本软件仅调用其公开的命令行接口，未修改 FFmpeg 源码。

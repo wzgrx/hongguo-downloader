@@ -5,7 +5,12 @@ dist-react/
 
 # 内置的 ffmpeg 二进制（约 167MB，从网络获取，不纳入版本管理）
 # 打包前执行：node scripts/setup-ffmpeg.js 或手动放入 build/ffmpeg/
-build/ffmpeg/
+# 注意：许可证文本（*.txt / COPYING.* / LICENSE.md）必须随源码保留，
+#       因此这里只忽略目录内容，再用反向规则把它们重新纳入。
+build/ffmpeg/*
+!build/ffmpeg/*.txt
+!build/ffmpeg/COPYING.*
+!build/ffmpeg/LICENSE.md
 
 # 构建与打包输出
 release/

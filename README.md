@@ -22,7 +22,9 @@
 **CENC-AES-CTR 原生流式解密引擎**：可浏览/搜索剧集、按选集批量下载并自动解密为
 无水印 MP4，配合内置播放器、在线播放与一键合并，形成「发现 → 下载 → 观看 → 清理」的完整闭环。
 
-> 本仓库基于 [327044572/hongguo-downloader](https://github.com/327044572/hongguo-downloader) 二次开发（GPL-3.0）。
+> **来源与修改声明**：本仓库是 [327044572/hongguo-downloader](https://github.com/327044572/hongguo-downloader)
+> 的**修改版本**（修改自 2026 年 9 月起），依照 GPL-3.0 第 5(a) 条声明。具体修改内容见
+> [NOTICE](NOTICE)，本版本整体继续以 **GPL-3.0** 授权。
 
 ---
 
@@ -255,7 +257,11 @@ Chromium 对超长 HEVC 视频的 seek 支持有限。合并文件本身是完�
 │   └── verify-best-def.js        # 调试脚本：验证清晰度选流逻辑（parseModelVideo）
 ├── build/
 │   ├── icon.png                  # 应用图标
-│   └── ffmpeg/                   # 内置 ffmpeg（.gitignore，需脚本生成）
+│   └── ffmpeg/                   # 内置 ffmpeg
+│                                 #   二进制由 setup-ffmpeg.js 生成（不入库）
+│                                 #   许可文本（COPYING.* / LICENSE.md / FFMPEG-NOTICE.txt）随源码入库
+├── NOTICE                        # 来源与修改声明（GPL-3.0 §5a）
+├── THIRD-PARTY-NOTICES.md        # 第三方组件许可清单
 ├── dist/                         # 打包输出（.gitignore）
 └── 红果视频刷访问量/             # 附带的协议分析与播放量研究工具集
 ```
@@ -271,7 +277,33 @@ Chromium 对超长 HEVC 视频的 seek 支持有限。合并文件本身是完�
 
 ---
 
-## 📄 开源许可证
+## 📄 开源许可证与第三方组件
 
-本项目基于 [GNU General Public License v3.0 (GPL-3.0)](LICENSE) 发布。
-原始项目：[327044572/hongguo-downloader](https://github.com/327044572/hongguo-downloader)
+### 本软件
+
+本项目基于 [327044572/hongguo-downloader](https://github.com/327044572/hongguo-downloader)
+二次开发，**整体以 [GNU General Public License v3.0 (GPL-3.0)](LICENSE) 发布**。
+
+作为 GPL-3.0 的修改版本，本仓库遵循以下要求：
+
+| 要求 | 落实方式 |
+|---|---|
+| 保留许可证与版权声明 | 仓库根目录 [`LICENSE`](LICENSE)（GPL-3.0 全文） |
+| **声明已修改及日期**（§5a） | 仓库根目录 [`NOTICE`](NOTICE)，列明修改内容与起始时间 |
+| 整体继续以 GPL-3.0 授权（§5c） | 本仓库及全部产物均为 GPL-3.0，不附加额外限制 |
+| 分发二进制时提供对应源码（§6） | 源码在本仓库公开；第三方组件源码地址见下 |
+
+### 第三方组件
+
+| 组件 | 许可证 | 说明 |
+|---|---|---|
+| Electron / React / axios | MIT | 运行时依赖 |
+| **FFmpeg** | **GPLv3** | 内置（合并与转码用），源码见 [ffmpeg.org](https://ffmpeg.org/download.html) |
+
+- 完整的第三方许可清单：[`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md)
+- 分发包内已随附：`LICENSE.txt`、`NOTICE.txt`、`THIRD-PARTY-NOTICES.md`（与主程序同目录），
+  以及 `resources/bin/` 下 FFmpeg 的 `COPYING.GPLv3` / `COPYING.GPLv2` /
+  `COPYING.LGPLv2.1` / `LICENSE.md` / `FFMPEG-NOTICE.txt`
+
+> 内置的 FFmpeg 构建参数含 `--enable-gpl --enable-version3`，因此其许可证为 GPLv3。
+> 本软件仅通过命令行调用其公开接口，未修改 FFmpeg 源码。

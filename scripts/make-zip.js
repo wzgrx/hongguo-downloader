@@ -11,6 +11,12 @@
  * 产物：dist/<产品名>-<版本>-win-x64.zip
  *   └── <产品名>-<版本>/          ← 解压后就是一个完整目录，双击里面的 exe 即用
  *
+ * 注意（实测踩坑）：
+ *   在本机 Node 24 上，对那个 ~158MB 的 zip 调用 fs.rmSync(file, {force:true})
+ *   会让进程直接崩溃（exit 0xC0000409），且崩溃抓不到、finally 不执行。
+ *   因此这里删除文件一律用 fs.unlinkSync，删除目录用独立进程的 PowerShell，
+ *   并在开头做「上次崩溃遗留」的自愈。
+ *
  * 用法：
  *   node scripts/make-zip.js                （需要先有 dist/win-unpacked）
  *   npm run build:zip                       （自动先构建再打包）
@@ -40,7 +46,44 @@ function find7za() {
   return null;
 }
 
+/** 删除文件：用 unlinkSync（rmSync 在本机会崩） */
+function safeUnlink(p) {
+  try {
+    if (fs.existsSync(p)) fs.unlinkSync(p);
+    return true;
+  } catch (e) {
+    console.warn('[zip] 删除文件失败：' + p + ' — ' + e.message);
+    return false;
+  }
+}
+
+/** 删除目录：交给独立进程的 PowerShell，避免主进程崩溃 */
+function safeRemoveDir(dir) {
+  if (!fs.existsSync(dir)) return true;
+  try {
+    execFileSync('powershell', [
+      '-NoProfile', '-Command',
+      `Remove-Item -LiteralPath '${dir}' -Recurse -Force -ErrorAction SilentlyContinue`,
+    ], { stdio: 'ignore' });
+    return !fs.existsSync(dir);
+  } catch (e) {
+    console.warn('[zip] 删除目录失败：' + dir + ' — ' + e.message);
+    return false;
+  }
+}
+
 function main() {
+  // ---- 自愈：上次若在改名后崩溃，目录名会停在 PRODUCT-VERSION ----
+  if (!fs.existsSync(SRC) && fs.existsSync(STAGED)) {
+    console.log('[zip] 检测到上次异常退出遗留的目录，正在改回 win-unpacked…');
+    fs.renameSync(STAGED, SRC);
+  }
+  // 真的是重名残留（两个都在）时删掉残留目录
+  if (fs.existsSync(SRC) && fs.existsSync(STAGED)) {
+    console.log('[zip] 清理重名残留目录：' + FOLDER_NAME);
+    safeRemoveDir(STAGED);
+  }
+
   if (!fs.existsSync(SRC)) {
     console.error('[zip] 未找到 ' + SRC);
     console.error('[zip] 请先执行：npx electron-builder --win --dir');
@@ -49,19 +92,17 @@ function main() {
 
   console.log('[zip] 准备打包：' + PRODUCT + ' ' + VERSION);
 
-  // 清理上次可能残留的同名目录
-  if (fs.existsSync(STAGED)) {
-    console.log('[zip] 发现上次残留的目录，先删除：' + FOLDER_NAME);
-    fs.rmSync(STAGED, { recursive: true, force: true });
-  }
-
   let renamed = false;
   try {
+    // 删除旧 zip（unlinkSync，避免 rmSync 崩溃）
+    if (fs.existsSync(ZIP_PATH)) {
+      console.log('[zip] 删除旧的 zip…');
+      if (!safeUnlink(ZIP_PATH)) throw new Error('旧 zip 删除失败（可能被占用）');
+    }
+
     fs.renameSync(SRC, STAGED); // 瞬时完成
     renamed = true;
     console.log('[zip] 已将 win-unpacked 临时更名为 ' + FOLDER_NAME);
-
-    if (fs.existsSync(ZIP_PATH)) fs.rmSync(ZIP_PATH, { force: true });
 
     const sevenZip = find7za();
     if (sevenZip) {
@@ -89,14 +130,12 @@ function main() {
     console.log('[zip]   解压后顶层文件夹：' + FOLDER_NAME + '/（双击其中的 exe 即用）');
   } finally {
     // 无论成功失败都把目录名改回来，避免影响后续 --dir 构建
-    if (renamed) {
+    if (renamed && fs.existsSync(STAGED) && !fs.existsSync(SRC)) {
       try {
-        if (fs.existsSync(STAGED) && !fs.existsSync(SRC)) {
-          fs.renameSync(STAGED, SRC);
-          console.log('[zip] 已恢复目录名为 win-unpacked');
-        }
+        fs.renameSync(STAGED, SRC);
+        console.log('[zip] 已恢复目录名为 win-unpacked');
       } catch (e) {
-        console.warn('[zip] 恢复目录名失败（不影响 zip）：' + e.message);
+        console.warn('[zip] 恢复目录名失败（下次运行会自动修复）：' + e.message);
       }
     }
   }

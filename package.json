@@ -51,8 +51,25 @@
         "to": "bin",
         "filter": [
           "ffmpeg.exe",
-          "ffprobe.exe"
+          "ffprobe.exe",
+          "*.txt",
+          "COPYING.*",
+          "LICENSE.md"
         ]
+      }
+    ],
+    "extraFiles": [
+      {
+        "from": "LICENSE",
+        "to": "LICENSE.txt"
+      },
+      {
+        "from": "NOTICE",
+        "to": "NOTICE.txt"
+      },
+      {
+        "from": "THIRD-PARTY-NOTICES.md",
+        "to": "THIRD-PARTY-NOTICES.md"
       }
     ],
     "win": {
