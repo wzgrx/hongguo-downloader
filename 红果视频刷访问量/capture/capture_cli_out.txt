@@ -1,0 +1,27 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[NET] hook-net v3 loaded
+[NET] okhttp hooked
+[NET] cronet ctx hooked: android.net.http.CronetEngineWrapper
+[NET] cronet builder hooked: android.net.http.UrlRequest$Builder
+[NET] cronet builder hooked: android.net.connectivity.org.chromium.net.UrlRequest$Builder
+[NET] cronet callback hooked: android.net.http.UrlRequestCallbackWrapper
+[25079RPDCC::PID::23928 ]-> [NET] OKHTTP GET https://dig.bdurl.net/q?host=n98-v-readingvideo.qznovelvod.com&source=vod&aid=8662
+[NET] OKHTTP GET https://dig.bdurl.net/q?host=n98-v-readingvideo.qznovelvod.com&source=vod&aid=8662
+[NET] OKHTTP GET https://dig.bdurl.net/q?host=n98-v-readingvideo.qznovelvod.com&source=vod&aid=8662
+[NET]   H Host: dig.bdurl.net | Connection: Keep-Alive | Accept-Encoding: gzip | User-Agent: okhttp/3.12.13.20
+[NET] OKHTTP GET https://dig.bdurl.net/q?host=v95-hzyy-thr-daily-reading-videocdn.qznovelvod.com&source=vod&aid=8662
+[NET] OKHTTP GET https://dig.bdurl.net/q?host=v95-hzyy-thr-daily-reading-videocdn.qznovelvod.com&source=vod&aid=8662
+[NET] OKHTTP GET https://dig.bdurl.net/q?host=v95-hzyy-thr-daily-reading-videocdn.qznovelvod.com&source=vod&aid=8662
+[NET]   H Host: dig.bdurl.net | Connection: Keep-Alive | Accept-Encoding: gzip | User-Agent: okhttp/3.12.13.20

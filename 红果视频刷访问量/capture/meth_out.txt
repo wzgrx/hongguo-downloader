@@ -1,0 +1,84 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[TT] hook v3 loaded
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.G6GgqQQg(java.lang.String)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final int com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.G6Q()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.G6gQGQ(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Stri
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final int com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.G9g9qqG()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.GQG66Q(com.ttnet.org.chromium.net.TTSamplingSettingProvider$TTSlaSamplingSetting)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.GQGGQ() throws java.lang.IllegalStateException
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Gg9(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Gq66Qq(boolean)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final com.ttnet.org.chromium.net.Q9g9$Q9G6 com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Gq9Gg6Qg(java.lang.String,com.ttnet.org.chromium.net.urlconnection.CronetH
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final java.util.List com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q696G999()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final int com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q6Q()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q6qQg()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public static long com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q6qgQ96g(com.ttnet.org.chromium.net.impl.CronetEngineBuilderImpl)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final com.ttnet.org.chromium.net.qq9699G com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q9G6()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q9GQ9(java.lang.String,int,java.lang.String,java.util.Map)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q9Q(long,long,long,long,long,long,long,long)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q9g9(java.lang.String)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final com.ttnet.org.chromium.net.impl.UrlRequestBase com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q9q(java.lang.String,com.ttnet.org.chromium.net.Q9g9$g6Gg9GQ9,ja
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final double com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Q9q66(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QG(long)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final java.net.URLConnection com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QGQ6Q(java.net.URL,java.net.Proxy,boolean)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final com.ttnet.org.chromium.net.QG com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QGq(com.ttnet.org.chromium.net.QG$g6Gg9GQ9,java.util.concurrent.Executor,java.uti
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final double com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QGqQq(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QQ66Q(java.lang.String)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public static java.lang.String com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QQqq(java.util.Map)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Qg6996qg(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QgQQq6(boolean)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final double com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QgggGqg(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.Qq9Gq9(java.lang.String[],int,long)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QqQ()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final long com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.QqQQ9()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final int com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.g6()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.g66Gg(java.lang.String[],int,int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.g66q669(boolean,java.lang.String,java.lang.String,java.lang.String,boolean,java.lang.String)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.g69Q(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final int com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.g6G66()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final com.ttnet.org.chromium.net.impl.qG6gq com.ttnet.org.chromium.net.impl.CronetEngineBase.g6Gg9GQ9(org.chromium.diagnosis.CronetDiagnosisRequestImpl$Q9G6)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.g6qQ(java.lang.String,java.util.Map)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final int com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.gG()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.gQ96GqQQ(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.gg(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.ggGQ()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final java.util.Map com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.gq6()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public java.lang.String com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.onRequestInterceptorToStart(java.lang.String,java.lang.String[],java.lang.String[])
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public java.lang.String com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.onResponseInterceptorToStart(java.lang.String,java.lang.String[],int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final int com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.q6q()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.q9qGq99(boolean)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qG6gq(java.lang.String[],int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final com.ttnet.org.chromium.net.QG com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qGQg6g(com.ttnet.org.chromium.net.QG$g6Gg9GQ9,java.util.concurrent.Executor,java.
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final int com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qGqQq()
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qQGqgQq6(java.lang.String,java.lang.String)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final double com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qQgGq(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final com.ttnet.org.chromium.net.G6GgqQQg com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qg69q9G(com.ttnet.org.chromium.net.G6GgqQQg$g6Gg9GQ9,java.util.concurrent.E
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final java.util.Map com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qg9Q9(int,java.lang.String,boolean) throws java.io.IOException
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qggG(int)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qq(java.lang.String[],byte[],byte[],long,long)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public final void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.qq9699G(java.lang.String)
+[TT] MM|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext :: public void com.ttnet.org.chromium.net.impl.CronetUrlRequestContext.stopNetLogCompleted()
+[TT] MM|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient :: public static int com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient.getCronetInputstreamBuffSize(java.lang.String,com.bytedance.frameworks.baselib.networ
+[TT] MM|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient :: public void com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient.getMappingRequestState(java.lang.String)
+[TT] MM|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient :: public com.bytedance.retrofit2.client.SsCall com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient.newSsCall(com.bytedance.retrofit2.client.Request) throws j
+[TT] MM|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient :: public static java.net.HttpURLConnection com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient.openConnection(java.lang.String,com.bytedance.frameworks.basel
+[TT] MM|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient :: public com.bytedance.retrofit2.client.Request com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient.tryUseFormBodyModifyHook(com.bytedance.retrofit2.client.R
+[TT] okhttp hooked
+[TT] gai hooked
+[25079RPDCC::PID::11998 ]-> [TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com

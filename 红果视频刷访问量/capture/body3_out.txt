@@ -1,0 +1,810 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[B3] body3 loaded
+[B3] body3 installed
+[25079RPDCC::PID::9160 ]-> [B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@50dd2f0
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730939078, x-reading-request: 1788730939078-264685834, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@2c82069
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=343], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@50dd2f0]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730939023&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=18&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@9b9efc5
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730945923, x-reading-request: 1788730945923-179699250, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@2974d1a
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@9b9efc5]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730945863&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=18&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@43a6572
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730946672, x-reading-request: 1788730946672-2087739697, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@ff21dc3
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=236], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@43a6572]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730946653&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=18&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@ae0ed97
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730952661, x-reading-request: 1788730952662-1474773500, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@3f35b84
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@ae0ed97]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730952626&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=18&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@a4efdd6
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730959399, x-reading-request: 1788730959399-2051812947, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@e7d7857
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@a4efdd6]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730959371&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=18&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@f88e958
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730966197, x-reading-request: 1788730966197-2018984158, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@6745ab1
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=359], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@f88e958]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730966166&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=18&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a ===
+[B3] F|addCommonParam=false
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|headers=[log-encode-type: gzip, X-SS-REQ-TICKET: 1788730971708, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@dbd083e
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=false
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.article.common.network.ICommonApi.postData() [-1, /service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a, TypedByteArray[length=29014], [log-encode-type: gzip], false]}
+[B3] F|url=https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@1529d66
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730972861, x-reading-request: 1788730972861-1539351372, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@f0648a7
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=361], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@1529d66]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730972839&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@2e719c4
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730979502, x-reading-request: 1788730979502-1031461073, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@7d7e0ad
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=361], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@2e719c4]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730979476&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@ee9e5f7
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730986171, x-reading-request: 1788730986171-1064835152, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@1b25c64
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=359], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@ee9e5f7]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730986147&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@da0972c
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730992764, x-reading-request: 1788730992764-240329436, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@377f5f5
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=357], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@da0972c]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730992739&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@4821a56
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730993351, x-reading-request: 1788730993351-860531356, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@3ef9ad7
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=236], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@4821a56]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730993339&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@7470ccd
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730999420, x-reading-request: 1788730999420-21238095, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@2b51982
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=358], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@7470ccd]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788730999394&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@11f4bce
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731000182, x-reading-request: 1788731000182-839482358, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@2c03aef
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=236], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@11f4bce]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731000169&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@9612941
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731006042, x-reading-request: 1788731006043-1157825429, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@2368ee6
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@9612941]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731006017&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@1b0bf79
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731006638, x-reading-request: 1788731006638-1275616950, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@32e94be
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=235], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@1b0bf79]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731006625&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@ed5f4c7
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731012709, x-reading-request: 1788731012709-445648537, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@a980af4
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=361], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@ed5f4c7]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731012686&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@c7678ec
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731013348, x-reading-request: 1788731013348-1659715925, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@9d194b5
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=236], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@c7678ec]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731013336&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@c156548
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731019312, x-reading-request: 1788731019312-1381087443, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@7a83fe1
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=358], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@c156548]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731019288&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@f5e1ade
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731019670, x-reading-request: 1788731019670-677983762, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@cf544bf
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=235], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@f5e1ade]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731019654&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@4ff2493
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731025955, x-reading-request: 1788731025955-1190645751, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@a798cd0
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@4ff2493]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731025930&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@2c4930b
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731026571, x-reading-request: 1788731026571-1866766485, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@80225e8
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=236], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@2c4930b]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731026560&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a ===
+[B3] F|addCommonParam=false
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|headers=[log-encode-type: gzip, X-SS-REQ-TICKET: 1788731031336, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@c86ef81
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=false
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.article.common.network.ICommonApi.postData() [-1, /service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a, TypedByteArray[length=23590], [log-encode-type: gzip], false]}
+[B3] F|url=https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@fdec6a2
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731032583, x-reading-request: 1788731032583-690025756, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@5ac1f33
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=358], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@fdec6a2]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731032562&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@875e1c
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731032991, x-reading-request: 1788731032991-1535843307, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@df7ca25
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=234], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@875e1c]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731032974&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@5f21ea7
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731039193, x-reading-request: 1788731039193-999698511, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@9981f54
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=358], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@5f21ea7]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731039167&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@501dcc0
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731039561, x-reading-request: 1788731039561-384846000, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@f8dadf9
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=234], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@501dcc0]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731039549&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@1715ea6
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731052373, x-reading-request: 1788731052374-154423623, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@28010e7
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=389], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@1715ea6]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731052356&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@b6f122c
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731053056, x-reading-request: 1788731053056-590536731, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@fdc54f5
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=261], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@b6f122c]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731053041&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@83ab2a2
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731058988, x-reading-request: 1788731058988-1025413737, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@eb79b33
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=357], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@83ab2a2]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731058972&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@f23ea1c
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731059560, x-reading-request: 1788731059561-1532288870, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@1476625
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=234], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@f23ea1c]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731059550&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@d92a8c0
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731065635, x-reading-request: 1788731065635-815224332, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@b5c89f9
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@d92a8c0]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731065619&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@bc4cfd8
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731065994, x-reading-request: 1788731065994-379520671, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@3307f31
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=235], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@bc4cfd8]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731065986&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@df7fce3
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731072226, x-reading-request: 1788731072226-1467836478, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@c3606e0
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=361], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@df7fce3]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731072210&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@f71d1f8
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731072686, x-reading-request: 1788731072686-1195700913, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@f4026d1
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=236], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@f71d1f8]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731072677&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@c86bdfe
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731078826, x-reading-request: 1788731078826-474063840, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@3b6795f
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@c86bdfe]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731078812&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@5f34c7b
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731079144, x-reading-request: 1788731079144-460591892, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@c073a98
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=235], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@5f34c7b]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731079134&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@5342b13
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731085510, x-reading-request: 1788731085510-708602121, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@85150
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@5342b13]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731085487&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@d735514
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731086111, x-reading-request: 1788731086111-471381287, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@f7f81bd
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=236], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@d735514]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731086101&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a ===
+[B3] F|addCommonParam=false
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|headers=[log-encode-type: gzip, X-SS-REQ-TICKET: 1788731091319, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@256a48a
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=false
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.article.common.network.ICommonApi.postData() [-1, /service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a, TypedByteArray[length=25910], [log-encode-type: gzip], false]}
+[B3] F|url=https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@d9426b1
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731092070, x-reading-request: 1788731092070-229859734, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@9c49796
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_detail/preload/v1, {}, TypedByteArray[length=360], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@d9426b1]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731092056&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END
+[B3] === REQ https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers ===
+[B3] F|addCommonParam=true
+[B3] F|body=BYTES_UNREADABLE
+[B3] F|commonParamLevel=0
+[B3] F|extraInfo=com.bytedance.ttnet.http.RequestContext@52a9722
+[B3] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788731092508, x-reading-request: 1788731092508-1841754307, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[B3] F|isBodyEncryptEnabled=false
+[B3] F|isQueryEncryptEnabled=false
+[B3] F|maxLength=-1
+[B3] F|method=POST
+[B3] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@37ae5b3
+[B3] F|priorityLevel=1
+[B3] F|queryFilterPriority=0
+[B3] F|requestPriorityLevel=3
+[B3] F|responseStreaming=true
+[B3] F|serviceType=
+[B3] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.post() [true, /novel/player/multi_video_model/preload/v1, {}, TypedByteArray[length=235], [Accept: application/json; charset=utf-8,application/x-protobuf, Content-Encoding: gzip, X-Xs-From-Web: 0], com.bytedance.ttnet.http.RequestContext@52a9722]}
+[B3] F|url=https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788731092500&normal_session_cnt_in_day=21&&cold_start_session_cnt_in_day=6&host_abi=arm64-v8a&dragon_device_type=pad&sys_mini_window=1&pv_player=73332&app_mini_window=0&normal_session_id=63491fa7-9fdc-4d2c-ad21-2f1a7717b4cd%231&compliance_status=0&har_status=0&cold_start_session_id=6be6ca8f-8644-42f0-a20a-0a7a9d3b4d1e&cold_start_session_cnt_in_life=11&charging=1&normal_session_cnt_in_life=67&is_power_save_mode=0&app_dark_mode=0&screen_brightness=24&battery_pct=100&down_speed=26634&sys_dark_mode=0&need_personal_recommend=1&player_so_load=1&font_scale=100&is_android_pad_screen=1&network_type=4&rom_version=miui_V816_OS3.0.307.0.WAOCNXM&current_volume=33&cdid=45158153-b9e3-4cd9-9a2f-268184f4ee28
+[B3] END

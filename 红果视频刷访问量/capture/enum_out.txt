@@ -1,0 +1,126 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[ENUM] enum hook loaded
+[ENUM] total classes: 82958
+[ENUM] ttnet/retrofit classes: 330
+[ENUM] CLS|com.bytedance.rpc.transport.TTNetTransportClientFactory
+[ENUM] CLS|[Lcom.bytedance.retrofit2.client.Header;
+[ENUM] CLS|com.ttnet.org.chromium.net.TTSocketAccelerate
+[ENUM] CLS|com.dragon.read.base.ssconfig.model.NetworkTypeConfig
+[ENUM] CLS|okhttp3.ttnet.TTNetDns
+[ENUM] CLS|com.bytedance.retrofit2.mime.FormUrlEncodedTypedOutput
+[ENUM] CLS|com.bytedance.retrofit2.Utils
+[ENUM] CLS|com.bytedance.retrofit2.AsyncLogReporter
+[ENUM] CLS|com.dragon.read.component.audio.impl.ui.settings.AudioReduceTopAdditionLowSubNetwork
+[ENUM] CLS|com.ttnet.org.chromium.net.qggG
+[ENUM] CLS|com.bytedance.retrofit2.RetrofitMetrics
+[ENUM] CLS|com.ttnet.org.chromium.net.g6qQ
+[ENUM] CLS|com.bytedance.frameworks.baselib.network.http.ok3.impl.TTNetDnsCacheSource
+[ENUM] CLS|com.bytedance.ttnet.utils.RetrofitUtils
+[ENUM] CLS|com.bytedance.retrofit2.http.PartMap
+[ENUM] CLS|com.bytedance.ttnet.QGQ6Q
+[ENUM] CLS|com.bytedance.caijing.sdk.infra.base.impl.ttnet.CJPayTTNetApi
+[ENUM] CLS|retrofit2.http.Multipart
+[ENUM] CLS|com.ttnet.org.chromium.net.impl.CronetEngineBuilderImpl
+[ENUM] CLS|com.bytedance.sdk.xbridge.cn.runtime.depend.XIRetrofit
+[ENUM] CLS|okhttp3.ttnet.TTConfigManager
+[ENUM] CLS|com.dragon.read.app.XsSSNetworkClient
+[ENUM] CLS|com.ttnet.org.chromium.base.q6q
+[ENUM] CLS|com.bytedance.retrofit2.NetworkLibLayerMetrics
+[ENUM] CLS|com.bytedance.android.ad.sdk.impl.baseruntime.IBaseRuntimeTTNetApi
+[ENUM] CLS|com.bytedance.retrofit2.client.Response
+[ENUM] CLS|com.bytedance.retrofit2.http.OPTIONS
+[ENUM] CLS|com.bytedance.retrofit2.http.Url
+[ENUM] CLS|com.ttnet.org.chromium.net.Q9g9
+[ENUM] CLS|com.bytedance.retrofit2.ServiceMethod
+[ENUM] CLS|com.bytedance.retrofit2.http.RequestPriority
+[ENUM] CLS|com.bytedance.apm.impl.DefaultTTNetImpl
+[ENUM] CLS|com.dragon.read.polaris.luckyservice.prefetch.IPrefetchNetworkApi
+[ENUM] CLS|com.bytedance.retrofit2.client.Header
+[ENUM] CLS|com.dragon.read.base.ssconfig.template.MineWorkPreloadNetwork
+[ENUM] CLS|com.ttnet.org.chromium.net.DnsStatus
+[ENUM] CLS|[Lcom.bytedance.frameworks.baselib.network.http.ok3.impl.TTNetDnsSource;
+[ENUM] CLS|com.ttnet.org.chromium.net.impl.CronetLibraryLoader
+[ENUM] CLS|com.bytedance.rpc.transport.ttnet.g6Gg9GQ9
+[ENUM] CLS|com.ttnet.org.chromium.net.impl.CronetUrlRequestContext
+[ENUM] CLS|com.bytedance.sdk.open.aweme.adapter.ttnet.OpenTTNetRetrofitApi
+[ENUM] CLS|com.bytedance.retrofit2.http.FieldMap
+[ENUM] CLS|com.bytedance.ttnet.utils.Q9G6
+[ENUM] CLS|com.bytedance.retrofit2.RetrofitLogger
+[ENUM] CLS|com.bytedance.ttnet.config.QGQ6Q
+[ENUM] CLS|com.bytedance.ttnet.http.RequestContext
+[ENUM] CLS|com.bytedance.retrofit2.HttpServiceMethod
+[ENUM] CLS|com.ttnet.org.chromium.net.impl.Q6qQg
+[ENUM] CLS|com.ttnet.org.chromium.net.gq6
+[ENUM] CLS|com.bytedance.ttnet.cronet.AbsCronetDependAdapter
+[ENUM] CLS|com.bytedance.rpc.transport.ttnet.RetrofitApi
+[ENUM] CLS|com.ttnet.org.chromium.net.impl.g69Q
+[ENUM] CLS|com.ss.android.socialbase.downloader.exception.DownloadTTNetException
+[ENUM] CLS|com.bytedance.retrofit2.SsRunnable
+[ENUM] CLS|com.bytedance.retrofit2.IMetricsCollect
+[ENUM] CLS|com.dragon.read.ab.SeriesNetworkQualityV713
+[ENUM] CLS|retrofit2.http.DELETE
+[ENUM] CLS|com.ttnet.org.chromium.net.urlconnection.q9Qgq9Qq
+[ENUM] CLS|com.bytedance.retrofit2.mime.DigestUtil
+[ENUM] CLS|com.ttnet.org.chromium.net.urlconnection.Gq9Gg6Qg
+[ENUM] req classes: 46
+[ENUM] RCLS|com.android.okhttp.OkHttpClient$1
+[ENUM] RCLS|com.android.okhttp.OkHttpClient
+[ENUM] RCLS|android.app.IRequestFinishCallback$Stub$Proxy
+[ENUM] RCLS|android.app.IRequestFinishCallback$Stub
+[ENUM] RCLS|android.app.IRequestFinishCallback
+[ENUM] RCLS|android.net.http.UrlRequestCallbackWrapper
+[ENUM] RCLS|android.net.http.UrlRequestWrapper
+[ENUM] RCLS|android.net.http.UrlRequestStatusListenerWrapper
+[ENUM] RCLS|android.net.http.UrlRequestBuilderWrapper
+[ENUM] RCLS|com.bytedance.ttnet.HttpClient$q9Qgq9Qq
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient$q9Qgq9Qq
+[ENUM] RCLS|okhttp3.OkHttpClient
+[ENUM] RCLS|okhttp3.OkHttpClient$1
+[ENUM] RCLS|com.dragon.read.rpc.model.GetWikiRequest
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient$Q9G6
+[ENUM] RCLS|com.bytedance.ttnet.HttpClient$Q9G6
+[ENUM] RCLS|com.bytedance.sdk.account.network.dispatcher.IRequest$Priority
+[ENUM] RCLS|okhttp3.OkHttpClient$Builder
+[ENUM] RCLS|[Lcom.bytedance.sdk.account.network.dispatcher.IRequest$Priority;
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.dispatcher.IRequest$Priority
+[ENUM] RCLS|com.bytedance.retrofit2.RetrofitMetrics$IRequestLogReporterBridge
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient$g6Gg9GQ9
+[ENUM] RCLS|com.bytedance.ttnet.HttpClient$g6Gg9GQ9
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.http.ok3.impl.OkHttp3Builder$IOkHttpClientBuilderHook
+[ENUM] RCLS|com.bytedance.bdturing.ttnet.TTNetHttpClient
+[ENUM] RCLS|[Lcom.bytedance.frameworks.baselib.network.dispatcher.IRequest$Priority;
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.dispatcher.IRequest
+[ENUM] RCLS|com.bytedance.ttnet.HttpClient
+[ENUM] RCLS|readersaas.com.dragon.read.saas.rpc.model.TransURIRequest
+[ENUM] RCLS|com.bytedance.sdk.account.network.dispatcher.IRequest
+[ENUM] RCLS|com.bytedance.retrofit2.IRequestInfo
+[ENUM] RCLS|com.dragon.read.rpc.model.TransURIRequest
+[ENUM] RCLS|com.bytedance.retrofit2.SsHttpCall$IRequestFlagHandler
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient
+[ENUM] RCLS|com.bytedance.ttnet.HttpClient$Gq9Gg6Qg
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.http.IHttpClient
+[ENUM] RCLS|com.bytedance.frameworks.baselib.network.http.cronet.impl.SsCronetHttpClient$Gq9Gg6Qg
+[ENUM] RCLS|com.bytedance.android.live.recharge.deal.DealSetApiDataSource$IRequestParamsProcessor
+[ENUM] RCLS|com.bytedance.android.livesdk.unify.UnifyHttpClient
+[ENUM] RCLS|com.bytedance.android.live.network.impl.interceptor.ApiRequestInterceptor
+[ENUM] I_TYPE=object A_TYPE=function
+[ENUM] gai addr: 0x730ace83c0
+[ENUM] gai hooked OK
+[ENUM] okhttp hooked
+[25079RPDCC::PID::11998 ]-> [ENUM] RESOLVE ads3-normal.zijieapi.com
+[ENUM] RESOLVE api5-normal.fqnovel.com
+[ENUM] RESOLVE dig.bdurl.net
+[ENUM] RESOLVE lf3-reading.fqnovelpic.com
+[ENUM] RESOLVE p3-novel.byteimg.com

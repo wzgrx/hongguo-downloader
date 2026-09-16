@@ -1,0 +1,18 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[NET] hook-net v5 loaded
+[NET] okhttp hooked
+[NET] ctx hooked: android.net.http.CronetEngineWrapper
+[NET] SSL modules: libssl.so,libmainlinecronet.133.0.6876.3.so,stable_cronet_libcrypto.so,stable_cronet_libpki.so,stable_cronet_libssl.so,libsscronet.so,libttboringssl.so,libquick.so
+[25079RPDCC::PID::2568 ]-> 

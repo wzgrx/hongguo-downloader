@@ -1,0 +1,22 @@
+{
+  "_comment": "播放上报事件模板（占位示意）。必须用真实抓包结果替换 url/headers/body 结构与字段名。",
+  "method": "POST",
+  "url": "https://api5-normal-sinfonlineb.fqnovel.com/novel/player/play_report/v1?device_id={{device_id}}&iid={{iid}}&cdid={{cdid}}&aid=8662&app_name=novelread&version_code=71532&_rticket={{rticket}}",
+  "headers": {
+    "User-Agent": "com.phoenix.read/71532 (Linux; U; Android 9; SM-N9860; Build/PQ3A.190705.10241111;tt-ok/3.12.13.20)",
+    "Content-Type": "application/json; charset=utf-8",
+    "Host": "api5-normal-sinfonlineb.fqnovel.com"
+  },
+  "body": {
+    "vid": "{{vid}}",
+    "device_id": "{{device_id}}",
+    "iid": "{{iid}}",
+    "cdid": "{{cdid}}",
+    "session": "{{session}}",
+    "play_seconds": "{{play_seconds}}",
+    "play_progress": "{{play_progress}}",
+    "scene": "detail",
+    "ts": "{{ts}}"
+  },
+  "vids": []
+}

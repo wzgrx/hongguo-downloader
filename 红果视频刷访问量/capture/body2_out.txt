@@ -1,0 +1,238 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[BD2] body2 loaded
+[BD2] newSsCall body2 installed
+[BD2] okhttp hooked
+[25079RPDCC::PID::22033 ]-> [BD2] === REQ https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a ===
+[BD2] F|addCommonParam=false
+[BD2] F|body=TypedByteArray[length=24214]
+[BD2] F|commonParamLevel=0
+[BD2] F|headers=[log-encode-type: gzip, X-SS-REQ-TICKET: 1788730643488, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=POST
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@5547256
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=false
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.article.common.network.ICommonApi.postData() [-1, /service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a, TypedByteArray[length=24214], [log-encode-type: gzip], false]}
+[BD2] F|url=https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[BD2] END
+[BD2] === REQ https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&relat ===
+[BD2] F|addCommonParam=true
+[BD2] F|commonParamLevel=0
+[BD2] F|extraInfo=com.bytedance.ttnet.http.RequestContext@4329cb1
+[BD2] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730656368, x-reading-request: 1788730656368-131284922, x-vc-bdturing-sdk-version: 4.0.3.cn, Un-Trace-Span-Id: 5036383305308833570, Authorization: Bearer , Openid: , sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=GET
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@730d596
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=true
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.get() [true, /reading/bookapi/bookmall/cell/change/v, {tab_version=double_col, client_template=12, sub_genre=0, rec_filter_info_list=, change_type=0, related_book_id=0, inner_algo=0, image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h
+Z2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5
+cGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0=
+, last_impression_rec_tags=, limit=0, tag_id=0, inner_category_id=0, cell_id=6952850996422770718, total_chapter_num=0, video_tab_cold_start=0, rank_sub_info_id=0, offset=48, version_tag=video_fee
+[BD2] F|url=https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&related_book_id=0&inner_algo=0&image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h%0AZ2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5%0AcGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0%3D%0A&last_impression_rec_tags&limit=0&tag_id=0&inner_category_id=0&cell_id=6952850996422770718&total_chapter_num=0&video_tab_cold_start=0&rank_sub_info_id=0&offset=48&version_tag=video_feed_refactor&page_entry_time=0&cold_start_session=0&ecom_impression_start_time=0&last_dyna
+[BD2] END
+[BD2] === REQ https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&relat ===
+[BD2] F|addCommonParam=true
+[BD2] F|commonParamLevel=0
+[BD2] F|extraInfo=com.bytedance.ttnet.http.RequestContext@49c76f
+[BD2] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730682175, x-reading-request: 1788730682175-599034106, x-vc-bdturing-sdk-version: 4.0.3.cn, Un-Trace-Span-Id: 449610370694952813, Authorization: Bearer , Openid: , sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=GET
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@907ec7c
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=true
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.get() [true, /reading/bookapi/bookmall/cell/change/v, {tab_version=double_col, client_template=12, sub_genre=0, rec_filter_info_list=, change_type=0, related_book_id=0, inner_algo=0, image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h
+Z2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5
+cGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0=
+, last_impression_rec_tags=, limit=0, tag_id=0, inner_category_id=0, cell_id=6952850996422770718, total_chapter_num=0, video_tab_cold_start=0, rank_sub_info_id=0, offset=54, version_tag=video_fee
+[BD2] F|url=https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&related_book_id=0&inner_algo=0&image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h%0AZ2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5%0AcGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0%3D%0A&last_impression_rec_tags&limit=0&tag_id=0&inner_category_id=0&cell_id=6952850996422770718&total_chapter_num=0&video_tab_cold_start=0&rank_sub_info_id=0&offset=54&version_tag=video_feed_refactor&page_entry_time=0&cold_start_session=0&ecom_impression_start_time=0&last_dyna
+[BD2] END
+[BD2] === REQ https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&relat ===
+[BD2] F|addCommonParam=true
+[BD2] F|commonParamLevel=0
+[BD2] F|extraInfo=com.bytedance.ttnet.http.RequestContext@7bcf9a0
+[BD2] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730695575, x-reading-request: 1788730695576-1112095927, x-vc-bdturing-sdk-version: 4.0.3.cn, Un-Trace-Span-Id: 1809223439056265341, Authorization: Bearer , Openid: , sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=GET
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@1453959
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=true
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.get() [true, /reading/bookapi/bookmall/cell/change/v, {tab_version=double_col, client_template=12, sub_genre=0, rec_filter_info_list=, change_type=0, related_book_id=0, inner_algo=0, image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h
+Z2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5
+cGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0=
+, last_impression_rec_tags=, limit=0, tag_id=0, inner_category_id=0, cell_id=6952850996422770718, total_chapter_num=0, video_tab_cold_start=0, rank_sub_info_id=0, offset=60, version_tag=video_fee
+[BD2] F|url=https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&related_book_id=0&inner_algo=0&image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h%0AZ2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5%0AcGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0%3D%0A&last_impression_rec_tags&limit=0&tag_id=0&inner_category_id=0&cell_id=6952850996422770718&total_chapter_num=0&video_tab_cold_start=0&rank_sub_info_id=0&offset=60&version_tag=video_feed_refactor&page_entry_time=0&cold_start_session=0&ecom_impression_start_time=0&last_dyna
+[BD2] END
+[BD2] === REQ https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a ===
+[BD2] F|addCommonParam=false
+[BD2] F|body=TypedByteArray[length=31670]
+[BD2] F|commonParamLevel=0
+[BD2] F|headers=[log-encode-type: gzip, X-SS-REQ-TICKET: 1788730703468, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=POST
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@798aed8
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=false
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.article.common.network.ICommonApi.postData() [-1, /service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a, TypedByteArray[length=31670], [log-encode-type: gzip], false]}
+[BD2] F|url=https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[BD2] END
+[BD2] === REQ https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&relat ===
+[BD2] F|addCommonParam=true
+[BD2] F|commonParamLevel=0
+[BD2] F|extraInfo=com.bytedance.ttnet.http.RequestContext@aae8586
+[BD2] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730715258, x-reading-request: 1788730715258-1174969127, x-vc-bdturing-sdk-version: 4.0.3.cn, Un-Trace-Span-Id: 2865050771604623918, Authorization: Bearer , Openid: , sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=GET
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@c8f7674
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=true
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.get() [true, /reading/bookapi/bookmall/cell/change/v, {tab_version=double_col, client_template=12, sub_genre=0, rec_filter_info_list=, change_type=0, related_book_id=0, inner_algo=0, image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h
+Z2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5
+cGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0=
+, last_impression_rec_tags=, limit=0, tag_id=0, inner_category_id=0, cell_id=6952850996422770718, total_chapter_num=0, video_tab_cold_start=0, rank_sub_info_id=0, offset=66, version_tag=video_fee
+[BD2] F|url=https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&related_book_id=0&inner_algo=0&image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h%0AZ2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5%0AcGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0%3D%0A&last_impression_rec_tags&limit=0&tag_id=0&inner_category_id=0&cell_id=6952850996422770718&total_chapter_num=0&video_tab_cold_start=0&rank_sub_info_id=0&offset=66&version_tag=video_feed_refactor&page_entry_time=0&cold_start_session=0&ecom_impression_start_time=0&last_dyna
+[BD2] END
+[BD2] === REQ https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&relat ===
+[BD2] F|addCommonParam=true
+[BD2] F|commonParamLevel=0
+[BD2] F|extraInfo=com.bytedance.ttnet.http.RequestContext@5ac46a
+[BD2] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730741226, x-reading-request: 1788730741226-27270542, x-vc-bdturing-sdk-version: 4.0.3.cn, Un-Trace-Span-Id: 7165197967804113886, Authorization: Bearer , Openid: , sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=GET
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@27a1d5b
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=true
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.get() [true, /reading/bookapi/bookmall/cell/change/v, {tab_version=double_col, client_template=12, sub_genre=0, rec_filter_info_list=, change_type=0, related_book_id=0, inner_algo=0, image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h
+Z2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5
+cGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0=
+, last_impression_rec_tags=, limit=0, tag_id=0, inner_category_id=0, cell_id=6952850996422770718, total_chapter_num=0, video_tab_cold_start=0, rank_sub_info_id=0, offset=72, version_tag=video_fee
+[BD2] F|url=https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&related_book_id=0&inner_algo=0&image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h%0AZ2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5%0AcGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0%3D%0A&last_impression_rec_tags&limit=0&tag_id=0&inner_category_id=0&cell_id=6952850996422770718&total_chapter_num=0&video_tab_cold_start=0&rank_sub_info_id=0&offset=72&version_tag=video_feed_refactor&page_entry_time=0&cold_start_session=0&ecom_impression_start_time=0&last_dyna
+[BD2] END
+[BD2] === REQ https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&relat ===
+[BD2] F|addCommonParam=true
+[BD2] F|commonParamLevel=0
+[BD2] F|extraInfo=com.bytedance.ttnet.http.RequestContext@5491df9
+[BD2] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730754703, x-reading-request: 1788730754703-650901313, x-vc-bdturing-sdk-version: 4.0.3.cn, Un-Trace-Span-Id: 3295655032202949737, Authorization: Bearer , Openid: , sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=GET
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@ed9d13e
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=true
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.get() [true, /reading/bookapi/bookmall/cell/change/v, {tab_version=double_col, client_template=12, sub_genre=0, rec_filter_info_list=, change_type=0, related_book_id=0, inner_algo=0, image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h
+Z2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5
+cGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0=
+, last_impression_rec_tags=, limit=0, tag_id=0, inner_category_id=0, cell_id=6952850996422770718, total_chapter_num=0, video_tab_cold_start=0, rank_sub_info_id=0, offset=78, version_tag=video_fee
+[BD2] F|url=https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&related_book_id=0&inner_algo=0&image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h%0AZ2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5%0AcGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0%3D%0A&last_impression_rec_tags&limit=0&tag_id=0&inner_category_id=0&cell_id=6952850996422770718&total_chapter_num=0&video_tab_cold_start=0&rank_sub_info_id=0&offset=78&version_tag=video_feed_refactor&page_entry_time=0&cold_start_session=0&ecom_impression_start_time=0&last_dyna
+[BD2] END
+[BD2] === REQ https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a ===
+[BD2] F|addCommonParam=false
+[BD2] F|body=TypedByteArray[length=31814]
+[BD2] F|commonParamLevel=0
+[BD2] F|headers=[log-encode-type: gzip, X-SS-REQ-TICKET: 1788730763389, x-vc-bdturing-sdk-version: 4.0.3.cn, sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=POST
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@96f9511
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=false
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.article.common.network.ICommonApi.postData() [-1, /service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a, TypedByteArray[length=31814], [log-encode-type: gzip], false]}
+[BD2] F|url=https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[BD2] END
+[BD2] === REQ https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&relat ===
+[BD2] F|addCommonParam=true
+[BD2] F|commonParamLevel=0
+[BD2] F|extraInfo=com.bytedance.ttnet.http.RequestContext@d8abc65
+[BD2] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730774447, x-reading-request: 1788730774447-1446164801, x-vc-bdturing-sdk-version: 4.0.3.cn, Un-Trace-Span-Id: 2565788166747948345, Authorization: Bearer , Openid: , sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=GET
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@4972d3a
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=true
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.get() [true, /reading/bookapi/bookmall/cell/change/v, {tab_version=double_col, client_template=12, sub_genre=0, rec_filter_info_list=, change_type=0, related_book_id=0, inner_algo=0, image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h
+Z2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5
+cGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0=
+, last_impression_rec_tags=, limit=0, tag_id=0, inner_category_id=0, cell_id=6952850996422770718, total_chapter_num=0, video_tab_cold_start=0, rank_sub_info_id=0, offset=84, version_tag=video_fee
+[BD2] F|url=https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&related_book_id=0&inner_algo=0&image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h%0AZ2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5%0AcGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0%3D%0A&last_impression_rec_tags&limit=0&tag_id=0&inner_category_id=0&cell_id=6952850996422770718&total_chapter_num=0&video_tab_cold_start=0&rank_sub_info_id=0&offset=84&version_tag=video_feed_refactor&page_entry_time=0&cold_start_session=0&ecom_impression_start_time=0&last_dyna
+[BD2] END
+[BD2] === REQ https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&relat ===
+[BD2] F|addCommonParam=true
+[BD2] F|commonParamLevel=0
+[BD2] F|extraInfo=com.bytedance.ttnet.http.RequestContext@70a8d82
+[BD2] F|headers=[Accept: application/json; charset=utf-8,application/x-protobuf, X-Xs-From-Web: 0, X-SS-REQ-TICKET: 1788730794109, x-reading-request: 1788730794109-354370984, x-vc-bdturing-sdk-version: 4.0.3.cn, Un-Trace-Span-Id: 1454639499227507451, Authorization: Bearer , Openid: , sdk-version: 2, passport-sdk-version: 5051452, sdk-version: 2, passport-sdk-version: 5051452]
+[BD2] F|isBodyEncryptEnabled=false
+[BD2] F|isQueryEncryptEnabled=false
+[BD2] F|maxLength=-1
+[BD2] F|method=GET
+[BD2] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@b280c93
+[BD2] F|priorityLevel=1
+[BD2] F|queryFilterPriority=0
+[BD2] F|requestPriorityLevel=3
+[BD2] F|responseStreaming=true
+[BD2] F|serviceType=
+[BD2] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.rpc.transport.ttnet.RetrofitApi.get() [true, /reading/bookapi/bookmall/cell/change/v, {tab_version=double_col, client_template=12, sub_genre=0, rec_filter_info_list=, change_type=0, related_book_id=0, inner_algo=0, image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h
+Z2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5
+cGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0=
+, last_impression_rec_tags=, limit=0, tag_id=0, inner_category_id=0, cell_id=6952850996422770718, total_chapter_num=0, video_tab_cold_start=0, rank_sub_info_id=0, offset=90, version_tag=video_fee
+[BD2] F|url=https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?tab_version=double_col&client_template=12&sub_genre=0&rec_filter_info_list&change_type=0&related_book_id=0&inner_algo=0&image_shrink_datas_str=W3siaW1hZ2VfdHlwZSI6MiwiaW1hZ2Vfd2lkdGgiOjYyNiwic2hyaW5rX3R5cGUiOjJ9LHsiaW1h%0AZ2VfdHlwZSI6MywiaW1hZ2Vfd2lkdGgiOjE4NzksInNocmlua190eXBlIjozfSx7ImltYWdlX3R5%0AcGUiOjQsImltYWdlX3dpZHRoIjoxMDEsInNocmlua190eXBlIjo0fV0%3D%0A&last_impression_rec_tags&limit=0&tag_id=0&inner_category_id=0&cell_id=6952850996422770718&total_chapter_num=0&video_tab_cold_start=0&rank_sub_info_id=0&offset=90&version_tag=video_feed_refactor&page_entry_time=0&cold_start_session=0&ecom_impression_start_time=0&last_dyna
+[BD2] END

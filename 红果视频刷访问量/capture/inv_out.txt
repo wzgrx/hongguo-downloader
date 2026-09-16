@@ -1,0 +1,55 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[INV] invocation hook loaded
+[INV] Invocation hooked: 1
+[INV] Q9q hooked
+[25079RPDCC::PID::16742 ]-> [INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&versio
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&versio
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&versio
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?filter_ids=7653404598777941016%2C7561703707851623449%2C7563876089643158552%2C7641141815151709246%2C7572221820993014808%2C7642913569662
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&ver
+[INV] URLQ|https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&vers
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&versio
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&versio
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&versio
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version
+[INV] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&versi
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_
+[INV] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version

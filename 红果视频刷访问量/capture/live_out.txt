@@ -1,0 +1,1273 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[TT] q9q hook loaded
+[TT] Q9q hooked ov=1
+[TT] newSsCall hooked
+[TT] openConnection hooked
+[TT] interceptor hooked
+[TT] gai hooked
+[25079RPDCC::PID::11998 ]-> [TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://vod-settings.bytedanceapi.com/vod/settings/v1?device_id=3418827795729376&app_version=7.3.3.32&os_version=16&device_type=25079rpdcc&config_version=1615259539&caller_name=VideoCloud&app_name=kylin_read&app_channel=xiaomi_8704_64&os_api=36&player_version=2.10.252.900-novel&device_brand=Redmi&sdk_version=1.10.252.150-novel&device_platform=android&settings_version=2.1.3&aid=8704&iid=1272582850785593&ac=wifi&channel=xiaomi_8704_64&version_code=73332&version_name=7.3.3.32&os=android&ssmix=a&lan
+[TT] URLQ|https://vod-settings.bytedanceapi.com/vod/settings/v1?device_id=3418827795729376&app_version=7.3.3.32&os_version=16&device_type=25079rpdcc&config_version=1615259539&caller_name=VideoCloud&app_name=kylin_read&app_channel=xiaomi_8704_64&os_api=36&player_version=2.10.252.900-novel&device_brand=Redmi&sdk_version=1.10.252.150-novel&device_platform=android&settings_version=2.1.3&aid=8704&iid=1272582850785593&ac=wifi&channel=xiaomi_8704_64&version_code=73332&version_name=7.3.3.32&os=android&ssmix=a&lan
+[TT] RESOLVE vod-settings.bytedanceapi.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://gecko.zijieapi.com/gkx/api/resource/v7/polling?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788727982109&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance
+[TT] URLQ|https://gecko.zijieapi.com/gkx/api/resource/v7/polling?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788727982109&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance
+[TT] RESOLVE gecko5.zijieapi.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788727984381&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788727984381&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] RESOLVE i.snssdk.com
+[TT] RESOLVE rtlog5-applog.fqnovel.com
+[TT] RESOLVE mon11-misc.fqnovel.com
+[TT] RESOLVE ec3-core.ecombdapi.com
+[TT] RESOLVE ec5-core.ecombdapi.com
+[TT] RESOLVE ecom3-normal.ecombdapi.com
+[TT] RESOLVE ecom5-normal.ecombdapi.com
+[TT] RESOLVE ads5-normal.zijieapi.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://bsync.snssdk.com/v2/bytesync/api/pipeline?device_id=3418827795729376&aid=8704&platform=0
+[TT] URLQ|https://bsync.snssdk.com/v2/bytesync/api/pipeline?device_id=3418827795729376&aid=8704&platform=0
+[TT] RESOLVE bsync3-normal.zijieapi.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://mon.zijieapi.com/monitor/collect/c/code_coverage?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728162802&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&complian
+[TT] URLQ|https://mon.zijieapi.com/monitor/collect/c/code_coverage?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728162802&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&complian
+[TT] RESOLVE mon11-misc.fqnovel.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728284572&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728284572&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] RESOLVE i.snssdk.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal-sinfonlinea.fqnovel.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728584795&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728584795&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] RESOLVE i.snssdk.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://bsync.snssdk.com/v2/bytesync/api/pipeline?device_id=3418827795729376&aid=8704&platform=0
+[TT] URLQ|https://bsync.snssdk.com/v2/bytesync/api/pipeline?device_id=3418827795729376&aid=8704&platform=0
+[TT] RESOLVE bsync3-normal.zijieapi.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal-sinfonlinea.fqnovel.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://mon.zijieapi.com/monitor/collect/c/code_coverage?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728823142&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&complian
+[TT] URLQ|https://mon.zijieapi.com/monitor/collect/c/code_coverage?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728823142&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&complian
+[TT] RESOLVE mon11-misc.fqnovel.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728885059&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788728885059&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] RESOLVE i.snssdk.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal-sinfonlinea.fqnovel.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/player/video_detail/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023002&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&complian
+[TT] URLQ|https://reading.snssdk.com/novel/player/video_detail/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023002&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&complian
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://security.snssdk.com/api/plugin/config/v2/?host_abi=arm64-v8a&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023237&&dragon_device_type=pad&pv_player=73332&compliance_stat
+[TT] URLQ|https://security.snssdk.com/api/plugin/config/v2/?host_abi=arm64-v8a&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023237&&dragon_device_type=pad&pv_player=73332&compliance_stat
+[TT] RESOLVE saveu.zijieapi.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://ichannel.snssdk.com/service/2/app_alert_check/?device_id=3418827795729376&aid=8704&tt_info=dGMFEAAADSx4E5v23PU7cPOqxZURrulqHDgcLYJtTUqg4moDMXd8SuBOHHY6Kfp0hYi_ngwAyEqCPcvGpGiPwKtMol9zFcYCGXsZlk5fXnBWnchUZmFGcD5aFMt5uzDpqaNvwLHUD0a3tmInTPWdHXoYzKOmzDJEpdW2m-qoAuOskJrT4WyAFiexH7VmIKONBpuBvAAU5Fo4FJcrpPtKeQ9DYCBcNQd2pdwzYnyZJdu0LN7X6iKsJrpYA8aJeUeLbfrjpOIOJfB_sXJ_A5cE2JGwg_vgBMwAY4426MzkX2LCYqkLu-aHsUq4ye62Hb1Dpl0eKYsInVdTUfRh8zPgpxwIwqmuMDIMbPhoEfYgBbOKjk8cycAszZVHKhpttFG2S1tVyKjD-5uH267cW
+[TT] URLQ|https://ichannel.snssdk.com/service/2/app_alert_check/?device_id=3418827795729376&aid=8704&tt_info=dGMFEAAADSx4E5v23PU7cPOqxZURrulqHDgcLYJtTUqg4moDMXd8SuBOHHY6Kfp0hYi_ngwAyEqCPcvGpGiPwKtMol9zFcYCGXsZlk5fXnBWnchUZmFGcD5aFMt5uzDpqaNvwLHUD0a3tmInTPWdHXoYzKOmzDJEpdW2m-qoAuOskJrT4WyAFiexH7VmIKONBpuBvAAU5Fo4FJcrpPtKeQ9DYCBcNQd2pdwzYnyZJdu0LN7X6iKsJrpYA8aJeUeLbfrjpOIOJfB_sXJ_A5cE2JGwg_vgBMwAY4426MzkX2LCYqkLu-aHsUq4ye62Hb1Dpl0eKYsInVdTUfRh8zPgpxwIwqmuMDIMbPhoEfYgBbOKjk8cycAszZVHKhpttFG2S1tVyKjD-5uH267cW
+[TT] RESOLVE ichannel.snssdk.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/commerceapi/my_tab/info/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023477&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&co
+[TT] OPENCONN|https://reading.snssdk.com/reading/ugc/writer_center/unread_count/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023471&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] URLQ|https://reading.snssdk.com/reading/commerceapi/my_tab/info/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023477&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&co
+[TT] URLQ|https://reading.snssdk.com/reading/ugc/writer_center/unread_count/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023471&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] OPENCONN|https://reading.snssdk.com/reading/commerceapi/order/status/v1/?need_user_order_cards=false&is_today_first_login=false&need_ecommerce_banner=false&scene=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_cod
+[TT] URLQ|https://reading.snssdk.com/reading/commerceapi/order/status/v1/?need_user_order_cards=false&is_today_first_login=false&need_ecommerce_banner=false&scene=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_cod
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://feedback-c.zijieapi.com/api/feedback/v1/newest_reply/?appKey=novelapp_android&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023449&&host_abi=arm64-v8a&dragon_device_type
+[TT] URLQ|https://feedback-c.zijieapi.com/api/feedback/v1/newest_reply/?appKey=novelapp_android&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023449&&host_abi=arm64-v8a&dragon_device_type
+[TT] OPENCONN|https://reading.snssdk.com/reading/msgapi/getnewmsggroupcount/v?skip_cache=false&im_merchant_msg_count=0&im_conversation_msg_count=0&is_pull_notifications=false&im_show_count=true&msg_group_list_type=2&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&
+[TT] RESOLVE feedback-c.zijieapi.com
+[TT] OPENCONN|https://reading.snssdk.com/reading/msgapi/syncAll/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023453&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] OPENCONN|https://reading.snssdk.com/reading/msgapi/syncAll/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023442&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://reading.snssdk.com/reading/msgapi/getnewmsggroupcount/v?skip_cache=false&im_merchant_msg_count=0&im_conversation_msg_count=0&is_pull_notifications=false&im_show_count=true&msg_group_list_type=2&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&
+[TT] URLQ|https://reading.snssdk.com/reading/msgapi/syncAll/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023453&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://reading.snssdk.com/reading/msgapi/syncAll/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023442&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/privilege/low_active_ad_free?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023526&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/privilege/low_active_ad_free?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729023526&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729025478&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729025478&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729026109&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729026109&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7677804799802215449/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729026566&&host_abi=arm64-v8a&drag
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7653124585235155992/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729026557&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7653124585235155992/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729026557&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7677804799802215449/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729026566&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027063&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027063&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7653124585235155992/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027011&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7653124585235155992/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027011&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027153&&host_abi=arm64-v8a&dragon_device_type
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/consume/consumption_strategy?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027098&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=
+[TT] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027153&&host_abi=arm64-v8a&dragon_device_type
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/consume/consumption_strategy?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027098&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/msgapi/getnewmsggroupcount/v?skip_cache=false&im_merchant_msg_count=0&im_conversation_msg_count=0&is_pull_notifications=false&im_show_count=true&msg_group_list_type=2&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&
+[TT] URLQ|https://reading.snssdk.com/reading/msgapi/getnewmsggroupcount/v?skip_cache=false&im_merchant_msg_count=0&im_conversation_msg_count=0&is_pull_notifications=false&im_show_count=true&msg_group_list_type=2&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027411&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729027411&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v11-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v11-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v11-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:c010:501::5c
+[TT] RESOLVE 240e:f7:7000:a1::71
+[TT] RESOLVE 240e:f7:ef00:35::4e
+[TT] RESOLVE 240e:f7:a096:20e::45
+[TT] RESOLVE 240e:f7:a096:100::60
+[TT] RESOLVE 115.231.82.113
+[TT] RESOLVE 183.131.46.67
+[TT] RESOLVE 125.122.91.78
+[TT] RESOLVE 122.228.241.59
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 183.131.46.63
+[TT] RESOLVE 115.231.82.101
+[TT] RESOLVE 115.231.186.102
+[TT] RESOLVE 115.223.9.105
+[TT] RESOLVE 183.131.46.65
+[TT] RESOLVE 183.131.46.59
+[TT] RESOLVE 115.231.186.99
+[TT] RESOLVE 183.131.46.62
+[TT] RESOLVE 125.122.91.79
+[TT] RESOLVE 183.131.46.75
+[TT] RESOLVE 115.223.9.104
+[TT] RESOLVE 183.131.46.72
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 115.231.186.98
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 122.228.241.59
+[TT] RESOLVE 125.122.91.83
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.61
+[TT] RESOLVE 183.131.46.62
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.71
+[TT] RESOLVE 183.131.46.78
+[TT] RESOLVE 183.131.46.86
+[TT] RESOLVE 115.223.9.102
+[TT] RESOLVE 115.223.9.104
+[TT] RESOLVE 115.231.82.110
+[TT] RESOLVE 115.231.82.115
+[TT] RESOLVE 115.231.186.97
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 115.231.186.98
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 122.228.241.59
+[TT] RESOLVE 125.122.91.83
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.61
+[TT] RESOLVE 183.131.46.62
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.71
+[TT] RESOLVE 183.131.46.78
+[TT] RESOLVE 183.131.46.86
+[TT] RESOLVE 115.223.9.102
+[TT] RESOLVE 115.223.9.104
+[TT] RESOLVE 115.231.82.110
+[TT] RESOLVE 115.231.82.115
+[TT] RESOLVE 115.231.186.97
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 115.231.186.98
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 122.228.241.59
+[TT] RESOLVE 125.122.91.83
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.61
+[TT] RESOLVE 183.131.46.62
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.71
+[TT] RESOLVE 183.131.46.78
+[TT] RESOLVE 183.131.46.86
+[TT] RESOLVE 115.223.9.102
+[TT] RESOLVE 115.223.9.104
+[TT] RESOLVE 115.231.82.110
+[TT] RESOLVE 115.231.82.115
+[TT] RESOLVE 115.231.186.97
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7676063019855514649/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729031947&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7676063019855514649/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729031947&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032223&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032223&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032515&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032515&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7677804799802215449/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032499&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7677804799802215449/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032499&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] OPENCONN|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032551&&host_abi=arm64-v8a&dragon_device_type
+[TT] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032551&&host_abi=arm64-v8a&dragon_device_type
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032869&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729032869&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729038407&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729038407&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7588198183751126041/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729038602&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7588198183751126041/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729038602&&host_abi=arm64-v8a&drag
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045244&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045276&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045244&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045276&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?filter_ids=7653124652717329432%2C7653124652717329432%2C7677804799802215449%2C7676063019855514649%2C7653124652717329432%2C7653122784213617689%2C7588198183751126041&client_template=7&sub_genre=0&rec_filter_info_list=%5B%7B%22content_type%22%3A%22VideoSeries%22%2C%22filter_id_map%22%3A%7B%22series_id%22%3A%227677801492920667198%22%2C%22item_id%22%3A%227677804799802215449%22%7D%2C%22rec_group_id%22%3A7677804799802215449%7D%2C%7B%22con
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?filter_ids=7653124652717329432%2C7653124652717329432%2C7677804799802215449%2C7676063019855514649%2C7653124652717329432%2C7653122784213617689%2C7588198183751126041&client_template=7&sub_genre=0&rec_filter_info_list=%5B%7B%22content_type%22%3A%22VideoSeries%22%2C%22filter_id_map%22%3A%7B%22series_id%22%3A%227677801492920667198%22%2C%22item_id%22%3A%227677804799802215449%22%7D%2C%22rec_group_id%22%3A7677804799802215449%7D%2C%7B%22con
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7676063019855514649/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045498&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045528&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7676063019855514649/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045498&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045528&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045795&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729045795&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729047077&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=7
+[TT] URLQ|https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729047077&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=7
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729047673&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73
+[TT] URLQ|https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729047673&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:ef00:35::4f
+[TT] RESOLVE 240e:f7:c000:20d:100::39
+[TT] RESOLVE 240e:f7:7000:a1::72
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:a096:20e::4d
+[TT] RESOLVE 240e:f7:c010:501::59
+[TT] RESOLVE 240e:f7:a096:100::5f
+[TT] RESOLVE 240e:f7:7000:a1::5d
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:a096:20e::57
+[TT] RESOLVE 240e:f7:c010:501::5a
+[TT] RESOLVE 240e:f7:a096:100::62
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 183.131.46.60
+[TT] RESOLVE 115.223.9.105
+[TT] RESOLVE 115.231.186.95
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 125.122.91.81
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 125.122.91.77
+[TT] RESOLVE 183.131.46.84
+[TT] RESOLVE 115.231.82.95
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 115.223.9.99
+[TT] RESOLVE 115.231.82.102
+[TT] RESOLVE 115.231.186.93
+[TT] RESOLVE 183.131.46.74
+[TT] RESOLVE 125.122.91.79
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:a060:9205:8000:0:b00:100
+[TT] RESOLVE 240e:f7:c010:2304:8000:0:b00:33
+[TT] RESOLVE 240e:f7:a062:801b:8000:0:b00:14
+[TT] RESOLVE 240e:f7:a096:209:8000:0:b00:18
+[TT] RESOLVE 240e:f7:a062:3:8000:0:b00:15
+[TT] RESOLVE 183.136.128.102
+[TT] RESOLVE 122.247.204.100
+[TT] RESOLVE 183.131.54.101
+[TT] RESOLVE 122.228.29.219
+[TT] RESOLVE 183.136.203.131
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v5-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v5-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v5-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:a060:9205:8000:0:b00:100
+[TT] RESOLVE 240e:f7:c010:2304:8000:0:b00:33
+[TT] RESOLVE 240e:f7:a062:801b:8000:0:b00:14
+[TT] RESOLVE 240e:f7:a096:209:8000:0:b00:18
+[TT] RESOLVE 240e:f7:a062:3:8000:0:b00:15
+[TT] RESOLVE 183.136.128.102
+[TT] RESOLVE 122.247.204.100
+[TT] RESOLVE 183.131.54.101
+[TT] RESOLVE 122.228.29.219
+[TT] RESOLVE 183.136.203.131
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:a060:9205:8000:0:b00:100
+[TT] RESOLVE 240e:f7:c010:2304:8000:0:b00:33
+[TT] RESOLVE 240e:f7:a062:801b:8000:0:b00:14
+[TT] RESOLVE 240e:f7:a096:209:8000:0:b00:18
+[TT] RESOLVE 240e:f7:a062:3:8000:0:b00:15
+[TT] RESOLVE 183.136.128.102
+[TT] RESOLVE 122.247.204.100
+[TT] RESOLVE 183.131.54.101
+[TT] RESOLVE 122.228.29.219
+[TT] RESOLVE 183.136.203.131
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729051570&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729051570&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7660446904580328472/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729051794&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7660446904580328472/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729051794&&host_abi=arm64-v8a&drag
+[TT] RESOLVE www.bytedance.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p3-novel-sign.byteimg.com/novel-pic/a899edfc94f2ae9e1f831a3b92136c3c~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=T3A7wh8t9Xtpg5HZ%2BP885FhlArs%3D
+[TT] URLQ|https://p3-novel-sign.byteimg.com/novel-pic/a899edfc94f2ae9e1f831a3b92136c3c~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=T3A7wh8t9Xtpg5HZ%2BP885FhlArs%3D
+[TT] RESOLVE p3-novel-sign.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p3-novel-sign.byteimg.com/novel-pic/a899edfc94f2ae9e1f831a3b92136c3c~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=T3A7wh8t9Xtpg5HZ%2BP885FhlArs%3D
+[TT] URLQ|https://p3-novel-sign.byteimg.com/novel-pic/a899edfc94f2ae9e1f831a3b92136c3c~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=T3A7wh8t9Xtpg5HZ%2BP885FhlArs%3D
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p3-novel-sign.byteimg.com/novel-pic/a899edfc94f2ae9e1f831a3b92136c3c~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=T3A7wh8t9Xtpg5HZ%2BP885FhlArs%3D
+[TT] URLQ|https://p3-novel-sign.byteimg.com/novel-pic/a899edfc94f2ae9e1f831a3b92136c3c~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=T3A7wh8t9Xtpg5HZ%2BP885FhlArs%3D
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729058334&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729058334&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/plan/v:version/?scene=10&from=single_col_same_ip_series&book_id=7588193255586548761&filter_ids=7588193255586548761&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/plan/v:version/?scene=10&from=single_col_same_ip_series&book_id=7588193255586548761&filter_ids=7588193255586548761&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7588198183751126041/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729058525&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7588198183751126041/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729058525&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] OPENCONN|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729058574&&host_abi=arm64-v8a&dragon_device_type
+[TT] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729058574&&host_abi=arm64-v8a&dragon_device_type
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:ef00:35::4f
+[TT] RESOLVE 240e:f7:c000:20d:100::39
+[TT] RESOLVE 240e:f7:7000:a1::72
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:a096:20e::4d
+[TT] RESOLVE 240e:f7:c010:501::59
+[TT] RESOLVE 240e:f7:a096:100::5f
+[TT] RESOLVE 240e:f7:7000:a1::5d
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:a096:20e::57
+[TT] RESOLVE 240e:f7:c010:501::5a
+[TT] RESOLVE 240e:f7:a096:100::62
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 183.131.46.60
+[TT] RESOLVE 115.223.9.105
+[TT] RESOLVE 115.231.186.95
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 125.122.91.81
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 125.122.91.77
+[TT] RESOLVE 183.131.46.84
+[TT] RESOLVE 115.231.82.95
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 115.223.9.99
+[TT] RESOLVE 115.231.82.102
+[TT] RESOLVE 115.231.186.93
+[TT] RESOLVE 183.131.46.74
+[TT] RESOLVE 125.122.91.79
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729064662&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729064662&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7674632108484086846/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729064852&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7674632108484086846/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729064852&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p9-novel-sign.byteimg.com/novel-pic/084d40a14a83764c3b3b4fe08ff23434~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=8d01aZIPQRu7GVvWFCL6iCTSx2Q%3D
+[TT] URLQ|https://p9-novel-sign.byteimg.com/novel-pic/084d40a14a83764c3b3b4fe08ff23434~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=8d01aZIPQRu7GVvWFCL6iCTSx2Q%3D
+[TT] RESOLVE p9-novel-sign.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p9-novel-sign.byteimg.com/novel-pic/084d40a14a83764c3b3b4fe08ff23434~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=8d01aZIPQRu7GVvWFCL6iCTSx2Q%3D
+[TT] URLQ|https://p9-novel-sign.byteimg.com/novel-pic/084d40a14a83764c3b3b4fe08ff23434~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=8d01aZIPQRu7GVvWFCL6iCTSx2Q%3D
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p9-novel-sign.byteimg.com/novel-pic/084d40a14a83764c3b3b4fe08ff23434~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=8d01aZIPQRu7GVvWFCL6iCTSx2Q%3D
+[TT] URLQ|https://p9-novel-sign.byteimg.com/novel-pic/084d40a14a83764c3b3b4fe08ff23434~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=8d01aZIPQRu7GVvWFCL6iCTSx2Q%3D
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071377&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071377&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071600&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071600&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7660446904580328472/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071568&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/plan/v:version/?scene=10&from=single_col_same_ip_series&book_id=7660445545915223064&filter_ids=7660445545915223064&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/plan/v:version/?scene=10&from=single_col_same_ip_series&book_id=7660445545915223064&filter_ids=7660445545915223064&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7660446904580328472/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071568&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071650&&host_abi=arm64-v8a&dragon_device_type
+[TT] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071650&&host_abi=arm64-v8a&dragon_device_type
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:501::5a
+[TT] RESOLVE 240e:f7:c010:501::59
+[TT] RESOLVE 240e:f7:a096:100::5f
+[TT] RESOLVE 240e:f7:a096:20e::4d
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:a096:20e::57
+[TT] RESOLVE 240e:f7:7000:a1::5d
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:7000:a1::72
+[TT] RESOLVE 240e:f7:ef00:35::4f
+[TT] RESOLVE 240e:f7:c000:20d:100::39
+[TT] RESOLVE 240e:f7:a096:100::62
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 115.231.186.93
+[TT] RESOLVE 115.231.186.95
+[TT] RESOLVE 115.223.9.99
+[TT] RESOLVE 183.131.46.74
+[TT] RESOLVE 183.131.46.84
+[TT] RESOLVE 115.231.82.102
+[TT] RESOLVE 125.122.91.77
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.60
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 125.122.91.79
+[TT] RESOLVE 125.122.91.81
+[TT] RESOLVE 115.231.82.95
+[TT] RESOLVE 115.223.9.105
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071913&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729071913&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729077706&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729077706&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675601028330310718/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729077913&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675601028330310718/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729077913&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p9-novel-sign.byteimg.com/novel-pic/f1fdfec3bf6c46a779ac3c67f60586c5~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=oDq10pNrVJrHTrcLkT%2FPjr2XD2Q%3D
+[TT] URLQ|https://p9-novel-sign.byteimg.com/novel-pic/f1fdfec3bf6c46a779ac3c67f60586c5~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=oDq10pNrVJrHTrcLkT%2FPjr2XD2Q%3D
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084440&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] SSCALL-ERR TypeError: not a function
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084440&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084470&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084470&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084657&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7674632108484086846/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084640&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084657&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7674632108484086846/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084640&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084682&&host_abi=arm64-v8a&dragon_device_type
+[TT] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084682&&host_abi=arm64-v8a&dragon_device_type
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084874&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729084874&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:501::5a
+[TT] RESOLVE 240e:f7:c010:501::59
+[TT] RESOLVE 240e:f7:a096:100::5f
+[TT] RESOLVE 240e:f7:a096:20e::4d
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:a096:20e::57
+[TT] RESOLVE 240e:f7:7000:a1::5d
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:7000:a1::72
+[TT] RESOLVE 240e:f7:ef00:35::4f
+[TT] RESOLVE 240e:f7:c000:20d:100::39
+[TT] RESOLVE 240e:f7:a096:100::62
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 115.231.186.93
+[TT] RESOLVE 115.231.186.95
+[TT] RESOLVE 115.223.9.99
+[TT] RESOLVE 183.131.46.74
+[TT] RESOLVE 183.131.46.84
+[TT] RESOLVE 115.231.82.102
+[TT] RESOLVE 125.122.91.77
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.60
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 125.122.91.79
+[TT] RESOLVE 125.122.91.81
+[TT] RESOLVE 115.231.82.95
+[TT] RESOLVE 115.223.9.105
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729090550&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729090550&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7672065137280306201/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729090714&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7672065137280306201/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729090714&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729090932&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729090932&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/plan/v:version/?scene=10&from=single_col_same_ip_series&book_id=7675595081096629273&filter_ids=7675595081096629273&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_
+[TT] SSCALL-ERR TypeError: not a function
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/plan/v:version/?scene=10&from=single_col_same_ip_series&book_id=7675595081096629273&filter_ids=7675595081096629273&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729091167&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729091167&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675601028330310718/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729091136&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675601028330310718/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729091136&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729091360&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729091360&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p3-novel-sign.byteimg.com/novel-pic/b01ff776c17f3f2d9072ba4c59560b8c~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=Z8pNvtimzL%2FeQLkNA%2BTDH7pwu9s%3D
+[TT] URLQ|https://p3-novel-sign.byteimg.com/novel-pic/b01ff776c17f3f2d9072ba4c59560b8c~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=Z8pNvtimzL%2FeQLkNA%2BTDH7pwu9s%3D
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729097020&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729097020&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7673479220391070782/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729097198&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7673479220391070782/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729097198&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p3-novel-sign.byteimg.com/novel-pic/6ce09e954f8aee815d508187c142e7ec~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=dMZ4V5u2yJKL3wWt%2BgvKwJHVyk0%3D
+[TT] URLQ|https://p3-novel-sign.byteimg.com/novel-pic/6ce09e954f8aee815d508187c142e7ec~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913046&x-signature=dMZ4V5u2yJKL3wWt%2BgvKwJHVyk0%3D
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729103782&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729103782&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729103792&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729103792&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729103975&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729103975&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7672065137280306201/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729103948&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7672065137280306201/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729103948&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729104160&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729104160&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729109898&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729109898&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110086&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110086&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110313&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110313&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:501::5a
+[TT] RESOLVE 240e:f7:c010:501::59
+[TT] RESOLVE 240e:f7:a096:100::5f
+[TT] RESOLVE 240e:f7:a096:20e::4d
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:a096:20e::57
+[TT] RESOLVE 240e:f7:7000:a1::5d
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:7000:a1::72
+[TT] RESOLVE 240e:f7:ef00:35::4f
+[TT] RESOLVE 240e:f7:c000:20d:100::39
+[TT] RESOLVE 240e:f7:a096:100::62
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 115.231.186.93
+[TT] RESOLVE 115.231.186.95
+[TT] RESOLVE 115.223.9.99
+[TT] RESOLVE 183.131.46.74
+[TT] RESOLVE 183.131.46.84
+[TT] RESOLVE 115.231.82.102
+[TT] RESOLVE 125.122.91.77
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.60
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 125.122.91.79
+[TT] RESOLVE 125.122.91.81
+[TT] RESOLVE 115.231.82.95
+[TT] RESOLVE 115.223.9.105
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?filter_ids=7653124652717329432%2C7653124652717329432%2C7677804799802215449%2C7676063019855514649%2C7588198183751126041%2C7660446904580328472%2C7674632108484086846%2C7675601028330310718%2C7672065137280306201%2C7673479220391070782%2C7653124652717329432%2C7653122784213617689%2C7675424396831378456&client_template=7&sub_genre=0&rec_filter_info_list=%5B%7B%22content_type%22%3A%22VideoSeries%22%2C%22filter_id_map%22%3A%7B%22series_id%22%
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/bookmall/cell/change/v?filter_ids=7653124652717329432%2C7653124652717329432%2C7677804799802215449%2C7676063019855514649%2C7588198183751126041%2C7660446904580328472%2C7674632108484086846%2C7675601028330310718%2C7672065137280306201%2C7673479220391070782%2C7653124652717329432%2C7653122784213617689%2C7675424396831378456&client_template=7&sub_genre=0&rec_filter_info_list=%5B%7B%22content_type%22%3A%22VideoSeries%22%2C%22filter_id_map%22%3A%7B%22series_id%22%
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/plan/v:version/?scene=10&from=single_col_same_ip_series&book_id=7673473745624763416&filter_ids=7673473745624763416&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_
+[TT] SSCALL-ERR TypeError: not a function
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/plan/v:version/?scene=10&from=single_col_same_ip_series&book_id=7673473745624763416&filter_ids=7673473745624763416&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110587&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7673479220391070782/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110563&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110587&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7673479220391070782/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110563&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110825&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729110825&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729111751&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=7
+[TT] URLQ|https://reading.snssdk.com/novel/player/multi_video_detail/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729111751&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=7
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729112184&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73
+[TT] URLQ|https://reading.snssdk.com/novel/player/multi_video_model/preload/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729112184&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE v11-hongman.qznovelvod.com
+[TT] RESOLVE 240e:971:4001:5:40::3
+[TT] RESOLVE 240e:f7:a070:405:31::14
+[TT] RESOLVE 61.174.243.140
+[TT] RESOLVE 183.131.208.34
+[TT] RESOLVE 183.131.117.231
+[TT] RESOLVE 122.247.212.139
+[TT] RESOLVE 115.238.207.119
+[TT] RESOLVE 60.188.72.205
+[TT] RESOLVE 115.228.138.218
+[TT] RESOLVE 115.238.207.63
+[TT] RESOLVE 183.134.9.94
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:501::5a
+[TT] RESOLVE 240e:f7:c010:501::59
+[TT] RESOLVE 240e:f7:a096:100::5f
+[TT] RESOLVE 240e:f7:a096:20e::4d
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:a096:20e::57
+[TT] RESOLVE 240e:f7:7000:a1::5d
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:7000:a1::72
+[TT] RESOLVE 240e:f7:ef00:35::4f
+[TT] RESOLVE 240e:f7:c000:20d:100::39
+[TT] RESOLVE 240e:f7:a096:100::62
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 115.231.186.93
+[TT] RESOLVE 115.231.186.95
+[TT] RESOLVE 115.223.9.99
+[TT] RESOLVE 183.131.46.74
+[TT] RESOLVE 183.131.46.84
+[TT] RESOLVE 115.231.82.102
+[TT] RESOLVE 125.122.91.77
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.60
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 125.122.91.79
+[TT] RESOLVE 125.122.91.81
+[TT] RESOLVE 115.231.82.95
+[TT] RESOLVE 115.223.9.105
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:2304:8000:0:b00:33
+[TT] RESOLVE 240e:f7:a096:209:8000:0:b00:18
+[TT] RESOLVE 240e:f7:a062:3:8000:0:b00:15
+[TT] RESOLVE 240e:f7:a062:801b:8000:0:b00:14
+[TT] RESOLVE 240e:f7:a060:9205:8000:0:b00:100
+[TT] RESOLVE 183.136.203.131
+[TT] RESOLVE 183.131.54.101
+[TT] RESOLVE 122.247.204.100
+[TT] RESOLVE 122.228.29.219
+[TT] RESOLVE 183.136.128.102
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:2304:8000:0:b00:33
+[TT] RESOLVE 240e:f7:a096:209:8000:0:b00:18
+[TT] RESOLVE 240e:f7:a062:3:8000:0:b00:15
+[TT] RESOLVE 240e:f7:a062:801b:8000:0:b00:14
+[TT] RESOLVE 240e:f7:a060:9205:8000:0:b00:100
+[TT] RESOLVE 183.136.203.131
+[TT] RESOLVE 183.131.54.101
+[TT] RESOLVE 122.247.204.100
+[TT] RESOLVE 122.228.29.219
+[TT] RESOLVE 183.136.128.102
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE v5-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:2304:8000:0:b00:33
+[TT] RESOLVE 240e:f7:a096:209:8000:0:b00:18
+[TT] RESOLVE 240e:f7:a062:3:8000:0:b00:15
+[TT] RESOLVE 240e:f7:a062:801b:8000:0:b00:14
+[TT] RESOLVE 240e:f7:a060:9205:8000:0:b00:100
+[TT] RESOLVE 183.136.203.131
+[TT] RESOLVE 183.131.54.101
+[TT] RESOLVE 122.247.204.100
+[TT] RESOLVE 122.228.29.219
+[TT] RESOLVE 183.136.128.102
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:501::5a
+[TT] RESOLVE 240e:f7:c010:501::59
+[TT] RESOLVE 240e:f7:a096:100::5f
+[TT] RESOLVE 240e:f7:a096:20e::4d
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:a096:20e::57
+[TT] RESOLVE 240e:f7:7000:a1::5d
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:7000:a1::72
+[TT] RESOLVE 240e:f7:ef00:35::4f
+[TT] RESOLVE 240e:f7:c000:20d:100::39
+[TT] RESOLVE 240e:f7:a096:100::62
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 115.231.186.93
+[TT] RESOLVE 115.231.186.95
+[TT] RESOLVE 115.223.9.99
+[TT] RESOLVE 183.131.46.74
+[TT] RESOLVE 183.131.46.84
+[TT] RESOLVE 115.231.82.102
+[TT] RESOLVE 125.122.91.77
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.60
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 125.122.91.79
+[TT] RESOLVE 125.122.91.81
+[TT] RESOLVE 115.231.82.95
+[TT] RESOLVE 115.223.9.105
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116365&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116365&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7553072239650802713/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116539&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7553072239650802713/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116539&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/player/multi_video_model/player/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116700&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/novel/player/multi_video_model/player/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116700&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] RESOLVE www.bytedance.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116749&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/anchor/get?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116749&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_s
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE 240e:f7:c010:501::5a
+[TT] RESOLVE 240e:f7:c010:501::59
+[TT] RESOLVE 240e:f7:a096:100::5f
+[TT] RESOLVE 240e:f7:a096:20e::4d
+[TT] RESOLVE 240e:f7:c000:20d:100::3b
+[TT] RESOLVE 240e:f7:a096:20e::57
+[TT] RESOLVE 240e:f7:7000:a1::5d
+[TT] RESOLVE 240e:f7:ef00:35::4d
+[TT] RESOLVE 240e:f7:7000:a1::72
+[TT] RESOLVE 240e:f7:ef00:35::4f
+[TT] RESOLVE 240e:f7:c000:20d:100::39
+[TT] RESOLVE 240e:f7:a096:100::62
+[TT] RESOLVE 122.228.241.58
+[TT] RESOLVE 115.231.186.93
+[TT] RESOLVE 115.231.186.95
+[TT] RESOLVE 115.223.9.99
+[TT] RESOLVE 183.131.46.74
+[TT] RESOLVE 183.131.46.84
+[TT] RESOLVE 115.231.82.102
+[TT] RESOLVE 125.122.91.77
+[TT] RESOLVE 125.122.91.84
+[TT] RESOLVE 183.131.46.68
+[TT] RESOLVE 183.131.46.60
+[TT] RESOLVE 122.228.241.57
+[TT] RESOLVE 125.122.91.79
+[TT] RESOLVE 125.122.91.81
+[TT] RESOLVE 115.231.82.95
+[TT] RESOLVE 115.223.9.105
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] OKHTTP GET https://dig.bdurl.net/q?host=v26-hongman.qznovelvod.com&source=vod&aid=8704
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116959&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116959&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116943&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116943&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116996&&host_abi=arm64-v8a&dragon_device_type
+[TT] URLQ|https://reading.snssdk.com/reading/distribution/book_pack_fields/inner_feed_detail/v1?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729116996&&host_abi=arm64-v8a&dragon_device_type
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p6-novel-sign.byteimg.com/novel-pic/0867ed40d241bbec17f314305def1c03~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913111&x-signature=Xmv3oO1LDT8MRxj6190Q6QNqaXE%3D
+[TT] URLQ|https://p6-novel-sign.byteimg.com/novel-pic/0867ed40d241bbec17f314305def1c03~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913111&x-signature=Xmv3oO1LDT8MRxj6190Q6QNqaXE%3D
+[TT] RESOLVE p6-novel-sign.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729117173&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729117173&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729122810&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/user/multi_share_info/v:version/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729122810&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7563876089643158552/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729123068&&host_abi=arm64-v8a&drag
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7563876089643158552/v1?aid=8704&compliance_status=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729123068&&host_abi=arm64-v8a&drag
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://p3-novel-sign.byteimg.com/novel-pic/b12c2fb0e88fb4577aaf3dc438bf88d2~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913111&x-signature=wSbmNrD6OB7rbmPQIARthoC5JIM%3D
+[TT] URLQ|https://p3-novel-sign.byteimg.com/novel-pic/b12c2fb0e88fb4577aaf3dc438bf88d2~tplv-81nmtwyey9-superreso-aifit:1200:0.heic?lk3s=a5f265fb&x-expires=1793913111&x-signature=wSbmNrD6OB7rbmPQIARthoC5JIM%3D
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] RESOLVE v26-hongman.qznovelvod.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729144363&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729144363&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729174338&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729174338&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729185281&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://i.snssdk.com/api/neptune/v3/sdk/PackLiveSDK?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729185281&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] RESOLVE i.snssdk.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://bsync.snssdk.com/v2/bytesync/api/pipeline?device_id=3418827795729376&aid=8704&platform=0
+[TT] URLQ|https://bsync.snssdk.com/v2/bytesync/api/pipeline?device_id=3418827795729376&aid=8704&platform=0
+[TT] RESOLVE bsync3-normal.zijieapi.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729204317&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729204317&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729234333&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729234333&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729264273&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] URLQ|https://reading.snssdk.com/novel/commentapi/comment/list/7675424396831378456/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729264273&&host_abi=arm64-v8a&dragon_device_type=pad&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278622&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_history/update/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278622&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://feedback-c.zijieapi.com/api/feedback/v1/newest_reply/?appKey=novelapp_android&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278729&&host_abi=arm64-v8a&dragon_device_type
+[TT] OPENCONN|https://reading.snssdk.com/reading/msgapi/getnewmsggroupcount/v?skip_cache=false&im_merchant_msg_count=0&im_conversation_msg_count=0&is_pull_notifications=false&im_show_count=true&msg_group_list_type=2&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/msgapi/syncAll/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278728&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://feedback-c.zijieapi.com/api/feedback/v1/newest_reply/?appKey=novelapp_android&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278729&&host_abi=arm64-v8a&dragon_device_type
+[TT] URLQ|https://reading.snssdk.com/reading/msgapi/getnewmsggroupcount/v?skip_cache=false&im_merchant_msg_count=0&im_conversation_msg_count=0&is_pull_notifications=false&im_show_count=true&msg_group_list_type=2&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&
+[TT] RESOLVE feedback-c.zijieapi.com
+[TT] OPENCONN|https://reading.snssdk.com/reading/ugc/writer_center/unread_count/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278731&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] URLQ|https://reading.snssdk.com/reading/msgapi/syncAll/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278728&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://reading.snssdk.com/reading/ugc/writer_center/unread_count/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278731&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=733
+[TT] OPENCONN|https://reading.snssdk.com/reading/commerceapi/my_tab/info/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278729&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&co
+[TT] OPENCONN|https://reading.snssdk.com/reading/commerceapi/order/status/v1/?need_user_order_cards=false&is_today_first_login=false&need_ecommerce_banner=false&scene=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_cod
+[TT] OPENCONN|https://reading.snssdk.com/reading/msgapi/syncAll/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278715&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://reading.snssdk.com/reading/commerceapi/my_tab/info/v1/?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278729&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&co
+[TT] URLQ|https://reading.snssdk.com/reading/commerceapi/order/status/v1/?need_user_order_cards=false&is_today_first_login=false&need_ecommerce_banner=false&scene=0&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_cod
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/privilege/low_active_ad_free?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278741&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=
+[TT] URLQ|https://reading.snssdk.com/reading/msgapi/syncAll/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278715&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332&compliance_st
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/privilege/low_active_ad_free?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278741&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278874&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] URLQ|https://reading.snssdk.com/reading/bookapi/read_progress/upload/v?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729278874&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=73332
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://api.fqnovel.com/luckycat/novel/v1/consume/consumption_strategy?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729279112&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=
+[TT] URLQ|https://api.fqnovel.com/luckycat/novel/v1/consume/consumption_strategy?iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&resolution=1880*2963&dpi=450&update_version_code=73332&_rticket=1788729279112&&host_abi=arm64-v8a&dragon_device_type=pad&pv_player=
+[TT] SSCALL-ERR TypeError: not a function
+[TT] OPENCONN|https://reading.snssdk.com/reading/msgapi/getnewmsggroupcount/v?skip_cache=false&im_merchant_msg_count=0&im_conversation_msg_count=0&is_pull_notifications=false&im_show_count=true&msg_group_list_type=2&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&
+[TT] URLQ|https://reading.snssdk.com/reading/msgapi/getnewmsggroupcount/v?skip_cache=false&im_merchant_msg_count=0&im_conversation_msg_count=0&is_pull_notifications=false&im_show_count=true&msg_group_list_type=2&iid=1272582850785593&device_id=3418827795729376&ac=wifi&channel=xiaomi_8704_64&aid=8704&app_name=kylin_read&version_code=73332&version_name=7.3.3.32&device_platform=android&os=android&ssmix=a&device_type=25079RPDCC&device_brand=Redmi&language=zh&os_api=36&os_version=16&manifest_version_code=73332&
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+Process terminated
+
+Thank you for using Frida!

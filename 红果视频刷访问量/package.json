@@ -1,0 +1,17 @@
+{
+  "name": "hongguo-view-bot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "红果视频刷访问量研究工具集：真机自动化 + 协议重放 + 抓包取证",
+  "main": "src/autoplay.js",
+  "scripts": {
+    "autoplay": "node src/autoplay.js",
+    "replay": "node src/replay-report.js",
+    "info": "node src/autoplay.js --info",
+    "protocol": "node src/protocol-bot.js"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "frida": "^17.17.0"
+  }
+}

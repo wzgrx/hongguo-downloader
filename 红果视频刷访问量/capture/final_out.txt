@@ -1,0 +1,124 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[CAP] final capture loaded at 1788731377593
+[CAP] newSsCall installed
+[CAP] Q9q installed
+[25079RPDCC::PID::10500 ]-> Process crashed: Bad access due to invalid address
+
+***
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'Redmi/turner/turner:16/BP2A.250605.031.A3/OS3.0.307.0.WAOCNXM:user/release-keys'
+Revision: '0'
+ABI: 'arm64'
+Timestamp: 2026-09-07 05:49:38.422033407+0800
+Process uptime: 5345s
+Cmdline: com.kylin.read
+pid: 10500, tid: 10500, name: com.kylin.read  >>> com.kylin.read <<<
+uid: 10280
+tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+pac_enabled_keys: 000000000000000f (PR_PAC_APIAKEY, PR_PAC_APIBKEY, PR_PAC_APDAKEY, PR_PAC_APDBKEY)
+signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x001f020058000010
+    x0  000000006f615880  x1  0000007ffc788754  x2  0000000000000000  x3  b40000719879a010
+    x4  0000007ffc788a68  x5  000000730fa5f6a5  x6  0000007ffc788a68  x7  00000071d8a5bc90
+    x8  0000000000000000  x9  0000007045070870  x10 000000730fa5f6a7  x11 0000007045059664
+    x12 00000070450596d4  x13 0000007045059744  x14 00000070450597c4  x15 b40000714879ad70
+    x16 d61f020058000010  x17 0000000000000000  x18 000000731110c000  x19 b40000719879a010
+    x20 0000000000000000  x21 b40000719879a0d0  x22 0000007ffc788730  x23 0000000000000001
+    x24 0000000000000000  x25 0000000000000000  x26 0000000000000000  x27 000000006f615880
+    x28 0000007ffc788760  x29 0000007ffc7886f0
+    lr  0000007045059864  sp  0000007ffc7886e0  pc  001f020058000010  pst 0000000060001400
+79 total frames
+backtrace:
+      #00 pc 0000000058000010  <unknown>
+      #01 pc 000000000034a860  /apex/com.android.art/lib64/libart.so (art_quick_invoke_static_stub+640) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #02 pc 000000000068865c  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2092) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #03 pc 0000000000692390  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+1376) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #04 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #05 pc 00000000000401d0  /apex/com.android.art/javalib/core-libart.jar
+      #06 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #07 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #08 pc 0000000000692a40  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+3088) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #09 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #10 pc 000000000003d7ac  /apex/com.android.art/javalib/core-libart.jar
+      #11 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #12 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #13 pc 0000000000692a40  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+3088) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #14 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #15 pc 000000000003d7ac  /apex/com.android.art/javalib/core-libart.jar
+      #16 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #17 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #18 pc 0000000000692a40  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+3088) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #19 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #20 pc 000000000002378c  /apex/com.android.art/javalib/core-libart.jar
+      #21 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #22 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #23 pc 0000000000692390  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+1376) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #24 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #25 pc 00000000002b4458  /system/framework/framework.jar (offset 0x1234000)
+      #26 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #27 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #28 pc 0000000000692390  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+1376) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #29 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #30 pc 00000000001caa58  /system_ext/framework/miui-framework.jar
+      #31 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #32 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #33 pc 000000000069221c  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+1004) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #34 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #35 pc 00000000001cab30  /system_ext/framework/miui-framework.jar
+      #36 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #37 pc 0000000000567cc4  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<true>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+1796) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #38 pc 0000000000694c28  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+11768) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #39 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #40 pc 00000000002aa760  /system/framework/framework.jar (offset 0x1ad4000)
+      #41 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #42 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #43 pc 000000000069221c  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+1004) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #44 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #45 pc 00000000002a97f4  /system/framework/framework.jar (offset 0x1ad4000)
+      #46 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #47 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #48 pc 0000000000692a40  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+3088) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #49 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #50 pc 00000000002714b8  /system/framework/framework.jar (offset 0x1234000)
+      #51 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #52 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #53 pc 0000000000692390  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+1376) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #54 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #55 pc 00000000002712f4  /system/framework/framework.jar (offset 0x1234000)
+      #56 pc 000000000028a640  /apex/com.android.art/lib64/libart.so (art::interpreter::ArtInterpreterToInterpreterBridge(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame*, art::JValue*)+416) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #57 pc 0000000000688648  /apex/com.android.art/lib64/libart.so (bool art::interpreter::DoCall<false>(art::ArtMethod*, art::Thread*, art::ShadowFrame&, art::Instruction const*, unsigned short, bool, art::JValue*)+2072) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #58 pc 000000000069221c  /apex/com.android.art/lib64/libart.so (void art::interpreter::ExecuteSwitchImplCpp<false>(art::interpreter::SwitchImplContext*)+1004) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #59 pc 000000000028ac48  /apex/com.android.art/lib64/libart.so (ExecuteSwitchImplAsm+8) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #60 pc 000000000029a508  /system/framework/framework.jar (offset 0x1234000)
+      #61 pc 000000000028ba54  /apex/com.android.art/lib64/libart.so (art::interpreter::Execute(art::Thread*, art::CodeItemDataAccessor const&, art::ShadowFrame&, art::JValue, bool, bool) (.__uniq.112435418011751916792819755956732575238.llvm.2877144121303408989)+340) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #62 pc 000000000028b278  /apex/com.android.art/lib64/libart.so (artQuickToInterpreterBridge+888) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #63 pc 0000000000361a38  /apex/com.android.art/lib64/libart.so (art_quick_to_interpreter_bridge+88) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #64 pc 000000000065593c  /system/framework/arm64/boot-framework.oat (android.os.Looper.loop+252) (BuildId: 6f39231d3dc929a3e869136da8d84e42facbcfb4)
+      #65 pc 00000000002d4a90  /system/framework/arm64/boot-framework.oat (android.app.ActivityThread.main+1696) (BuildId: 6f39231d3dc929a3e869136da8d84e42facbcfb4)
+      #66 pc 000000000034a860  /apex/com.android.art/lib64/libart.so (art_quick_invoke_static_stub+640) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #67 pc 0000000000344880  /apex/com.android.art/lib64/libart.so (_jobject* art::InvokeMethod<(art::PointerSize)8>(art::ScopedObjectAccessAlreadyRunnable const&, _jobject*, _jobject*, _jobject*, unsigned long)+544) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #68 pc 0000000000328050  /apex/com.android.art/lib64/libart.so (art::Method_invoke(_JNIEnv*, _jobject*, _jobject*, _jobjectArray*) (.__uniq.165753521025965369065708152063621506277)+32) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #69 pc 0000000000361bc4  /system/framework/arm64/boot.oat (art_jni_trampoline+116) (BuildId: 0c4e26d8b2775f63b1df625f40bbf437789671f4)
+      #70 pc 0000000000a05b14  /system/framework/arm64/boot-framework.oat (com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run+132) (BuildId: 6f39231d3dc929a3e869136da8d84e42facbcfb4)
+      #71 pc 0000000000a0e824  /system/framework/arm64/boot-framework.oat (com.android.internal.os.ZygoteInit.main+3844) (BuildId: 6f39231d3dc929a3e869136da8d84e42facbcfb4)
+      #72 pc 000000000034a860  /apex/com.android.art/lib64/libart.so (art_quick_invoke_static_stub+640) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #73 pc 00000000003494cc  /apex/com.android.art/lib64/libart.so (art::JValue art::InvokeWithVarArgs<_jmethodID*>(art::ScopedObjectAccessAlreadyRunnable const&, _jobject*, _jmethodID*, std::__va_list)+812) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #74 pc 0000000000655bcc  /apex/com.android.art/lib64/libart.so (art::JNI<true>::CallStaticVoidMethodV(_JNIEnv*, _jclass*, _jmethodID*, std::__va_list)+140) (BuildId: 9d7c19e050419de96f6b2327df7d3216)
+      #75 pc 000000000010f568  /system/lib64/libandroid_runtime.so (_JNIEnv::CallStaticVoidMethod(_jclass*, _jmethodID*, ...)+104) (BuildId: 8a88610e0c19bed048006bab794dbfcb)
+      #76 pc 000000000013d184  /system/lib64/libandroid_runtime.so (android::AndroidRuntime::start(char const*, android::Vector<android::String8> const&, bool)+1204) (BuildId: 8a88610e0c19bed048006bab794dbfcb)
+      #77 pc 0000000000004698  /system/bin/app_process64 (main+1464) (BuildId: 8298230449e9ce4665160e74afe511e7)
+      #78 pc 000000000006c1a8  /apex/com.android.runtime/lib64/bionic/libc.so (__libc_init+120) (BuildId: 9511d9cb89af590535458e21a5811d1a)
+***
+
+Thank you for using Frida!

@@ -1,0 +1,35 @@
+# 依赖
+node_modules/
+dist/
+dist-react/
+
+# 内置的 ffmpeg 二进制（约 167MB，从网络获取，不纳入版本管理）
+# 打包前执行：node scripts/setup-ffmpeg.js 或手动放入 build/ffmpeg/
+build/ffmpeg/
+
+# 构建与打包输出
+release/
+out/
+.webpack/
+*.asar
+*.exe
+*.dmg
+*.app
+*.AppImage
+
+# 临时文件与缓存
+.zcode/
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+*.tmp
+.cache/
+.npm-cache/
+.electron-cache/
+.eb-cache/
+
+# 本地配置
+config.json
+settings.json

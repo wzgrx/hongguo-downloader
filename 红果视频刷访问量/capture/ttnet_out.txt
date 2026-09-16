@@ -1,0 +1,25 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[TT] ttnet hook v2 loaded
+[TT] factory OK via java.lang.BootClassLoader@4cbc99f
+[TT] factory search done, fac=yes
+[TT] engine err com.ttnet.org.chromium.net.CronetEngine Error: java.lang.ClassNotFoundException: com.ttnet.org.chromium.net.CronetEngine not found in NewMiraClassloader
+[TT] no method in com.ttnet.org.chromium.net.impl.CronetUrlRequestContext
+[TT] cb err Error: java.lang.ClassNotFoundException: com.ttnet.org.chromium.net.UrlRequest$Callback not found in
+[TT] gai hooked
+[25079RPDCC::PID::11998 ]-> [TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com

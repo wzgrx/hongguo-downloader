@@ -1,0 +1,225 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[TT] q9q hook loaded
+[TT] Q9q hooked ov=1
+[TT] newSsCall hooked
+[TT] openConnection hooked
+[TT] interceptor hooked
+[TT] gai hooked
+[25079RPDCC::PID::27088 ]-> [TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal-sinfonlinea.fqnovel.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal-sinfonlinea.fqnovel.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal-sinfonlinea.fqnovel.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal-sinfonlinea.fqnovel.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal-sinfonlinea.fqnovel.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE api5-normal.fqnovel.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] SSCALL-ERR TypeError: not a function
+[TT] RESOLVE rtlog5-applog.fqnovel.com
+[TT] RESOLVE log5-applog.fqnovel.com
+[TT] RESOLVE mon11-misc.fqnovel.com
+[TT] RESOLVE ec3-core.ecombdapi.com
+[TT] RESOLVE ec5-core.ecombdapi.com
+[TT] RESOLVE ecom3-normal.ecombdapi.com
+[TT] RESOLVE ecom5-normal.ecombdapi.com
+[TT] RESOLVE ads5-normal.zijieapi.com
+[TT] RESOLVE ads3-normal.zijieapi.com
+[TT] RESOLVE dig.bdurl.net
+[TT] RESOLVE lf3-reading.fqnovelpic.com
+[TT] RESOLVE p3-novel.byteimg.com
+[TT] RESOLVE p6-novel.byteimg.com
+Process terminated
+
+Thank you for using Frida!

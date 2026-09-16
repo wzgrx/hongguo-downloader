@@ -1,0 +1,346 @@
+.settings-container {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--text-primary);
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.settings-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.settings-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.folder-row {
+  display: flex;
+  gap: 10px;
+}
+
+.folder-row .input-field {
+  flex: 1;
+}
+
+.preset-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.select-field {
+  max-width: 260px;
+  cursor: pointer;
+}
+
+.settings-hint {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.settings-hint code {
+  background: var(--bg-inset);
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+.settings-footer {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--border-muted);
+  padding-top: 18px;
+}
+
+/* ===== 网络代理：设置页状态行 ===== */
+.proxy-status-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-inset);
+}
+
+.proxy-status-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.proxy-status-text code {
+  background: var(--bg-card);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--text-primary);
+}
+
+.proxy-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.proxy-dot-on {
+  background: var(--success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+}
+
+.proxy-dot-off {
+  background: var(--text-tertiary);
+  box-shadow: 0 0 0 3px rgba(138, 143, 153, 0.15);
+}
+
+.btn-sm {
+  padding: 6px 11px;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ===== 网络代理：配置弹窗 ===== */
+.proxy-modal-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(31, 35, 41, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: proxy-mask-in 0.15s ease-out;
+}
+
+@keyframes proxy-mask-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.proxy-modal {
+  width: 100%;
+  max-width: 520px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: proxy-modal-in 0.18s ease-out;
+}
+
+@keyframes proxy-modal-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.proxy-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.proxy-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.proxy-modal-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+}
+
+.proxy-switch-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.proxy-switch-row input {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.proxy-switch-text {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.proxy-switch-text em {
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+}
+
+.proxy-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.proxy-fields-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.proxy-mode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.proxy-mode-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.proxy-mode-item input {
+  margin-top: 2px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.proxy-mode-item.active {
+  border-color: var(--accent);
+  background: rgba(255, 77, 109, 0.06);
+}
+
+.proxy-mode-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.proxy-mode-body b {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.proxy-mode-body em {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.proxy-host-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.proxy-host-row .input-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.proxy-colon {
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.proxy-port {
+  max-width: 110px;
+  flex: 0 0 auto !important;
+}
+
+.proxy-auth-row {
+  display: flex;
+  gap: 10px;
+}
+
+.proxy-auth-row .input-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.proxy-test-result {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 13px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.proxy-test-result svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.proxy-test-result.ok {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #0f7a5a;
+}
+
+.proxy-test-result.fail {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #b91c1c;
+}
+
+.proxy-modal-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border-muted);
+}
+
+.proxy-foot-right {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,69 @@
+     ____
+    / _  |   Frida 17.17.0 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   Prefer a GUI? Luma is the official Frida app, with a live REPL,
+   . . . .   persistent sessions & collaboration. https://luma.frida.re/
+   . . . .
+   . . . .   Connected to 25079RPDCC (id=W84PPZKRH6UKGEWW)
+Attaching...
+[CS] capture-safe loaded 1788731998185
+[CS] newSsCall safe-installed
+[CS] Q9q installed
+[25079RPDCC::PID::25413 ]-> [CS] ===REQ===
+[CS] URL|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[CS] F|addCommonParam=false
+[CS] F|body=TypedByteArray
+[CS] F|commonParamLevel=0
+[CS] F|isBodyEncryptEnabled=false
+[CS] F|isQueryEncryptEnabled=false
+[CS] F|maxLength=-1
+[CS] F|method=POST
+[CS] F|metrics=com.bytedance.retrofit2.RetrofitMetrics@8ffb2e2
+[CS] F|priorityLevel=1
+[CS] F|queryFilterPriority=0
+[CS] F|requestPriorityLevel=3
+[CS] F|responseStreaming=false
+[CS] F|serviceType=
+[CS] F|tags={class com.bytedance.retrofit2.Invocation=com.bytedance.article.common.network.ICommonApi.postData() [-1, /service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a, TypedByteArray[length=17750], [log-encode-type: gzip], false]}
+[CS] F|url=https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[CS] ===END===
+[CS] URLQ|https://log.snssdk.com/service/2/app_log/?version_code=73332&device_platform=android&device_id=3418827795729376&aid=8704&iid=1272582850785593&tt_data=a
+[CS] capture-safe loaded 1788732036253
+[CS] newSsCall safe-installed
+[CS] Q9q installed
+Process crashed: SIGBUS BUS_ADRALN
+
+***
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'Redmi/turner/turner:16/BP2A.250605.031.A3/OS3.0.307.0.WAOCNXM:user/release-keys'
+Revision: '0'
+ABI: 'arm64'
+Timestamp: 2026-09-07 06:00:36.890390677+0800
+Process uptime: 1126s
+Cmdline: com.kylin.read
+pid: 25413, tid: 25413, name: com.kylin.read  >>> com.kylin.read <<<
+uid: 10280
+tagged_addr_ctrl: 0000000000000001 (PR_TAGGED_ADDR_ENABLE)
+pac_enabled_keys: 000000000000000f (PR_PAC_APIAKEY, PR_PAC_APIBKEY, PR_PAC_APDAKEY, PR_PAC_APDBKEY)
+signal 7 (SIGBUS), code 1 (BUS_ADRALN), fault addr 0x000317e46d020fe2
+    x0  00000000702d4340  x1  000000000b0d6a28  x2  0000000000000002  x3  b40000719879a010
+    x4  0000007ffc7887a8  x5  0000006fbd7b96a7  x6  0000007ffc7887a8  x7  0000007042a012c8
+    x8  0000000000000001  x9  00000000acb9a8e0  x10 0000006fbd7b96a9  x11 00000070450593b8
+    x12 0000007045059418  x13 0000007045059478  x14 00000070450594f8  x15 b40000714879ad70
+    x16 6d0317e46d020fe2  x17 0000000000000000  x18 000000731110c000  x19 b40000719879a010
+    x20 0000000000000000  x21 b40000719879a0d0  x22 000000000b968aa8  x23 000000000b0d6a28
+    x24 0000000000000005  x25 0000000000000001  x26 0000000000000001  x27 00000000b00740b0
+    x28 0000007ffc7884a0  x29 0000007ffc788430
+    lr  00000000acb9a96c  sp  0000007ffc7883e0  pc  000317e46d020fe2  pst 0000000080001400
+2 total frames
+backtrace:
+      #00 pc 000000646d020fe2  <unknown>
+      #01 pc 0000000000036968  [anon_shmem:dalvik-jit-code-cache] (offset 0x2000000)
+***
+
+Thank you for using Frida!
