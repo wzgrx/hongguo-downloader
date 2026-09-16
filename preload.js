@@ -31,6 +31,17 @@ contextBridge.exposeInMainWorld('electronAPI', {
     return () => ipcRenderer.removeListener('online-play-progress', listener);
   },
 
+  // 兼容模式（HEVC -> H.264 转码，解决「黑屏有声」）
+  transcodeForPlayback: (payload) => ipcRenderer.invoke('transcode-for-playback', payload),
+  compatCacheStatus: () => ipcRenderer.invoke('compat-cache-status'),
+  clearCompatCache: () => ipcRenderer.invoke('clear-compat-cache'),
+  decodeCapability: () => ipcRenderer.invoke('decode-capability'),
+  onTranscodeProgress: (cb) => {
+    const listener = (_e, data) => cb(data);
+    ipcRenderer.on('transcode-progress', listener);
+    return () => ipcRenderer.removeListener('transcode-progress', listener);
+  },
+
   // 浏览（分类页）
   browseCategories: () => ipcRenderer.invoke('browse-categories'),
   browseList: (options) => ipcRenderer.invoke('browse-list', options),
@@ -51,7 +62,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
 
   // 一键合并
   getFfmpegStatus: () => ipcRenderer.invoke('get-ffmpeg-status'),
-  mergeSeries: (seriesId, outputName) => ipcRenderer.invoke('merge-series', seriesId, outputName),
+  mergeSeries: (seriesId, outputName, options) => ipcRenderer.invoke('merge-series', seriesId, outputName, options),
   cancelMerge: (id) => ipcRenderer.invoke('cancel-merge', id),
   getMergeTasks: () => ipcRenderer.invoke('get-merge-tasks'),
   deleteMergeTask: (id) => ipcRenderer.invoke('delete-merge-task', id),

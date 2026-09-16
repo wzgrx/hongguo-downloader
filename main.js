@@ -22,6 +22,17 @@ const APP_TITLE = '红果短剧下载器';
 
 let mainWindow = null;
 
+// ===== 视频解码兼容性 =====
+// 平台视频是 HEVC(bytevc1)，Chromium 在 Windows 上只能靠硬件解码 HEVC。
+// 若显卡不支持、或被 Chromium 的 GPU 黑名单挡掉，就会出现「黑屏但有声音」。
+// 这里主动开启平台 HEVC 解码并放宽黑名单，能救回相当一部分机器；
+// 仍然不行的，由「兼容模式转码」兜底（见 transcodeForPlayback）。
+app.commandLine.appendSwitch('enable-features', 'PlatformHEVCDecoderSupport,PlatformHEVCEncoderSupport');
+app.commandLine.appendSwitch('ignore-gpu-blocklist');
+// 允许在无硬件解码时也尽量使用平台解码器
+app.commandLine.appendSwitch('disable-features', 'UseChromeOSDirectVideoDecoder');
+
+
 // ===== 在线播放：自定义流协议（内存缓存 + Range 支持）=====
 // 视频是 CENC 加密的，无法直接把 CDN 地址交给 <video> 播放，
 // 因此这里先在内存里完成「下载 + 解密」，再用自定义协议按 Range 供给播放器。
@@ -80,6 +91,8 @@ function getDefaultSettings() {
     max_concurrent: 3,
     // 看完一集后自动删除本地文件（边看边清，避免占用磁盘）
     auto_delete_watched: false,
+    // 兼容模式：本机无法解码 HEVC 时自动转码为 H.264（解决「黑屏有声」）
+    compat_mode: true,
     // ===== 网络代理 =====
     // proxy_enabled: 是否启用代理（关闭时忽略系统代理，直连）
     // proxy_mode:    system=跟随系统/环境变量 · custom=手动指定 · direct=强制直连
@@ -1179,7 +1192,7 @@ function collectSeriesEpisodeFiles(seriesId, seriesTitle) {
   };
 }
 
-ipcMain.handle('merge-series', async (event, seriesId, outputName) => {
+ipcMain.handle('merge-series', async (event, seriesId, outputName, options) => {
   try {
     const sid = String(seriesId);
     const entry = seriesRegistry.find((s) => String(s.series_id) === sid);
@@ -1269,11 +1282,31 @@ ipcMain.handle('merge-series', async (event, seriesId, outputName) => {
 
     const tmpOutput = output + '.part';
     const { spawn } = require('child_process');
+
+    // 兼容格式：转码为 H.264，任何播放器/电脑都能播（慢，但通用）
+    let videoArgs;
+    if (options && options.compatible) {
+      const encoder = await pickH264Encoder(ffmpegPath);
+      videoArgs = encoder === 'libx264'
+        ? ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-profile:v', 'high', '-level', '4.2']
+        : encoder === 'h264_nvenc'
+        ? ['-c:v', 'h264_nvenc', '-preset', 'p4', '-cq', '23', '-b:v', '0']
+        : encoder === 'h264_qsv'
+        ? ['-c:v', 'h264_qsv', '-global_quality', '23']
+        : encoder === 'h264_amf'
+        ? ['-c:v', 'h264_amf', '-quality', 'speed', '-rc', 'cqp', '-qp_i', '23', '-qp_p', '23']
+        : ['-c:v', encoder, '-cq', '23'];
+      videoArgs = [...videoArgs, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k'];
+      console.log('[Merge] 兼容格式合并，编码器:', encoder);
+    } else {
+      videoArgs = ['-c', 'copy'];
+    }
+
     // 注意：.part 扩展名无法让 ffmpeg 推断封装格式，必须显式 -f mp4
     const args = [
       '-y', '-hide_banner',
       '-f', 'concat', '-safe', '0', '-i', listPath,
-      '-c', 'copy', '-movflags', '+faststart',
+      ...videoArgs, '-movflags', '+faststart',
       '-progress', 'pipe:1', '-nostats',
       '-f', 'mp4',
       tmpOutput,
@@ -1736,6 +1769,236 @@ ipcMain.handle('clear-online-cache', async () => {
   clearOnlineCache();
   return { success: true };
 });
+
+// ===== 兼容模式：把 HEVC 转成 H.264，解决「黑屏有声」=====
+const COMPAT_MAX_BYTES = 4 * 1024 * 1024 * 1024; // 转码缓存上限
+let compatDir = null;
+let compatEncoder = null; // 探测到的最优 H.264 编码器
+
+function getCompatDir() {
+  if (!compatDir) {
+    compatDir = path.join(app.getPath('userData'), 'compat-cache');
+    try { fs.mkdirSync(compatDir, { recursive: true }); } catch (_) {}
+  }
+  return compatDir;
+}
+
+function compatFileName(seriesId, vidIndex) {
+  return `${sanitizeFolderName(String(seriesId))}_${String(vidIndex).padStart(3, '0')}.mp4`;
+}
+
+function compatPathFor(seriesId, vidIndex) {
+  return path.join(getCompatDir(), compatFileName(seriesId, vidIndex));
+}
+
+function compatCacheStatus() {
+  const dir = getCompatDir();
+  let files = 0;
+  let bytes = 0;
+  try {
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.mp4')) continue;
+      try { bytes += fs.statSync(path.join(dir, f)).size; files++; } catch (_) {}
+    }
+  } catch (_) {}
+  return { dir, files, bytes };
+}
+
+function trimCompatCache() {
+  const dir = getCompatDir();
+  let entries = [];
+  try {
+    entries = fs.readdirSync(dir)
+      .filter((f) => f.endsWith('.mp4'))
+      .map((f) => {
+        const p = path.join(dir, f);
+        const st = fs.statSync(p);
+        return { p, size: st.size, at: st.atimeMs || st.mtimeMs };
+      });
+  } catch (_) { return; }
+  let total = entries.reduce((s, e) => s + e.size, 0);
+  if (total <= COMPAT_MAX_BYTES) return;
+  entries.sort((a, b) => a.at - b.at); // 最早访问的先删
+  for (const e of entries) {
+    if (total <= COMPAT_MAX_BYTES) break;
+    try { fs.unlinkSync(e.p); total -= e.size; } catch (_) {}
+  }
+}
+
+/** 探测可用的 H.264 编码器：先看列表，再实际试编一帧（列表里有不代表能用，如无 N 卡时的 nvenc） */
+async function pickH264Encoder(ffmpegPath) {
+  if (compatEncoder) return compatEncoder;
+  const { execFile } = require('child_process');
+
+  const list = await new Promise((resolve) => {
+    execFile(ffmpegPath, ['-hide_banner', '-encoders'], { timeout: 20000 }, (err, stdout) => {
+      resolve(String(stdout || ''));
+    });
+  });
+
+  const candidates = ['h264_nvenc', 'h264_qsv', 'h264_amf', 'h264_mf', 'libx264'].filter((e) =>
+    list.includes(e)
+  );
+  if (!candidates.includes('libx264')) candidates.push('libx264'); // 软件兜底
+
+  const works = (enc) =>
+    new Promise((resolve) => {
+      execFile(
+        ffmpegPath,
+        ['-hide_banner', '-v', 'error', '-f', 'lavfi', '-i', 'color=c=black:s=64x64:d=0.1',
+         '-frames:v', '1', '-c:v', enc, '-f', 'null', '-'],
+        { timeout: 25000 },
+        (err) => resolve(!err)
+      );
+    });
+
+  for (const enc of candidates) {
+    if (await works(enc)) {
+      compatEncoder = enc;
+      break;
+    }
+    console.log('[Compat] 编码器不可用，跳过:', enc);
+  }
+  if (!compatEncoder) compatEncoder = 'libx264';
+  console.log('[Compat] 使用编码器:', compatEncoder);
+  return compatEncoder;
+}
+
+/**
+ * 转码为 H.264/AAC。
+ * 返回 { success, path, size, elapsed }
+ */
+ipcMain.handle('transcode-for-playback', async (event, payload) => {
+  try {
+    const { seriesId, vidIndex, filePath, force } = payload || {};
+    if (!seriesId || vidIndex == null) return { success: false, error: '缺少剧集信息' };
+
+    const out = compatPathFor(seriesId, vidIndex);
+    if (!force && fs.existsSync(out) && fs.statSync(out).size > 1024 * 100) {
+      // 命中缓存
+      try { fs.utimesSync(out, new Date(), new Date()); } catch (_) {}
+      return { success: true, url: pathToFileURL(out).href, size: fs.statSync(out).size, cached: true };
+    }
+
+    const ffmpegPath = resolveFfmpeg('ffmpeg');
+    const ffprobePath = resolveFfmpeg('ffprobe');
+    if (!ffmpegPath) return { success: false, error: '未找到 ffmpeg，无法转码' };
+
+    // 1) 解析输入文件：优先本地已下载；否则先取在线缓存并落临时文件
+    let inputPath = filePath || null;
+    let tmpInput = null;
+    if (!inputPath || !fs.existsSync(inputPath)) {
+      const vid = payload.vid;
+      if (!vid) return { success: false, error: '既没有本地文件，也没有 vid' };
+      let buf = onlineCache.has(String(vid)) ? onlineCache.get(String(vid)).buffer : null;
+      if (!buf) {
+        buf = await fetchDecryptedEpisode(String(vid), () => {});
+      }
+      tmpInput = path.join(getCompatDir(), `.tmp_${vid}.mp4`);
+      fs.writeFileSync(tmpInput, buf);
+      inputPath = tmpInput;
+    }
+
+    const duration = ffprobePath ? await probeDuration(ffprobePath, inputPath) : 0;
+    const encoder = await pickH264Encoder(ffmpegPath);
+
+    // 2) 转码（硬件编码器用各自推荐的参数）
+    const encArgs = encoder === 'libx264'
+      ? ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-profile:v', 'high', '-level', '4.2']
+      : encoder === 'h264_nvenc'
+      ? ['-c:v', 'h264_nvenc', '-preset', 'p4', '-cq', '23', '-b:v', '0']
+      : encoder === 'h264_qsv'
+      ? ['-c:v', 'h264_qsv', '-global_quality', '23']
+      : encoder === 'h264_amf'
+      ? ['-c:v', 'h264_amf', '-quality', 'speed', '-rc', 'cqp', '-qp_i', '23', '-qp_p', '23']
+      : ['-c:v', encoder, '-cq', '23'];
+
+    const tmpOut = out + '.part';
+    try { fs.existsSync(tmpOut) && fs.unlinkSync(tmpOut); } catch (_) {}
+
+    const { spawn } = require('child_process');
+    const args = [
+      '-y', '-hide_banner', '-i', inputPath,
+      ...encArgs,
+      '-pix_fmt', 'yuv420p',
+      '-c:a', 'aac', '-b:a', '128k',
+      '-movflags', '+faststart',
+      '-progress', 'pipe:1', '-nostats',
+      '-f', 'mp4', tmpOut,
+    ];
+
+    console.log(`[Compat] 转码 第${vidIndex}集  编码器=${encoder}  时长=${duration.toFixed(0)}s`);
+    const started = Date.now();
+    let stderrTail = '';
+    const code = await new Promise((resolve) => {
+      const child = spawn(ffmpegPath, args, { windowsHide: true });
+      let buf = '';
+      child.stdout.on('data', (d) => {
+        buf += d.toString();
+        const lines = buf.split('\n');
+        buf = lines.pop() || '';
+        for (const line of lines) {
+          const m = line.match(/^out_time_us=(\d+)/);
+          if (m && duration > 0) {
+            const sec = parseInt(m[1], 10) / 1e6;
+            const pct = Math.max(0, Math.min(99, Math.floor((sec / duration) * 100)));
+            sendToRenderer('transcode-progress', { seriesId: String(seriesId), vidIndex: Number(vidIndex), percent: pct });
+          }
+        }
+      });
+      child.stderr.on('data', (d) => { stderrTail = (stderrTail + d.toString()).slice(-1500); });
+      child.on('error', (e) => { stderrTail += ' | spawn: ' + e.message; resolve(-1); });
+      child.on('close', (c) => resolve(c));
+    });
+
+    if (tmpInput) { try { fs.unlinkSync(tmpInput); } catch (_) {} }
+
+    if (code !== 0 || !fs.existsSync(tmpOut)) {
+      try { fs.existsSync(tmpOut) && fs.unlinkSync(tmpOut); } catch (_) {}
+      const tail = stderrTail.split('\n').filter(Boolean).slice(-2).join(' ').slice(0, 300);
+      console.warn('[Compat] 转码失败 code=', code, tail);
+      return { success: false, error: `转码失败（ffmpeg 退出码 ${code}）${tail ? '：' + tail : ''}` };
+    }
+
+    fs.renameSync(tmpOut, out);
+    trimCompatCache();
+    const size = fs.statSync(out).size;
+    const elapsed = ((Date.now() - started) / 1000).toFixed(1);
+    console.log(`[Compat] 完成 ${(size / 1048576).toFixed(1)}MB  用时 ${elapsed}s`);
+
+    sendToRenderer('transcode-progress', { seriesId: String(seriesId), vidIndex: Number(vidIndex), percent: 100, done: true });
+    return { success: true, url: pathToFileURL(out).href, size, elapsed: Number(elapsed), encoder };
+  } catch (error) {
+    console.error('[Compat] 转码失败:', error.message);
+    return { success: false, error: error.message };
+  }
+});
+
+ipcMain.handle('compat-cache-status', async () => {
+  const st = compatCacheStatus();
+  return { success: true, ...st, maxBytes: COMPAT_MAX_BYTES };
+});
+
+ipcMain.handle('clear-compat-cache', async () => {
+  const dir = getCompatDir();
+  let freed = 0;
+  let count = 0;
+  try {
+    for (const f of fs.readdirSync(dir)) {
+      if (!f.endsWith('.mp4')) continue;
+      const p = path.join(dir, f);
+      try { freed += fs.statSync(p).size; fs.unlinkSync(p); count++; } catch (_) {}
+    }
+  } catch (_) {}
+  return { success: true, count, freed };
+});
+
+/** 报告本机是否能解码 HEVC（供界面提前提示） */
+ipcMain.handle('decode-capability', async () => ({
+  ffmpegEncoder: compatEncoder || null,
+  compatDir: getCompatDir(),
+}));
+
 
 
 /**

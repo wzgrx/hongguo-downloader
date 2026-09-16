@@ -35,6 +35,14 @@ function Player({ target, onNavigate }) {
   const [autoDelete, setAutoDelete] = useState(false);    // 看完自动删本地文件
   const [confirmAsk, setConfirmAsk] = useState(null);     // {title, message, danger, onOk}
 
+  // 兼容模式：本机解不了 HEVC 时转码为 H.264
+  const [autoCompat, setAutoCompat] = useState(true);
+  const [compatMap, setCompatMap] = useState({});         // vidIndex -> 转码后 url
+  const [compatProgress, setCompatProgress] = useState(null); // {vidIndex, percent}
+  const [decodeFailed, setDecodeFailed] = useState(false);    // 当前集解不出画面
+  const [compatCache, setCompatCache] = useState({ files: 0, bytes: 0 });
+  const [mergeAsk, setMergeAsk] = useState(false);            // 合并格式选择
+
   const videoRef = useRef(null);
   const toastTimer = useRef(null);
   const pendingSeekRef = useRef(0); // 切集后要跳转的秒数
@@ -92,9 +100,38 @@ function Player({ target, onNavigate }) {
   useEffect(() => {
     refreshCacheInfo();
     window.electronAPI.getSettings().then((s) => {
-      if (s) setAutoDelete(s.auto_delete_watched === true);
+      if (s) {
+        setAutoDelete(s.auto_delete_watched === true);
+        setAutoCompat(s.compat_mode !== false); // 默认开启
+      }
+    });
+    window.electronAPI.compatCacheStatus().then((r) => {
+      if (r && r.success) setCompatCache({ files: r.files, bytes: r.bytes });
     });
   }, [refreshCacheInfo]);
+
+  useEffect(() => {
+    if (!window.electronAPI.onTranscodeProgress) return undefined;
+    return window.electronAPI.onTranscodeProgress((d) => {
+      if (d.done) return;
+      setCompatProgress({ vidIndex: d.vidIndex, percent: d.percent || 0 });
+    });
+  }, []);
+
+  /**
+   * 注意：以下三个用到 episodes 的函数必须定义在 episodes 之后。
+   * useCallback 的依赖数组在「定义时」就会求值，若提前引用后声明的 const
+   * 会触发 TDZ（Cannot access 'X' before initialization）导致整页白屏。
+   */
+  const toggleAutoCompat = async () => {
+    const next = !autoCompat;
+    setAutoCompat(next);
+    try {
+      const s = await window.electronAPI.getSettings();
+      await window.electronAPI.saveSettings({ ...s, compat_mode: next });
+      showToast(next ? '兼容模式已开启：无法解码时自动转码' : '兼容模式已关闭');
+    } catch (_) {}
+  };
 
   const toggleAutoDelete = async () => {
     const next = !autoDelete;
@@ -227,6 +264,64 @@ function Player({ target, onNavigate }) {
   );
 
   const playableCount = episodes.filter((e) => e.status === 'completed').length;
+
+  /** 转码当前集为 H.264 后播放（解决本机无法解码 HEVC 的黑屏问题） */
+  const startCompatPlay = useCallback(
+    async (vidIndex) => {
+      const ep = episodes.find((e) => e.vid_index === vidIndex);
+      if (!ep) return;
+      setCompatProgress({ vidIndex, percent: 0 });
+      try {
+        const res = await window.electronAPI.transcodeForPlayback({
+          seriesId: activeSeriesId,
+          vidIndex,
+          vid: ep.vid,
+          filePath: ep.savePath || null,
+        });
+        if (res && res.success) {
+          setCompatMap((prev) => ({ ...prev, [vidIndex]: res.url }));
+          setDecodeFailed(false);
+          setCompatProgress(null);
+          showToast(res.cached ? '已切换为兼容格式播放' : `已转码为兼容格式（用时 ${res.elapsed}s），开始播放`);
+          window.electronAPI.compatCacheStatus().then((r) => {
+            if (r && r.success) setCompatCache({ files: r.files, bytes: r.bytes });
+          });
+        } else {
+          setCompatProgress(null);
+          showToast((res && res.error) || '转码失败');
+        }
+      } catch (e) {
+        setCompatProgress(null);
+        showToast('转码异常: ' + e.message);
+      }
+    },
+    [episodes, activeSeriesId, showToast]
+  );
+
+  const clearCompatCache = async () => {
+    const r = await window.electronAPI.clearCompatCache();
+    setCompatCache({ files: 0, bytes: 0 });
+    showToast(r && r.count > 0 ? `已清理转码缓存，释放 ${fmtSize(r.freed)}` : '转码缓存已是空的');
+  };
+
+  // 播放中若始终解不出画面（videoWidth 一直为 0），判定为解码不兼容。
+  // 必须定义在早返回之前 —— hooks 不能出现在条件分支之后。
+  const handlePlaying = useCallback(() => {
+    setDecodeFailed(false);
+    const idx = currentIndex;
+    setTimeout(() => {
+      const v = videoRef.current;
+      if (!v) return;
+      if (v.videoWidth === 0 && !v.paused && v.currentTime > 0.3) {
+        setDecodeFailed(true);
+        if (autoCompat && !compatMap[idx]) {
+          showToast('该视频格式（HEVC）本机无法解码，正在转码为兼容格式…');
+          startCompatPlay(idx);
+        }
+      }
+    }, 2600);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCompat, compatMap, currentIndex, startCompatPlay, showToast]);
 
   /**
    * 在线播放：让主进程把该集下载+解密到内存，拿回可播放的流地址。
@@ -506,16 +601,20 @@ function Player({ target, onNavigate }) {
     showToast(`已把 ${ok} 集加入下载队列`);
   };
 
-  // 一键合并当前这部剧
-  const mergeThisSeries = async () => {
+  // 一键合并当前这部剧（弹出格式选择）
+  const mergeThisSeries = async (compatible) => {
     setMerging(true);
+    setMergeAsk(false);
     try {
-      const res = await window.electronAPI.mergeSeries(activeSeriesId, '');
+      const res = await window.electronAPI.mergeSeries(activeSeriesId, '', { compatible });
       if (!res || !res.success) {
         showToast((res && res.error) || '合并失败');
         return;
       }
-      showToast(`开始合并 ${res.count} 集，约 ${(res.totalBytes / 1073741824).toFixed(2)} GB，可在「下载管理」查看进度`);
+      const tip = compatible
+        ? `开始兼容格式合并 ${res.count} 集（H.264，耗时较长）`
+        : `开始合并 ${res.count} 集，约 ${(res.totalBytes / 1073741824).toFixed(2)} GB`;
+      showToast(`${tip}，可在「下载管理」查看进度`);
       if (res.codecWarning) showToast(res.codecWarning);
     } catch (e) {
       showToast('合并异常: ' + e.message);
@@ -561,10 +660,11 @@ function Player({ target, onNavigate }) {
     );
   }
 
-  // 可播放：本地已下载走 file://，否则走在线内存流
+  // 可播放：本地已下载走 file://，否则走在线内存流；兼容模式下优先用转码后的文件
+  const compatUrl = current ? compatMap[current.vid_index] : null;
   const isOnlinePlaying = onlineVid && current && current.vid === onlineVid && onlineUrl;
-  const canPlay = !!(current && ((current.status === 'completed' && current.fileUrl) || isOnlinePlaying));
-  const videoSrc = isOnlinePlaying ? onlineUrl : (current && current.fileUrl) || '';
+  const canPlay = !!(current && (compatUrl || (current.status === 'completed' && current.fileUrl) || isOnlinePlaying));
+  const videoSrc = compatUrl || (isOnlinePlaying ? onlineUrl : (current && current.fileUrl) || '');
 
   return (
     <div className="player-container">
@@ -584,6 +684,14 @@ function Player({ target, onNavigate }) {
             连播 {autoNext ? '开' : '关'}
           </button>
           <button
+            className={`btn btn-outline ${autoCompat ? 'btn-autonext-on' : ''}`}
+            onClick={toggleAutoCompat}
+            title="本机无法解码 HEVC 时自动转码为 H.264 播放（解决黑屏有声）"
+          >
+            <Zap size={15} />
+            兼容模式 {autoCompat ? '开' : '关'}
+          </button>
+          <button
             className={`btn btn-outline ${autoDelete ? 'btn-autonext-on' : ''}`}
             onClick={toggleAutoDelete}
             title="看完一集后自动删除该集的本地文件（边看边清，不占磁盘）"
@@ -597,7 +705,7 @@ function Player({ target, onNavigate }) {
           </button>
           <button
             className="btn btn-primary"
-            onClick={mergeThisSeries}
+            onClick={() => setMergeAsk(true)}
             disabled={merging || playableCount === 0}
             title="把已下载的分集合并成单个 mp4，方便一次性看完"
           >
@@ -761,6 +869,12 @@ function Player({ target, onNavigate }) {
               <Zap size={14} />
               清空播放缓存{cacheInfo.count > 0 ? ` (${cacheInfo.count})` : ''}
             </button>
+            {compatCache.files > 0 && (
+              <button className="btn btn-outline btn-sm" onClick={clearCompatCache} title="删除转码产生的兼容格式文件">
+                <Trash2 size={14} />
+                清空转码缓存 ({fmtSize(compatCache.bytes)})
+              </button>
+            )}
           </div>
         </div>
       )}
@@ -776,6 +890,7 @@ function Player({ target, onNavigate }) {
             autoPlay
             onEnded={handleEnded}
             onPause={persistPosition}
+            onPlaying={handlePlaying}
           />
         ) : (
           <div className="player-placeholder">
@@ -836,6 +951,39 @@ function Player({ target, onNavigate }) {
                 <p>请选择一集开始播放</p>
               </>
             )}
+          </div>
+        )}
+
+        {/* 兼容模式浮层：解码失败提示 / 转码进度 */}
+        {compatProgress && compatProgress.vidIndex === currentIndex && (
+          <div className="compat-overlay">
+            <RefreshCw size={26} className="spin" />
+            <p>正在转码为兼容格式（H.264）…</p>
+            <div className="player-wait-bar">
+              <div className="player-wait-fill" style={{ width: `${compatProgress.percent || 0}%` }} />
+            </div>
+            <span className="compat-overlay-sub">
+              {compatProgress.percent || 0}% · 本机无法解码 HEVC，转码一次后可正常播放与拖动
+            </span>
+          </div>
+        )}
+
+        {!compatProgress && decodeFailed && canPlay && !compatUrl && (
+          <div className="compat-overlay">
+            <Film size={30} />
+            <p>画面无法显示（有声音）</p>
+            <span className="compat-overlay-sub">
+              本机不支持该视频的编码格式（HEVC）。转码为 H.264 后即可正常播放。
+            </span>
+            <div className="player-placeholder-actions">
+              <button className="btn btn-primary" onClick={() => startCompatPlay(currentIndex)}>
+                <Zap size={15} />
+                转码后播放
+              </button>
+              <button className="btn btn-outline" onClick={toggleAutoCompat}>
+                {autoCompat ? '关闭自动转码' : '开启自动转码'}
+              </button>
+            </div>
           </div>
         )}
       </div>
@@ -900,9 +1048,34 @@ function Player({ target, onNavigate }) {
 
       {toast && <div className="dm-toast dm-toast-success" onClick={() => setToast(null)}>{toast}</div>}
 
+      {/* 合并格式选择 */}
+      {mergeAsk && (
+        <div className="player-confirm-mask" onClick={() => setMergeAsk(false)}>
+          <div className="player-confirm" onClick={(e) => e.stopPropagation()}>
+            <div className="player-confirm-title" style={{ color: 'var(--accent)' }}>
+              <Layers size={17} />
+              合并导出全集
+            </div>
+            <div className="player-confirm-msg">
+              <p>把《{detail ? detail.series_title : ''}》已下载的 {playableCount} 集合并为一个 mp4。</p>
+              <p><b>快速合并</b>：原画质直接拼接，秒级完成，但格式仍是 HEVC —— 在部分电脑上可能黑屏有声。</p>
+              <p><b>兼容合并</b>：转码为 H.264，任何电脑/播放器都能播，但速度慢（约每分钟视频需数秒）。</p>
+            </div>
+            <div className="player-confirm-foot">
+              <button className="btn btn-outline" onClick={() => setMergeAsk(false)}>取消</button>
+              <button className="btn btn-outline" onClick={() => mergeThisSeries(true)} disabled={merging}>
+                兼容合并（H.264）
+              </button>
+              <button className="btn btn-primary" onClick={() => mergeThisSeries(false)} disabled={merging}>
+                快速合并
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* 删除确认 */}
-      {confirmAsk && (
-        <div className="player-confirm-mask" onClick={() => setConfirmAsk(null)}>
+      {confirmAsk && (        <div className="player-confirm-mask" onClick={() => setConfirmAsk(null)}>
           <div className="player-confirm" onClick={(e) => e.stopPropagation()}>
             <div className="player-confirm-title">
               <Trash2 size={17} />

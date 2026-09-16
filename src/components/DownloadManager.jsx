@@ -53,6 +53,7 @@ function DownloadManager({ onNavigate }) {
   const [merging, setMerging] = useState(false);
   const [mergeTasks, setMergeTasks] = useState([]);
   const [confirmAsk, setConfirmAsk] = useState(null); // 删除确认（可勾选删除本地文件）
+  const [mergeAsk, setMergeAsk] = useState(false);    // 合并格式选择
   const listenersRef = useRef([]);
   const toastTimerRef = useRef(null);
 
@@ -225,14 +226,15 @@ function DownloadManager({ onNavigate }) {
   };
 
   // 一键合并选中的短剧
-  const doMerge = async () => {
+  const doMerge = async (compatible) => {
     if (!mergeSeriesId) {
       showToast('请先选择要合并的短剧', 'error');
       return;
     }
+    setMergeAsk(false);
     setMerging(true);
     try {
-      const res = await window.electronAPI.mergeSeries(mergeSeriesId, '');
+      const res = await window.electronAPI.mergeSeries(mergeSeriesId, '', { compatible });
       if (!res || !res.success) {
         showToast((res && res.error) || '合并失败', 'error');
         return;
@@ -240,7 +242,9 @@ function DownloadManager({ onNavigate }) {
       await loadMergeTasks();
       const sizeGb = (res.totalBytes / 1073741824).toFixed(2);
       const mins = Math.round(res.totalDuration / 60);
-      showToast(`开始合并 ${res.count} 集（约 ${sizeGb} GB / ${mins} 分钟）`);
+      showToast(compatible
+        ? `开始兼容格式合并 ${res.count} 集（H.264，耗时较长）`
+        : `开始合并 ${res.count} 集（约 ${sizeGb} GB / ${mins} 分钟）`);
       if (res.codecWarning) showToast(res.codecWarning, 'error');
     } catch (e) {
       showToast('合并异常: ' + e.message, 'error');
@@ -426,7 +430,7 @@ function DownloadManager({ onNavigate }) {
                 </option>
               ))}
             </select>
-            <button className="btn btn-outline" onClick={doMerge} disabled={merging} title="把该剧已下载的分集合并成单个 mp4">
+            <button className="btn btn-outline" onClick={() => setMergeAsk(true)} disabled={merging} title="把该剧已下载的分集合并成单个 mp4">
               <Layers size={15} />
               {merging ? '合并中...' : '一键合并本剧'}
             </button>
@@ -594,6 +598,32 @@ function DownloadManager({ onNavigate }) {
       {toast && (
         <div className={`dm-toast dm-toast-${toast.type}`} onClick={() => setToast(null)}>
           {toast.text}
+        </div>
+      )}
+
+      {/* 合并格式选择 */}
+      {mergeAsk && (
+        <div className="player-confirm-mask" onClick={() => setMergeAsk(false)}>
+          <div className="player-confirm" onClick={(e) => e.stopPropagation()}>
+            <div className="player-confirm-title" style={{ color: 'var(--accent)' }}>
+              <Layers size={17} />
+              合并导出全集
+            </div>
+            <div className="player-confirm-msg">
+              <p>把该剧已下载的分集合并为一个 mp4。</p>
+              <p><b>快速合并</b>：原画质直接拼接，秒级完成，但格式仍是 HEVC —— 在部分电脑上可能黑屏有声。</p>
+              <p><b>兼容合并</b>：转码为 H.264，任何电脑/播放器都能播，但速度慢（约每分钟视频需数秒）。</p>
+            </div>
+            <div className="player-confirm-foot">
+              <button className="btn btn-outline" onClick={() => setMergeAsk(false)}>取消</button>
+              <button className="btn btn-outline" onClick={() => doMerge(true)} disabled={merging}>
+                兼容合并（H.264）
+              </button>
+              <button className="btn btn-primary" onClick={() => doMerge(false)} disabled={merging}>
+                快速合并
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
