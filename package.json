@@ -10,7 +10,12 @@
     "dev:react": "vite",
     "build:react": "vite build",
     "build": "npm run build:react && electron-builder --win",
-    "pack": "electron-builder --dir"
+    "build:zip": "npm run build:react && electron-builder --win --dir && node scripts/make-zip.js",
+    "build:dir": "npm run build:react && electron-builder --win --dir",
+    "build:portable": "npm run build:react && electron-builder --win portable",
+    "build:installer": "npm run build:react && electron-builder --win nsis",
+    "pack": "electron-builder --dir",
+    "zip": "node scripts/make-zip.js"
   },
   "dependencies": {
     "axios": "^1.13.2"
@@ -39,6 +44,7 @@
       "src/store.js"
     ],
     "asar": true,
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
     "extraResources": [
       {
         "from": "build/ffmpeg",
@@ -61,13 +67,16 @@
       "icon": "build/icon.png",
       "requestedExecutionLevel": "asInvoker"
     },
+    "portable": {
+      "artifactName": "${productName}-${version}-便携版.${ext}"
+    },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "shortcutName": "红果短剧下载器",
-      "artifactName": "红果短剧下载器-Setup-${version}.${ext}"
+      "artifactName": "${productName}-Setup-${version}.${ext}"
     }
   }
 }

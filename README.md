@@ -184,16 +184,33 @@ npm run dev
 ### 生产打包构建
 
 ```powershell
-# Windows 上若未以管理员身份运行，先执行一次（见下方说明）
+# 1) 准备内置 ffmpeg（约 88MB，不入库，只需执行一次）
+node scripts/setup-ffmpeg.js
+
+# 2) Windows 上若未以管理员身份运行，先执行一次（见下方说明）
 node scripts/setup-winCodeSign.js
 
-# 编译 React 前端并打包为 Windows x64 NSIS 安装包
-npm run build
+# 3) 按需选择打包方式
+npm run build             # NSIS 安装包（默认）
+npm run build:zip         # 绿色版 zip（推荐用于分发）
+npm run build:dir         # 仅免安装目录 dist/win-unpacked
+npm run build:portable    # 便携单文件 exe
+npm run build:installer   # 同 build
 ```
 
-> 打包生成的可执行安装文件位于 `dist/` 目录下：
-> - `dist/红果短剧下载器-Setup-1.0.0.exe` —— NSIS 安装包
-> - `dist/win-unpacked/红果短剧下载器.exe` —— 免安装绿色版
+#### 三种产物的区别
+
+| 产物 | 大小 | 说明 |
+|---|---|---|
+| `红果短剧下载器-Setup-1.0.0.exe` | ~116 MB | **NSIS 安装包**：双击安装，创建桌面/开始菜单快捷方式，可改安装目录，可从控制面板卸载 |
+| `红果短剧下载器-1.0.0-win-x64.zip` | ~158 MB | **绿色版 zip**：解压即用，解压后是一个完整文件夹，双击里面的 exe 运行；启动最快，最适合分发 |
+| `红果短剧下载器-1.0.0-便携版.exe` | ~108 MB | **便携单文件**：双击直接运行，免安装；但每次启动都要自解压到临时目录，启动稍慢 |
+| `win-unpacked/` | ~421 MB | 未压缩的绿色版目录（zip 的来源） |
+
+> **分发建议**：发给别人用 `build:zip` 出的 zip —— 解压后目录结构完整、启动最快，
+> 也避免了「便携单文件版每次自解压」和「杀软误报自解压行为」的问题。
+
+> zip 内已套好顶层文件夹 `红果短剧下载器-1.0.0/`，用户解压不会把文件散落一地。
 
 #### Windows 打包常见问题：winCodeSign 解压失败
 
