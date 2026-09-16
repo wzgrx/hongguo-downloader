@@ -236,6 +236,26 @@ npm run zip               # 仅重新压缩已有的 win-unpacked
 
 > zip 内已套好顶层文件夹 `红果短剧下载器-1.0.0/`，解压不会把文件散落一地。
 
+### 发布到 GitHub Release
+
+**注意**：GitHub 的 Release 资产接口会**过滤掉文件名里的非 ASCII 字符**，
+中文产物名 `红果短剧下载器-1.0.0-win-x64.zip` 上传后会变成 `-1.0.0-win-x64.zip`
+（gh CLI 与直连 API 都一样）。所以上传前要先复制成 ASCII 文件名：
+
+```powershell
+node scripts/prepare-release-assets.js      # 生成 dist/release/（ASCII 命名）
+gh release create v1.0.0 `
+  --title "红果短剧下载器 v1.0.0" `
+  --notes-file release-notes.md `
+  dist/release/*
+```
+
+| 本地产物（中文） | Release 资产名（ASCII） |
+|---|---|
+| `红果短剧下载器-1.0.0-win-x64.zip` | `hongguo-downloader-1.0.0-win-x64.zip` |
+| `红果短剧下载器-Setup-1.0.0.exe` | `hongguo-downloader-1.0.0-Setup.exe` |
+| `红果短剧下载器-1.0.0-便携版.exe` | `hongguo-downloader-1.0.0-portable.exe` |
+
 ---
 
 ## ❓ 常见问题
@@ -313,6 +333,7 @@ Chromium 对超长 HEVC 视频的 seek 支持有限。合并文件本身是完�
 │   ├── setup-ffmpeg.js           # 下载内置 ffmpeg（不入库）
 │   ├── setup-winCodeSign.js      # 预解压 winCodeSign，绕过符号链接限制
 │   ├── make-zip.js               # 打绿色版 zip（含顶层文件夹）
+│   ├── prepare-release-assets.js # 为 GitHub Release 生成 ASCII 命名的资产
 │   └── verify-best-def.js        # 调试脚本：验证清晰度选流逻辑（parseModelVideo）
 ├── build/
 │   ├── icon.png                  # 应用图标
