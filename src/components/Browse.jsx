@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import './Browse.css';
 import { Film, RefreshCw, ExternalLink, Download, Play, Check, X, Sparkles } from './icons';
 
@@ -11,7 +11,7 @@ import { Film, RefreshCw, ExternalLink, Download, Play, Check, X, Sparkles } fro
  *         -> 复用 get-series-episodes 拿到每集「已下载/下载中/未下载」状态
  *         -> 跳播放器 或 走既有批量下载
  */
-function Browse({ onNavigate }) {
+function Browse({ onNavigate, active = true }) {
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState('real-drama');
   const [genre, setGenre] = useState('');
@@ -33,6 +33,7 @@ function Browse({ onNavigate }) {
   // 已下载统计（按 series_id -> 已下载集数）
   const [downloadedMap, setDownloadedMap] = useState({});
   const [toast, setToast] = useState(null);
+  const listRequestId = useRef(0);
 
   const showToast = useCallback((text, type = 'success') => {
     setToast({ text, type });
@@ -67,10 +68,12 @@ function Browse({ onNavigate }) {
 
   const loadList = useCallback(
     async (cat, gen, pg) => {
+      const requestId = ++listRequestId.current;
       setLoading(true);
       setError('');
       try {
         const res = await window.electronAPI.browseList({ category: cat, genre: gen, page: pg });
+        if (requestId !== listRequestId.current) return;
         if (!res || !res.success) {
           setError((res && res.error) || '加载失败，请重试');
           setResults([]);
@@ -83,10 +86,11 @@ function Browse({ onNavigate }) {
           }
         }
       } catch (e) {
+        if (requestId !== listRequestId.current) return;
         setError('加载异常: ' + e.message);
         setResults([]);
       } finally {
-        setLoading(false);
+        if (requestId === listRequestId.current) setLoading(false);
       }
     },
     []
@@ -94,8 +98,12 @@ function Browse({ onNavigate }) {
 
   useEffect(() => {
     loadCategories();
-    loadDownloadedMap();
-  }, [loadCategories, loadDownloadedMap]);
+  }, [loadCategories]);
+
+  // 返回浏览页时只刷新本地下载标记，不重新请求分类列表。
+  useEffect(() => {
+    if (active) loadDownloadedMap();
+  }, [active, loadDownloadedMap]);
 
   useEffect(() => {
     loadList(category, genre, page);

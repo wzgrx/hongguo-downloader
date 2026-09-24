@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Film, Download, Settings, Play, Sparkles } from './components/icons';
 import HongguoDownload from './components/HongguoDownload';
 import DownloadManager from './components/DownloadManager';
@@ -19,6 +19,11 @@ export default function App() {
   const [appInfo, setAppInfo] = useState(null); // { version, brand, appName }
   const [playerTarget, setPlayerTarget] = useState(null); // 浏览页点播 -> 播放页选中
 
+  const navigateTo = useCallback((nextPage) => {
+    if (!MENU.some((item) => item.id === nextPage)) return;
+    setPage(nextPage);
+  }, []);
+
   useEffect(() => {
     window.electronAPI.getAppInfo().then((info) => {
       setAppInfo(info);
@@ -31,23 +36,21 @@ export default function App() {
     return window.electronAPI.onNavigate((data) => {
       if (!data || !data.page) return;
       if (data.payload) setPlayerTarget({ ...data.payload, ts: Date.now() });
-      setPage(data.page);
+      navigateTo(data.page);
     });
-  }, []);
+  }, [navigateTo]);
 
   const renderPage = () => {
     switch (page) {
-      case 'browse':
-        return <Browse onNavigate={setPage} />;
       case 'player':
-        return <Player target={playerTarget} onNavigate={setPage} />;
+        return <Player target={playerTarget} onNavigate={navigateTo} />;
       case 'manager':
-        return <DownloadManager onNavigate={setPage} />;
+        return <DownloadManager onNavigate={navigateTo} />;
       case 'settings':
         return <SettingsPage />;
       case 'download':
       default:
-        return <HongguoDownload onNavigate={setPage} />;
+        return <HongguoDownload onNavigate={navigateTo} />;
     }
   };
 
@@ -72,7 +75,7 @@ export default function App() {
               <div
                 key={item.id}
                 className={`sidebar-item ${page === item.id ? 'active' : ''}`}
-                onClick={() => setPage(item.id)}
+                onClick={() => navigateTo(item.id)}
               >
                 <Icon size={18} />
                 <span>{item.label}</span>
@@ -88,7 +91,17 @@ export default function App() {
 
       {/* 右侧主体区域 */}
       <div className="main-wrapper">
-        <div className="main-content">{renderPage()}</div>
+        <div className="main-content">
+          {/* 浏览页保留挂载状态；切换页面时隐藏，返回时不重新抓取列表或重置筛选条件。 */}
+          <div
+            className="page-keep-alive"
+            style={{ display: page === 'browse' ? undefined : 'none' }}
+            aria-hidden={page !== 'browse'}
+          >
+            <Browse active={page === 'browse'} onNavigate={navigateTo} />
+          </div>
+          {page !== 'browse' && renderPage()}
+        </div>
       </div>
     </div>
   );
