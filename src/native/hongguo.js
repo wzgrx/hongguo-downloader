@@ -7,6 +7,13 @@ const API = "https://api5-normal-sinfonlineb.fqnovel.com";
 const UA = "com.phoenix.read/71532 (Linux; U; Android 9; SM-N9860; Build/PQ3A.190705.10241111;tt-ok/3.12.13.20)";
 const VIDEO_REFERER = "https://novelquickapp.com/";
 
+// ===== 官网网页版数据源（官方 App 接口不可用时的兜底）=====
+// 官网 player 页是服务端渲染的：完整分集 vid 列表与可直接下载的 MP4 直链
+// 都内嵌在 HTML 里，无需任何签名。走的是官网对普通用户开放的同一层。
+const SITE_ORIGIN = "https://hongguoduanju.com";
+const WEB_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
+const WEB_REFERER = SITE_ORIGIN + "/";
+
 const COMMON_QUERY = {
   klink_egdi: "AAI29o4dI-eMiO73_SRSbZ_0By1v3fUSriNeu8-L951MoXhWT88pzj5B",
   iid: "3788260546453235",
@@ -77,21 +84,150 @@ const MODEL_BIZ_PARAM = {
 async function apiCall(apiPath, body, retries = 3) {
   const q = { ...COMMON_QUERY, _rticket: Date.now().toString() };
   for (let i = 0; i < retries; i++) {
+    const signal = {}; // 供错误信息回溯（HTTP 状态 / 字节数 / CDN logid）
     try {
       const res = await axios.post(API + apiPath, body, {
         params: q,
         headers: HEADERS,
         timeout: 25000,
+        // 200 + 空 body 时 axios 会解析成 ''，这里统一按原始字节处理便于判断
+        responseType: 'arraybuffer',
+        transformResponse: [(d) => d],
       });
+      signal.status = res.status;
+      signal.logid = res.headers?.['x-tt-logid'];
+      const buf = Buffer.from(res.data || []);
+      signal.bytes = buf.length;
       if (res.status !== 200) {
         throw new Error(`HTTP ${res.status}`);
       }
-      return res.data;
+      if (buf.length === 0) {
+        // 服务端返回 200 但无任何内容：网关在做业务处理前就丢弃了请求
+        const err = new Error(
+          `接口返回空响应（HTTP 200，0 字节）${signal.logid ? ' logid=' + signal.logid : ''}`
+        );
+        err.emptyResponse = true;
+        err.detail = signal;
+        throw err;
+      }
+      const text = buf.toString('utf8');
+      try {
+        return JSON.parse(text);
+      } catch (e) {
+        const err = new Error(`响应不是合法 JSON（HTTP 200，${buf.length} 字节）: ${text.slice(0, 100)}`);
+        err.detail = signal;
+        throw err;
+      }
     } catch (err) {
-      if (i === retries - 1) throw err;
+      if (i === retries - 1) {
+        if (err.detail === undefined) err.detail = signal;
+        throw err;
+      }
       await new Promise(r => setTimeout(r, 2000 * (i + 1)));
     }
   }
+}
+
+// ===== 官网网页版数据源实现 =====
+
+/** MP4 直链：去掉 HTML 转义并剥掉 Range 头，让 CDN 回整段 */
+function normalizeVideoUrl(raw) {
+  return String(raw || '')
+    .replace(/\\u002F/g, '/')
+    .replace(/\\u0026/g, '&')
+    .replace(/&amp;/g, '&')
+    .replace(/([?&])Range=[^&]*/gi, '$1')
+    .replace(/[?&]$/, '');
+}
+
+/** 从响应体里安全地取出某个字符串字段 */
+function pickJsonString(text, key) {
+  const m = text.match(new RegExp('"' + key + '"\\s*:\\s*"([^"]*)"'));
+  return m ? m[1].replace(/\\u002F/g, '/').replace(/\\u0026/g, '&') : '';
+}
+
+/** 拉取官网页面 HTML */
+async function fetchSiteHtml(url) {
+  const res = await axios.get(url, {
+    headers: {
+      'User-Agent': WEB_UA,
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'zh-CN,zh;q=0.9',
+      'Referer': WEB_REFERER,
+    },
+    timeout: 30000,
+    responseType: 'text',
+    maxRedirects: 5,
+  });
+  return typeof res.data === 'string' ? res.data : JSON.stringify(res.data);
+}
+
+/**
+ * 官网兜底：从 player 页内嵌 JSON 取完整分集列表
+ * vid_list 按下标即集数顺序（下标 i → 第 i+1 集）
+ */
+async function fetchEpisodeListFromWeb(seriesId) {
+  const html = await fetchSiteHtml(`${SITE_ORIGIN}/player/${encodeURIComponent(seriesId)}`);
+
+  const m = html.match(/"vid_list"\s*:\s*\[([^\]]*)\]/);
+  if (!m) throw new Error('官网页面未找到分集数据（vid_list）');
+
+  const vids = m[1]
+    .split(',')
+    .map((s) => s.trim().replace(/^"|"$/g, ''))
+    .filter((s) => /^\d+$/.test(s));
+  if (!vids.length) throw new Error('官网分集列表为空');
+
+  const seriesTitle = pickJsonString(html, 'series_name') || '未命名短剧';
+  const cover = pickJsonString(html, 'series_cover');
+
+  const episodes = vids.map((vid, i) => ({
+    vid,
+    vid_index: i + 1,
+    title: '',
+    series_id: String(seriesId),
+    series_title: seriesTitle,
+    cover,
+  }));
+
+  return {
+    series_id: String(seriesId),
+    series_title: seriesTitle,
+    cover: cover || (episodes[0] && episodes[0].cover) || '',
+    total: episodes.length,
+    episodes,
+    source: 'web', // 标记来源，便于排查
+  };
+}
+
+/**
+ * 官网兜底：取单集可直接下载的 MP4 直链
+ * 官网页里内嵌的 main_url 是「已经可播」的地址，明文 MP4，无 CENC 加密，
+ * 因此不需要 spade_a / 解密这一步。
+ * sid 已知时用 /player/{sid}/{vid}；未知时退回 /player/_/{vid} 再自行解析。
+ */
+async function fetchPlayUrlFromWeb(vid, sid) {
+  const candidates = [];
+  if (sid) candidates.push(`${SITE_ORIGIN}/player/${encodeURIComponent(sid)}/${encodeURIComponent(vid)}`);
+  candidates.push(`${SITE_ORIGIN}/player/_/${encodeURIComponent(vid)}`);
+
+  let lastErr = null;
+  for (const url of candidates) {
+    try {
+      const html = await fetchSiteHtml(url);
+      let m = html.match(/"main_url"\s*:\s*"([^"]+)"/);
+      if (!m) m = html.match(/"contentUrl"\s*:\s*"([^"]+)"/);
+      if (!m) continue;
+
+      const videoUrl = normalizeVideoUrl(m[1]);
+      if (!/^https?:\/\//i.test(videoUrl)) continue;
+      return { url: videoUrl, spadeA: null, codec: '', source: 'web' };
+    } catch (e) {
+      lastErr = e;
+    }
+  }
+  if (lastErr) console.warn('[Web] 取播放直链失败:', lastErr.message);
+  return null;
 }
 
 /**
@@ -137,7 +273,22 @@ async function fetchEpisodeList(seriesId) {
     dr_scene: "preload",
     series_id: seriesId,
   };
-  const j = await apiCall("/novel/player/multi_video_detail/preload/v1", body);
+  let j;
+  try {
+    j = await apiCall("/novel/player/multi_video_detail/preload/v1", body);
+  } catch (e) {
+    // 官方 App 接口不可用时，自动降级到官网网页版数据源
+    console.warn('[Hongguo] detail API 不可用，改用官网数据源:', e.message);
+    try {
+      const webData = await fetchEpisodeListFromWeb(seriesId);
+      console.log(`[Hongguo] 官网数据源成功:《${webData.series_title}》共 ${webData.total} 集`);
+      return webData;
+    } catch (webErr) {
+      throw new Error(
+        `获取分集失败：官方接口不可用（${e.message}），官网兜底也失败（${webErr.message}）`
+      );
+    }
+  }
   if (!j || j.code !== 0) {
     throw new Error("detail API 失败: " + JSON.stringify(j || {}).slice(0, 200));
   }
@@ -230,7 +381,7 @@ function parseModelVideo(vm) {
 /**
  * 获取单集播放直链与 spade_a 加密 key
  */
-async function fetchPlayUrlSingle(vid) {
+async function fetchPlayUrlSingle(vid, sid) {
   const body = {
     biz_param: MODEL_BIZ_PARAM,
     dr_scene: "preload",
@@ -240,10 +391,16 @@ async function fetchPlayUrlSingle(vid) {
     const j = await apiCall("/novel/player/multi_video_model/preload/v1", body);
     const item = j?.data?.[vid] || {};
     const [url, spadeA, codec] = parseModelVideo(item.video_model);
-    return { url, spadeA, codec };
+    if (url) return { url, spadeA, codec, source: 'api' };
   } catch (e) {
-    return { url: null, spadeA: null, codec: null };
+    // 落到下面的官网兜底
   }
+  // 官方 App 接口不可用时，改用官网内嵌的 MP4 直链（明文，无需解密）
+  try {
+    const web = await fetchPlayUrlFromWeb(vid, sid);
+    if (web && web.url) return web;
+  } catch (_) {}
+  return { url: null, spadeA: null, codec: null };
 }
 
 /**
@@ -662,7 +819,9 @@ function decryptMp4File(srcPath, dstPath, key) {
 module.exports = {
   resolveSeriesId,
   fetchEpisodeList,
+  fetchEpisodeListFromWeb,
   fetchPlayUrlSingle,
+  fetchPlayUrlFromWeb,
   deriveKey,
   decryptMp4File,
   decryptMp4Buffer,

@@ -11,7 +11,7 @@
 const { app, BrowserWindow, ipcMain, dialog, shell, session, protocol } = require('electron');
 const path = require('path');
 const fs = require('fs');
-const { pathToFileURL } = require('url');
+const fsp = require('fs/promises');
 const axios = require('axios');
 
 const hongguo = require('./src/native/hongguo');
@@ -38,9 +38,18 @@ app.commandLine.appendSwitch('disable-features', 'UseChromeOSDirectVideoDecoder'
 // 因此这里先在内存里完成「下载 + 解密」，再用自定义协议按 Range 供给播放器。
 // 好处：不落盘（不占用用户的下载目录），且支持拖动进度。
 const STREAM_SCHEME = 'hongguo-stream';
+// 本地已下载文件的播放协议。
+// 不能在开发模式下直接用 file:// —— 渲染页面来自 http://localhost:5173，
+// Chromium 会以「Not allowed to load local resource」拒绝（表现为播放器黑屏、0:00）。
+// 因此改由主进程用 Node 读文件并通过自定义协议供给，带 Range 支持以便拖动进度。
+const LOCAL_SCHEME = 'hongguo-local';
 protocol.registerSchemesAsPrivileged([
   {
     scheme: STREAM_SCHEME,
+    privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true, bypassCSP: true },
+  },
+  {
+    scheme: LOCAL_SCHEME,
     privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true, bypassCSP: true },
   },
 ]);
@@ -471,8 +480,8 @@ async function executeHongguoDownload(task) {
     task.progress = 0;
     sendToRenderer('download-progress', { id, progress: 0, receivedBytes: 0, totalBytes: 0 });
 
-    // 1. 获取播放直链与 spade_a 加密信息
-    const playInfo = await hongguo.fetchPlayUrlSingle(vid);
+    // 1. 获取播放直链与 spade_a 加密信息（官网兜底时 spadeA 为空，直链为明文 MP4）
+    const playInfo = await hongguo.fetchPlayUrlSingle(vid, hongguoInfo && hongguoInfo.series_id);
     if (!playInfo || !playInfo.url) {
       throw new Error('未获取到有效播放地址');
     }
@@ -1501,7 +1510,7 @@ ipcMain.handle('get-series-episodes', async (event, seriesId) => {
           }
           if (fileSize > 1024 * 100) {
             status = 'completed';
-            fileUrl = pathToFileURL(t.savePath).href;
+            fileUrl = localPlayUrl(t.savePath);
           } else if (t.status === 'downloading') {
             status = 'downloading';
             progress = t.progress || 0;
@@ -1517,7 +1526,7 @@ ipcMain.handle('get-series-episodes', async (event, seriesId) => {
           const f = scannedByIndex.get(idx);
           if (f) {
             savePath = f.path;
-            fileUrl = pathToFileURL(f.path).href;
+            fileUrl = localPlayUrl(f.path);
             try { fileSize = fs.statSync(f.path).size; } catch (_) {}
             status = 'completed';
           }
@@ -1640,9 +1649,79 @@ function registerStreamProtocol() {
   });
 }
 
-/** 下载整集到内存并解密 */
-async function fetchDecryptedEpisode(vid, onProgress) {
-  const playInfo = await hongguo.fetchPlayUrlSingle(vid);
+/** 把本地文件路径转成可被渲染进程播放的 URL */
+function localPlayUrl(filePath) {
+  if (!filePath) return null;
+  const p = path.resolve(String(filePath));
+  return `${LOCAL_SCHEME}://f/${Buffer.from(p, 'utf8').toString('base64url')}`;
+}
+
+/**
+ * 注册本地文件播放协议。
+ * 改由主进程用 Node 读文件供给，而不是让 Chromium 读 file://：
+ * 开发模式下渲染页面来自 http://localhost:5173，Chromium 会以
+ * 「Not allowed to load local resource」拒绝 file:// 请求（表现为播放器黑屏、进度 0:00）。
+ * 走自定义协议后开发/打包两种模式行为一致，并且支持 Range 拖动进度。
+ */
+function registerLocalProtocol() {
+  protocol.handle(LOCAL_SCHEME, async (request) => {
+    try {
+      const url = new URL(request.url);
+      const b64 = url.pathname.replace(/^\/+/, '');
+      const filePath = Buffer.from(b64, 'base64url').toString('utf8');
+      if (!filePath) {
+        return new Response('bad path', { status: 400, headers: { 'Content-Type': 'text/plain' } });
+      }
+      // 只允许取视频文件，避免该协议被用来读取任意本地文件
+      if (!/\.(mp4|m4v|mov|webm)$/i.test(filePath)) {
+        return new Response('forbidden', { status: 403, headers: { 'Content-Type': 'text/plain' } });
+      }
+
+      let size = 0;
+      try {
+        size = (await fsp.stat(filePath)).size;
+      } catch (_) {
+        console.warn('[Local] 文件不存在:', filePath);
+        return new Response('not found', { status: 404, headers: { 'Content-Type': 'text/plain' } });
+      }
+
+      const range = request.headers.get('range');
+      if (range) {
+        const m = /bytes=(\d*)-(\d*)/.exec(range);
+        let start = m && m[1] ? parseInt(m[1], 10) : 0;
+        let end = m && m[2] ? parseInt(m[2], 10) : size - 1;
+        if (Number.isNaN(start) || start < 0) start = 0;
+        if (Number.isNaN(end) || end >= size) end = size - 1;
+        if (start > end) start = 0;
+        return new Response(fs.createReadStream(filePath, { start, end }), {
+          status: 206,
+          headers: {
+            'Content-Type': 'video/mp4',
+            'Accept-Ranges': 'bytes',
+            'Content-Range': `bytes ${start}-${end}/${size}`,
+            'Content-Length': String(end - start + 1),
+          },
+        });
+      }
+
+      return new Response(fs.createReadStream(filePath), {
+        status: 200,
+        headers: {
+          'Content-Type': 'video/mp4',
+          'Accept-Ranges': 'bytes',
+          'Content-Length': String(size),
+        },
+      });
+    } catch (e) {
+      console.error('[Local] 读取失败:', e.message);
+      return new Response('error', { status: 500, headers: { 'Content-Type': 'text/plain' } });
+    }
+  });
+}
+
+/** 下载整集到内存并解密（官网兜底时直链为明文 MP4，跳过解密） */
+async function fetchDecryptedEpisode(vid, onProgress, seriesId) {
+  const playInfo = await hongguo.fetchPlayUrlSingle(vid, seriesId);
   if (!playInfo || !playInfo.url) throw new Error('未获取到有效播放地址');
 
   let headers = { 'User-Agent': hongguo.UA };
@@ -1727,7 +1806,7 @@ ipcMain.handle('prepare-online-play', async (event, payload) => {
           percent: total ? Math.floor((received / total) * 100) : 0,
           phase: phase || 'downloading',
         });
-      });
+      }, seriesId);
       onlineCache.set(key, {
         buffer: buf,
         size: buf.length,
@@ -1877,7 +1956,7 @@ ipcMain.handle('transcode-for-playback', async (event, payload) => {
     if (!force && fs.existsSync(out) && fs.statSync(out).size > 1024 * 100) {
       // 命中缓存
       try { fs.utimesSync(out, new Date(), new Date()); } catch (_) {}
-      return { success: true, url: pathToFileURL(out).href, size: fs.statSync(out).size, cached: true };
+      return { success: true, url: localPlayUrl(out), size: fs.statSync(out).size, cached: true };
     }
 
     const ffmpegPath = resolveFfmpeg('ffmpeg');
@@ -1967,7 +2046,7 @@ ipcMain.handle('transcode-for-playback', async (event, payload) => {
     console.log(`[Compat] 完成 ${(size / 1048576).toFixed(1)}MB  用时 ${elapsed}s`);
 
     sendToRenderer('transcode-progress', { seriesId: String(seriesId), vidIndex: Number(vidIndex), percent: 100, done: true });
-    return { success: true, url: pathToFileURL(out).href, size, elapsed: Number(elapsed), encoder };
+    return { success: true, url: localPlayUrl(out), size, elapsed: Number(elapsed), encoder };
   } catch (error) {
     console.error('[Compat] 转码失败:', error.message);
     return { success: false, error: error.message };
@@ -2696,6 +2775,7 @@ app.whenReady().then(async () => {
   try { rescanDownloadsFromDisk(); } catch (e) { console.warn('[Rescan] 启动补登记失败:', e.message); }
   loadMergeTasks();
   registerStreamProtocol();
+  registerLocalProtocol();
   const settings = getCurrentSettings();
 
   // 代理必须在创建窗口、发起任何请求之前生效
