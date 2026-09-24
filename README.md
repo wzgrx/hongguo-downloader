@@ -285,12 +285,19 @@ Chromium 对超长 HEVC 视频的 seek 支持有限。合并文件本身是完�
 
 解决办法（任选其一）：
 
-1. **推荐**：`node scripts/setup-winCodeSign.js` 预解压到固定目录，再打包时带上环境变量：
+1. **推荐**：把缓存目录指到已预解压好的 `.eb-cache`（仓库内已备好，
+   `scripts/setup-winCodeSign.js` 也是往这里解压）。electron-builder 认的环境变量是
+   `ELECTRON_BUILDER_CACHE`：
    ```powershell
-   $env:DSH_WINCODESIGN_DIR='<项目路径>\.eb-cache\winCodeSign\winCodeSign-2.6.0'
+   node scripts/setup-winCodeSign.js      # 若 .eb-cache 已就绪会直接跳过
+   $env:ELECTRON_BUILDER_CACHE = "$PWD\.eb-cache\"
    npm run build
    ```
    （macOS 符号链接缺失不影响 Windows 打包，实际只用 `windows-10/` 与 `rcedit-*.exe`）
+
+   > 注意：每个新的终端窗口都要重新设置该环境变量，
+   > 否则 electron-builder 会回到默认缓存目录 `%LOCALAPPDATA%\electron-builder\Cache`
+   > 重新解压并再次失败。
 2. 以管理员身份运行终端，或开启 Windows「开发者模式」后直接打包。
 
 ### 打包报错 `Access is denied`
