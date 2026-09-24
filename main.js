@@ -42,15 +42,19 @@ const STREAM_SCHEME = 'hongguo-stream';
 // 不能在开发模式下直接用 file:// —— 渲染页面来自 http://localhost:5173，
 // Chromium 会以「Not allowed to load local resource」拒绝（表现为播放器黑屏、0:00）。
 // 因此改由主进程用 Node 读文件并通过自定义协议供给，带 Range 支持以便拖动进度。
+//
+// 注意：这两个 scheme 刻意不开 bypassCSP —— 视频能否加载由 index.html 的 CSP 白名单
+// 决定（media-src / connect-src 必须显式列出 hongguo-stream: 与 hongguo-local:）。
+// 用 bypassCSP 绕开自家 CSP 会白白丢掉一层防护，属于掩盖配置疏漏，不要再加回来。
 const LOCAL_SCHEME = 'hongguo-local';
 protocol.registerSchemesAsPrivileged([
   {
     scheme: STREAM_SCHEME,
-    privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true, bypassCSP: true },
+    privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true },
   },
   {
     scheme: LOCAL_SCHEME,
-    privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true, bypassCSP: true },
+    privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true },
   },
 ]);
 
