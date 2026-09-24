@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Film, Download, Settings, Play, Sparkles } from './components/icons';
+import { Film, Download, Settings, Play, Sparkles, AlertCircle } from './components/icons';
 import HongguoDownload from './components/HongguoDownload';
 import DownloadManager from './components/DownloadManager';
 import SettingsPage from './components/Settings';
 import Player from './components/Player';
 import Browse from './components/Browse';
+import Diagnostics from './components/Diagnostics';
 
 const MENU = [
   { id: 'browse', label: '浏览', icon: Sparkles },
@@ -12,6 +13,7 @@ const MENU = [
   { id: 'player', label: '播放', icon: Play },
   { id: 'manager', label: '下载管理', icon: Download },
   { id: 'settings', label: '设置', icon: Settings },
+  { id: 'diagnostics', label: '诊断', icon: AlertCircle },
 ];
 
 export default function App() {
@@ -48,6 +50,8 @@ export default function App() {
         return <DownloadManager onNavigate={navigateTo} />;
       case 'settings':
         return <SettingsPage />;
+      case 'diagnostics':
+        return <Diagnostics />;
       case 'download':
       default:
         return <HongguoDownload onNavigate={navigateTo} />;

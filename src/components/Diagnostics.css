@@ -1,0 +1,150 @@
+.diagnostics-container {
+  height: 100%;
+  overflow: auto;
+  padding: 30px 34px;
+  color: var(--text-primary, #202536);
+}
+
+.diagnostics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.diagnostics-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 22px;
+}
+
+.diagnostics-header p {
+  margin: 8px 0 0;
+  color: #778096;
+  font-size: 13px;
+}
+
+.diagnostics-actions {
+  display: flex;
+  gap: 9px;
+}
+
+.diagnostics-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.diagnostics-summary,
+.diagnostics-notice {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border: 1px solid #e5e8f0;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.diagnostics-summary span {
+  color: #7b8397;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.diagnostics-notice {
+  color: #16794c;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.diagnostics-error {
+  color: #b42318;
+}
+
+.diagnostics-list {
+  overflow: hidden;
+  border: 1px solid #e5e8f0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.diagnostics-row {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  padding: 16px;
+  border-bottom: 1px solid #eef0f5;
+}
+
+.diagnostics-row:last-child {
+  border-bottom: 0;
+}
+
+.diagnostics-status {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.diagnostics-status.is-ok {
+  color: #137a4b;
+  background: #e9f7ef;
+}
+
+.diagnostics-status.is-error {
+  color: #b42318;
+  background: #fff0ee;
+}
+
+.diagnostics-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.diagnostics-copy strong {
+  font-size: 14px;
+}
+
+.diagnostics-copy span,
+.diagnostics-copy code {
+  color: #737b90;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.diagnostics-copy code {
+  max-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.diagnostics-empty,
+.diagnostics-footnote {
+  color: #858da0;
+  font-size: 12px;
+}
+
+.diagnostics-empty {
+  padding: 22px;
+}
+
+.diagnostics-footnote {
+  margin-top: 13px;
+}
+
+@media (max-width: 760px) {
+  .diagnostics-container { padding: 20px; }
+  .diagnostics-header { align-items: flex-start; flex-direction: column; }
+}

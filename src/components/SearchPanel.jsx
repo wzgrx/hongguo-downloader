@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './HongguoDownload.css';
 import { Search, Film, RefreshCw, ExternalLink } from './icons';
+import { createRequestGate } from '../request-gate.mjs';
 
 /**
  * SearchPanel —— 通过内嵌浏览器嗅探 hongguoduanju.com 的搜索结果
@@ -13,6 +14,8 @@ function SearchPanel({ onSelectSeries, onSwitchToInput }) {
   const [error, setError] = useState('');
   const [pageTitle, setPageTitle] = useState('');
   const [pickingId, setPickingId] = useState('');
+  const searchRequestGate = useRef(createRequestGate());
+  const pickRequestGate = useRef(createRequestGate());
 
   const doSearch = async () => {
     const kw = keyword.trim();
@@ -20,12 +23,14 @@ function SearchPanel({ onSelectSeries, onSwitchToInput }) {
       setError('请输入剧名关键词');
       return;
     }
+    const requestId = searchRequestGate.current.next();
     setLoading(true);
     setError('');
     setResults(null);
     setPageTitle('');
     try {
       const res = await window.electronAPI.searchSeries(kw);
+      if (!searchRequestGate.current.isCurrent(requestId)) return;
       if (!res || !res.success) {
         setError((res && res.error) || '搜索失败，请重试');
         setResults([]);
@@ -34,28 +39,32 @@ function SearchPanel({ onSelectSeries, onSwitchToInput }) {
         if (!res.results || res.results.length === 0) setPageTitle(res.pageTitle || '');
       }
     } catch (e) {
+      if (!searchRequestGate.current.isCurrent(requestId)) return;
       setError('搜索异常: ' + e.message);
       setResults([]);
     } finally {
-      setLoading(false);
+      if (searchRequestGate.current.isCurrent(requestId)) setLoading(false);
     }
   };
 
   // 选中某部剧 -> 拉取完整分集 -> 交给下载页
   const pick = async (item) => {
+    const requestId = pickRequestGate.current.next();
     setPickingId(item.series_id);
     setError('');
     try {
       const res = await window.electronAPI.searchResolve(item.series_id);
+      if (!pickRequestGate.current.isCurrent(requestId)) return;
       if (res && res.success && res.data) {
         onSelectSeries(res.data);
       } else {
         setError((res && res.error) || '拉取分集失败');
       }
     } catch (e) {
+      if (!pickRequestGate.current.isCurrent(requestId)) return;
       setError('拉取分集异常: ' + e.message);
     } finally {
-      setPickingId('');
+      if (pickRequestGate.current.isCurrent(requestId)) setPickingId('');
     }
   };
 

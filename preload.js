@@ -91,6 +91,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
   selectFolder: () => ipcRenderer.invoke('select-folder'),
   getSettings: () => ipcRenderer.invoke('get-settings'),
   saveSettings: (settings) => ipcRenderer.invoke('save-settings', settings),
+  getDiagnostics: () => ipcRenderer.invoke('get-diagnostics'),
+  exportDiagnostics: () => ipcRenderer.invoke('export-diagnostics'),
 
   // 网络代理
   getProxyStatus: () => ipcRenderer.invoke('get-proxy-status'),
@@ -104,6 +106,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
   // 文件清理
   deleteTaskWithFiles: (taskId, deleteFiles) => ipcRenderer.invoke('delete-task', taskId, { deleteFiles }),
   deleteTasksWithFiles: (taskIds, deleteFiles) => ipcRenderer.invoke('delete-tasks', taskIds, { deleteFiles }),
+  previewDeleteTasks: (taskIds) => ipcRenderer.invoke('preview-delete-tasks', taskIds),
+  previewSeriesFiles: (seriesId) => ipcRenderer.invoke('preview-series-files', seriesId),
+  previewAllDownloaded: () => ipcRenderer.invoke('preview-all-downloaded'),
   deleteSeriesFiles: (seriesId, options) => ipcRenderer.invoke('delete-series-files', seriesId, options),
   deleteEpisodeFile: (seriesId, vidIndex) => ipcRenderer.invoke('delete-episode-file', seriesId, vidIndex),
   getStorageUsage: () => ipcRenderer.invoke('get-storage-usage'),

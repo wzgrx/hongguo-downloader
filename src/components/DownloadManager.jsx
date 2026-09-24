@@ -5,17 +5,25 @@ import { Download, Trash2, RefreshCw, X, Film, Square, Folder, Zap, CheckSquare,
 const STATUS_TEXT = {
   pending: '等待中',
   downloading: '下载中',
+  paused: '已暂停',
+  interrupted: '上次中断',
+  cancelled: '已取消',
   completed: '已完成',
   failed: '失败',
+  missing: '文件缺失',
   stopped: '已停止',
 };
 
 const STATUS_ORDER = {
   downloading: 0,
   pending: 1,
-  failed: 2,
-  stopped: 3,
-  completed: 4,
+  interrupted: 2,
+  paused: 3,
+  failed: 4,
+  cancelled: 5,
+  missing: 6,
+  stopped: 7,
+  completed: 8,
 };
 
 function sortTasks(list) {
@@ -101,7 +109,9 @@ function DownloadManager({ onNavigate }) {
     const cleanups = [
       window.electronAPI.onDownloadProgress((data) => {
         setTasks((prev) =>
-          prev.map((t) => (t.id === data.id ? { ...t, progress: data.progress, receivedBytes: data.receivedBytes, totalBytes: data.totalBytes, status: 'downloading' } : t))
+          prev.map((t) => (t.id === data.id && ['pending', 'downloading'].includes(t.status)
+            ? { ...t, progress: data.progress, receivedBytes: data.receivedBytes, totalBytes: data.totalBytes, status: 'downloading' }
+            : t))
         );
       }),
       window.electronAPI.onDownloadTaskAdded(() => refresh()),
@@ -112,7 +122,7 @@ function DownloadManager({ onNavigate }) {
         setTasks((prev) => prev.map((t) => (t.id === data.id ? { ...t, status: 'failed', error: data.error } : t)));
       }),
       window.electronAPI.onDownloadStopped((data) => {
-        setTasks((prev) => prev.map((t) => (t.id === data.id ? { ...t, status: 'stopped' } : t)));
+        setTasks((prev) => prev.map((t) => (t.id === data.id ? { ...t, status: 'cancelled' } : t)));
       }),
       window.electronAPI.onDownloadQueueChanged(() => {
         refresh();
@@ -184,12 +194,12 @@ function DownloadManager({ onNavigate }) {
   };
 
   /** 弹删除确认：默认只删记录，可勾选同时删除本地文件 */
-  const askDelete = (list, label) => {
+  const askDelete = async (list, label) => {
     const items = (list || []).filter(Boolean);
     if (!items.length) return;
-    // 用已下载字节数估算可释放空间（完成任务才有意义）
-    const estBytes = items.reduce((s, t) => s + (t.totalBytes || t.receivedBytes || 0), 0);
-    const withFile = items.filter((t) => t.status === 'completed').length;
+    const preview = await window.electronAPI.previewDeleteTasks(items.map((task) => task.id));
+    const estBytes = preview?.bytes || 0;
+    const withFile = preview?.count || 0;
     setConfirmAsk({
       title: label,
       count: items.length,
@@ -202,8 +212,10 @@ function DownloadManager({ onNavigate }) {
         await refresh();
         if (res && res.success) {
           showToast(deleteFiles
-            ? `已删除 ${res.count} 个任务，释放 ${fmtSize(res.freed)}`
+            ? `已删除 ${res.count} 个任务，${res.fileCount || 0} 个文件已移入回收站`
             : `已删除 ${res.count} 个任务记录（本地文件已保留）`);
+        } else if (res && res.error) {
+          showToast(res.error, 'error');
         }
       },
     });
@@ -272,7 +284,7 @@ function DownloadManager({ onNavigate }) {
     showToast(res && res.success ? `已暂停 ${res.count} 个任务` : '暂停失败', res && res.success ? 'success' : 'error');
   };
 
-  // 一键启动：把所有已停止/失败/等待中的任务重新排队开跑
+  // 一键启动：只恢复用户暂停或尚未开始的任务
   const resumeAll = async () => {
     const res = await window.electronAPI.resumeAll();
     await refresh();
@@ -280,9 +292,11 @@ function DownloadManager({ onNavigate }) {
     showToast(res && res.success ? `已启动 ${res.count} 个任务` : '启动失败', res && res.success ? 'success' : 'error');
   };
 
-  // 一键重试全部失败/已停止的任务
+  const retryableStatus = (status) => ['failed', 'cancelled', 'missing', 'interrupted', 'stopped'].includes(status);
+
+  // 一键重试全部失败或上次中断的任务
   const retryAllFailed = async () => {
-    const ids = tasks.filter((t) => t.status === 'failed' || t.status === 'stopped').map((t) => t.id);
+    const ids = tasks.filter((t) => retryableStatus(t.status)).map((t) => t.id);
     if (ids.length === 0) return;
     const res = await window.electronAPI.retryTasks(ids);
     await refresh();
@@ -293,11 +307,11 @@ function DownloadManager({ onNavigate }) {
     }
   };
 
-  // 一键选中全部失败/已停止的任务（选中后可再点「重试选中」）
+  // 一键选中全部可重试任务（选中后可再点「重试选中」）
   const selectAllFailed = () => {
-    const ids = tasks.filter((t) => t.status === 'failed' || t.status === 'stopped').map((t) => t.id);
+    const ids = tasks.filter((t) => retryableStatus(t.status)).map((t) => t.id);
     if (ids.length === 0) {
-      showToast('没有失败或已停止的任务');
+      showToast('没有可重试的任务');
       return;
     }
     setSelected(new Set(ids));
@@ -315,14 +329,15 @@ function DownloadManager({ onNavigate }) {
   const activeCount = tasks.filter((t) => t.status === 'downloading' || t.status === 'pending').length;
   const completedCount = tasks.filter((t) => t.status === 'completed').length;
   const failedTasks = useMemo(
-    () => tasks.filter((t) => t.status === 'failed' || t.status === 'stopped'),
+    () => tasks.filter((t) => retryableStatus(t.status)),
     [tasks]
   );
   const failedCount = failedTasks.length;
+  const interruptedTasks = tasks.filter((task) => task.status === 'interrupted');
 
   // 可暂停的任务：正在下载、等待中、已停止（未跑完的都算）
   const pausableCount = useMemo(
-    () => tasks.filter((t) => t.status !== 'completed').length,
+    () => tasks.filter((t) => ['downloading', 'pending', 'paused'].includes(t.status)).length,
     [tasks]
   );
 
@@ -331,7 +346,7 @@ function DownloadManager({ onNavigate }) {
     () =>
       Array.from(selected).filter((id) => {
         const t = tasks.find((x) => x.id === id);
-        return t && (t.status === 'failed' || t.status === 'stopped');
+        return t && retryableStatus(t.status);
       }).length,
     [selected, tasks]
   );
@@ -346,7 +361,7 @@ function DownloadManager({ onNavigate }) {
         <div className="dm-stats">
           <span className="stat stat-active">进行中 {activeCount}</span>
           <span className="stat stat-done">已完成 {completedCount}</span>
-          <span className="stat stat-fail">失败/停止 {failedCount}</span>
+          <span className="stat stat-fail">需重试 {failedCount}</span>
         </div>
       </div>
 
@@ -355,7 +370,7 @@ function DownloadManager({ onNavigate }) {
           className="btn btn-primary"
           onClick={resumeAll}
           disabled={queue.active > 0 || pausableCount === 0}
-          title="把等待中 / 已停止 / 失败的任务全部排队开跑"
+          title="重新启动等待中和已暂停的任务"
         >
           <Play size={15} />
           一键启动
@@ -373,19 +388,19 @@ function DownloadManager({ onNavigate }) {
           className="btn btn-primary"
           onClick={retryAllFailed}
           disabled={failedCount === 0}
-          title="把所有失败/已停止的任务一次性重新加入下载队列"
+          title="重试失败、取消、中断或文件缺失的任务"
         >
           <Zap size={15} />
-          {failedCount > 0 ? `一键重试全部失败 (${failedCount})` : '一键重试全部失败'}
+          {failedCount > 0 ? `重试全部可恢复任务 (${failedCount})` : '重试全部可恢复任务'}
         </button>
         <button
           className="btn btn-outline"
           onClick={selectAllFailed}
           disabled={failedCount === 0}
-          title="一键勾选所有失败/已停止的任务"
+          title="一键勾选所有可重试任务"
         >
           <CheckSquare size={15} />
-          {failedCount > 0 ? `选中失败项 (${failedCount})` : '选中失败项'}
+          {failedCount > 0 ? `选中可重试项 (${failedCount})` : '选中可重试项'}
         </button>
         <button className="btn btn-outline" onClick={retrySelected} disabled={retryableSelectedCount === 0}>
           <RefreshCw size={15} />
@@ -408,13 +423,13 @@ function DownloadManager({ onNavigate }) {
             const r = await window.electronAPI.rescanDownloads();
             await refresh();
             showToast(r && r.success
-              ? (r.count > 0 ? `已从磁盘补回 ${r.count} 条下载记录` : '没有发现未登记的文件')
+              ? `校准完成：补登记 ${r.added || 0}，恢复 ${r.recovered || 0}，缺失 ${r.missing || 0}`
               : '扫描失败');
           }}
-          title="扫描下载目录，把磁盘上已有但列表里没有的文件补登记回来"
+          title="核对下载任务记录与磁盘上的实际文件"
         >
           <RefreshCw size={15} />
-          扫描目录补登记
+          校准文件库
         </button>
         {seriesList.length > 0 && (
           <div className="merge-inline">
@@ -516,6 +531,17 @@ function DownloadManager({ onNavigate }) {
         </div>
       )}
 
+      {interruptedTasks.length > 0 && (
+        <div className="dm-hint dm-recovery">
+          <span>检测到上次退出时中断的 <b>{interruptedTasks.length}</b> 个任务。选择重试后会重新下载。</span>
+          <button className="btn btn-primary btn-sm" onClick={async () => {
+            const result = await window.electronAPI.retryTasks(interruptedTasks.map((task) => task.id));
+            await refresh();
+            showToast(result?.success ? `已重新排队 ${result.count} 个中断任务` : (result?.error || '恢复失败'), result?.success ? 'success' : 'error');
+          }}>重新排队全部</button>
+        </div>
+      )}
+
       {retryableSelectedCount > 0 && (
         <div className="dm-hint">
           已选中 <b>{retryableSelectedCount}</b> 个失败项，点
@@ -535,8 +561,8 @@ function DownloadManager({ onNavigate }) {
 
             const isSel = selected.has(task.id);
             const isActive = task.status === 'downloading' || task.status === 'pending';
-            const canStop = task.status === 'downloading';
-            const canRetry = task.status === 'failed' || task.status === 'stopped';
+            const canStop = task.status === 'downloading' || task.status === 'pending';
+            const canRetry = retryableStatus(task.status);
             const pct = task.progress || 0;
             return (
               <div key={task.id} className={`dm-task ${isSel ? 'selected' : ''}`} onClick={() => toggleSelect(task.id)}>
@@ -554,7 +580,7 @@ function DownloadManager({ onNavigate }) {
                     {task.status === 'downloading' && task.totalBytes > 0 && (
                       <span className="dm-size">{fmtBytes(task.receivedBytes)} / {fmtBytes(task.totalBytes)}</span>
                     )}
-                    {task.status === 'failed' && task.error && <span className="dm-error">{task.error}</span>}
+                    {['failed', 'interrupted', 'missing'].includes(task.status) && task.error && <span className="dm-error">{task.error}</span>}
                   </div>
                   {(task.status === 'downloading' || task.status === 'pending') && (
                     <div className="dm-progress">
@@ -636,8 +662,7 @@ function DownloadManager({ onNavigate }) {
               {confirmAsk.title}
             </div>
             <div className="player-confirm-msg">
-              <p>共 {confirmAsk.count} 个任务，其中 {confirmAsk.withFile} 个已下载完成
-                {confirmAsk.estBytes > 0 ? `（约 ${fmtSize(confirmAsk.estBytes)}）` : ''}。</p>
+              <p>共 {confirmAsk.count} 个任务，发现 {confirmAsk.withFile} 个本地文件，合计 {fmtSize(confirmAsk.estBytes)}。</p>
               <label className="dm-confirm-check">
                 <input
                   type="checkbox"
@@ -645,12 +670,11 @@ function DownloadManager({ onNavigate }) {
                   onChange={(e) => setConfirmAsk({ ...confirmAsk, _del: e.target.checked })}
                 />
                 <span>
-                  同时删除本地文件
-                  {confirmAsk.estBytes > 0 ? `（释放约 ${fmtSize(confirmAsk.estBytes)}）` : ''}
+                  同时移入 Windows 回收站（可从回收站恢复）
                 </span>
               </label>
               <p className="dm-confirm-hint">
-                不勾选则只移除任务记录，磁盘上的视频文件会保留（可在文件管理器里自行管理）。
+                勾选后显示的文件数量和大小会移入回收站；不勾选则只移除任务记录，保留本地文件。
               </p>
             </div>
             <div className="player-confirm-foot">
@@ -664,7 +688,7 @@ function DownloadManager({ onNavigate }) {
                   await fn(del);
                 }}
               >
-                {confirmAsk._del ? '删除任务和文件' : '仅删除记录'}
+                {confirmAsk._del ? '移入回收站并删除任务' : '仅删除任务记录'}
               </button>
             </div>
           </div>

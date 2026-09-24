@@ -27,16 +27,21 @@ function loadCache() {
 
 function flush() {
   if (!dataFile) return;
+  const tempFile = `${dataFile}.tmp-${process.pid}-${Date.now()}`;
   try {
     fs.mkdirSync(path.dirname(dataFile), { recursive: true });
-    fs.writeFileSync(dataFile, JSON.stringify(cache || {}, null, 2), 'utf8');
+    fs.writeFileSync(tempFile, JSON.stringify(cache || {}, null, 2), 'utf8');
+    fs.renameSync(tempFile, dataFile);
   } catch (e) {
+    try { fs.unlinkSync(tempFile); } catch (_) {}
     console.error('[Store] 写入数据文件失败:', e.message);
+    throw e;
   }
 }
 
 function init(filePath) {
   dataFile = filePath;
+  cache = null;
   loadCache();
 }
 

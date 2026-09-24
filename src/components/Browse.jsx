@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import './Browse.css';
 import { Film, RefreshCw, ExternalLink, Download, Play, Check, X, Sparkles } from './icons';
+import { createRequestGate } from '../request-gate.mjs';
 
 /**
  * Browse —— 分类淘剧
@@ -33,7 +34,9 @@ function Browse({ onNavigate, active = true }) {
   // 已下载统计（按 series_id -> 已下载集数）
   const [downloadedMap, setDownloadedMap] = useState({});
   const [toast, setToast] = useState(null);
-  const listRequestId = useRef(0);
+  const listRequestGate = useRef(createRequestGate());
+  const detailRequestGate = useRef(createRequestGate());
+  const downloadedMapGate = useRef(createRequestGate());
 
   const showToast = useCallback((text, type = 'success') => {
     setToast({ text, type });
@@ -41,11 +44,13 @@ function Browse({ onNavigate, active = true }) {
   }, []);
 
   const loadDownloadedMap = useCallback(async () => {
+    const requestId = downloadedMapGate.current.next();
     try {
       const list = (await window.electronAPI.getSeriesList()) || [];
       const map = {};
       for (const s of list) {
         const res = await window.electronAPI.getSeriesEpisodes(s.series_id);
+        if (!downloadedMapGate.current.isCurrent(requestId)) return;
         if (res && res.success) {
           map[String(s.series_id)] = {
             completed: res.data.completedCount,
@@ -53,7 +58,7 @@ function Browse({ onNavigate, active = true }) {
           };
         }
       }
-      setDownloadedMap(map);
+      if (downloadedMapGate.current.isCurrent(requestId)) setDownloadedMap(map);
     } catch (_) {}
   }, []);
 
@@ -68,12 +73,12 @@ function Browse({ onNavigate, active = true }) {
 
   const loadList = useCallback(
     async (cat, gen, pg) => {
-      const requestId = ++listRequestId.current;
+      const requestId = listRequestGate.current.next();
       setLoading(true);
       setError('');
       try {
         const res = await window.electronAPI.browseList({ category: cat, genre: gen, page: pg });
-        if (requestId !== listRequestId.current) return;
+        if (!listRequestGate.current.isCurrent(requestId)) return;
         if (!res || !res.success) {
           setError((res && res.error) || '加载失败，请重试');
           setResults([]);
@@ -86,11 +91,11 @@ function Browse({ onNavigate, active = true }) {
           }
         }
       } catch (e) {
-        if (requestId !== listRequestId.current) return;
+        if (!listRequestGate.current.isCurrent(requestId)) return;
         setError('加载异常: ' + e.message);
         setResults([]);
       } finally {
-        if (requestId === listRequestId.current) setLoading(false);
+        if (listRequestGate.current.isCurrent(requestId)) setLoading(false);
       }
     },
     []
@@ -104,6 +109,12 @@ function Browse({ onNavigate, active = true }) {
   useEffect(() => {
     if (active) loadDownloadedMap();
   }, [active, loadDownloadedMap]);
+
+  useEffect(() => () => {
+    listRequestGate.current.invalidate();
+    detailRequestGate.current.invalidate();
+    downloadedMapGate.current.invalidate();
+  }, []);
 
   useEffect(() => {
     loadList(category, genre, page);
@@ -134,12 +145,14 @@ function Browse({ onNavigate, active = true }) {
 
   // ===== 打开某部剧 =====
   const openSeries = async (item) => {
+    const requestId = detailRequestGate.current.next();
     setDetailLoading(true);
     setDetail(null);
     setSelectedIdx(new Set());
     setRangeInput('');
     try {
       const res = await window.electronAPI.searchResolve(item.series_id);
+      if (!detailRequestGate.current.isCurrent(requestId)) return;
       if (!res || !res.success) {
         showToast((res && res.error) || '拉取分集失败', 'error');
         return;
@@ -147,6 +160,7 @@ function Browse({ onNavigate, active = true }) {
       const data = res.data;
       // 合并下载状态
       const epRes = await window.electronAPI.getSeriesEpisodes(item.series_id);
+      if (!detailRequestGate.current.isCurrent(requestId)) return;
       const statusMap = {};
       if (epRes && epRes.success) {
         for (const e of epRes.data.episodes) statusMap[e.vid_index] = e;
@@ -161,9 +175,10 @@ function Browse({ onNavigate, active = true }) {
       // 默认全选未下载的
       setSelectedIdx(new Set(episodes.filter((e) => e.status !== 'completed').map((e) => e.vid_index)));
     } catch (e) {
+      if (!detailRequestGate.current.isCurrent(requestId)) return;
       showToast('打开失败: ' + e.message, 'error');
     } finally {
-      setDetailLoading(false);
+      if (detailRequestGate.current.isCurrent(requestId)) setDetailLoading(false);
     }
   };
 

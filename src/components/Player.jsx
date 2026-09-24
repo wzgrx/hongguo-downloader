@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import './Player.css';
 import { Play, Film, Download, Check, RefreshCw, Layers, X, Trash2, ChevronDown, Zap } from './icons';
+import { createRequestGate } from '../request-gate.mjs';
 
 /**
  * Player —— 内置播放器
@@ -47,6 +48,9 @@ function Player({ target, onNavigate }) {
   const toastTimer = useRef(null);
   const pendingSeekRef = useRef(0); // 切集后要跳转的秒数
   const lastSavedRef = useRef(0);
+  const seriesListRequestGate = useRef(createRequestGate());
+  const detailRequestGate = useRef(createRequestGate());
+  const selectionRequestGate = useRef(createRequestGate());
   const stateRef = useRef({ currentIndex, autoNext, activeSeriesId });
   stateRef.current = { currentIndex, autoNext, activeSeriesId };
 
@@ -58,7 +62,9 @@ function Player({ target, onNavigate }) {
 
   // 载入已登记的剧集列表
   const loadSeriesList = useCallback(async () => {
+    const requestId = seriesListRequestGate.current.next();
     const list = (await window.electronAPI.getSeriesList()) || [];
+    if (!seriesListRequestGate.current.isCurrent(requestId)) return [];
     setSeriesList(list);
     return list;
   }, []);
@@ -66,8 +72,10 @@ function Player({ target, onNavigate }) {
   // 载入某剧的分集状态
   const loadDetail = useCallback(async (seriesId, opts = {}) => {
     if (!seriesId) return null;
+    const requestId = detailRequestGate.current.next();
     const res = await window.electronAPI.getSeriesEpisodes(seriesId);
     if (!res || !res.success) return null;
+    if (!detailRequestGate.current.isCurrent(requestId)) return null;
     setDetail(res.data);
     return res.data;
   }, []);
@@ -175,9 +183,11 @@ function Player({ target, onNavigate }) {
   }, []);
 
   useEffect(() => {
+    const requestId = selectionRequestGate.current.next();
     (async () => {
       setLoading(true);
       const list = await loadSeriesList();
+      if (!selectionRequestGate.current.isCurrent(requestId)) return;
       if (list.length) {
         // 浏览页点播时优先用指定剧，否则选最近更新的那部
         const wanted = target && target.seriesId ? String(target.seriesId) : '';
@@ -186,6 +196,7 @@ function Player({ target, onNavigate }) {
         const sid = exists ? wanted : sorted[0].series_id;
         setActiveSeriesId(sid);
         const d = await loadDetail(sid);
+        if (!selectionRequestGate.current.isCurrent(requestId)) return;
 
         if (exists && target.vidIndex) {
           // 点播指定集：优先播它（若尚未下载则交给等待逻辑）
@@ -195,6 +206,7 @@ function Player({ target, onNavigate }) {
         } else {
           // 恢复断点
           const saved = await window.electronAPI.getPlaybackPosition(sid);
+          if (!selectionRequestGate.current.isCurrent(requestId)) return;
           if (saved && saved.vid_index) setCurrentIndex(saved.vid_index);
           else if (d) {
             const firstPlayable = d.episodes.find((e) => e.status === 'completed');
@@ -203,9 +215,12 @@ function Player({ target, onNavigate }) {
           pendingSeekRef.current = saved ? saved.currentTime || 0 : 0;
         }
       }
-      setLoading(false);
+      if (selectionRequestGate.current.isCurrent(requestId)) setLoading(false);
     })();
     return () => {
+      selectionRequestGate.current.invalidate();
+      seriesListRequestGate.current.invalidate();
+      detailRequestGate.current.invalidate();
       if (toastTimer.current) clearTimeout(toastTimer.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -217,14 +232,17 @@ function Player({ target, onNavigate }) {
     if (!target || !target.seriesId || !target.ts) return;
     if (handledTargetRef.current === target.ts) return;
     handledTargetRef.current = target.ts;
+    const requestId = selectionRequestGate.current.next();
     (async () => {
       const list = await loadSeriesList();
+      if (!selectionRequestGate.current.isCurrent(requestId)) return;
       const wanted = String(target.seriesId);
       if (!list.some((s) => String(s.series_id) === wanted)) return;
       setActiveSeriesId(wanted);
       setWaitingFor(null);
       pendingSeekRef.current = 0;
       const d = await loadDetail(wanted);
+      if (!selectionRequestGate.current.isCurrent(requestId)) return;
       if (target.vidIndex) {
         setCurrentIndex(target.vidIndex);
         const ep = d && d.episodes.find((e) => e.vid_index === target.vidIndex);
@@ -513,6 +531,7 @@ function Player({ target, onNavigate }) {
   }, [findNext, findPrev, goToEpisode]);
 
   const switchSeries = async (sid) => {
+    const requestId = selectionRequestGate.current.next();
     persistPosition();
     setActiveSeriesId(sid);
     setDetail(null);
@@ -521,7 +540,9 @@ function Player({ target, onNavigate }) {
     setOnlineUrl('');
     setOnlineProgress(null);
     const d = await loadDetail(sid);
+    if (!selectionRequestGate.current.isCurrent(requestId)) return;
     const saved = await window.electronAPI.getPlaybackPosition(sid);
+    if (!selectionRequestGate.current.isCurrent(requestId)) return;
     if (saved && saved.vid_index) setCurrentIndex(saved.vid_index);
     else if (d) {
       const firstPlayable = d.episodes.find((e) => e.status === 'completed');
@@ -785,22 +806,25 @@ function Player({ target, onNavigate }) {
                               title={`删除本地文件（${st.files} 个 · ${fmtSize(st.bytes)}）`}
                               onClick={(e) => {
                                 e.stopPropagation();
-                                setConfirmAsk({
-                                  title: '删除本地文件',
-                                  message: `将删除《${s.series_title}》已下载的 ${st.files} 个文件，释放 ${fmtSize(st.bytes)}。\n剧集仍保留在列表中，之后可以随时在线播放或重新下载。`,
-                                  okText: '删除文件',
-                                  danger: true,
-                                  onOk: async () => {
-                                    const r = await window.electronAPI.deleteSeriesFiles(s.series_id);
-                                    if (r && r.success) {
-                                      showToast(`已删除 ${r.count} 个文件，释放 ${fmtSize(r.freed)}`);
-                                      await loadDetail(activeSeriesId);
-                                      refreshCacheInfo();
-                                    } else {
-                                      showToast((r && r.error) || '删除失败');
-                                    }
-                                  },
-                                });
+                                (async () => {
+                                  const preview = await window.electronAPI.previewSeriesFiles(s.series_id);
+                                  setConfirmAsk({
+                                    title: '移入回收站',
+                                    message: `《${s.series_title}》共 ${preview?.count || 0} 个文件，合计 ${fmtSize(preview?.bytes || 0)}。\n文件将移入 Windows 回收站，可以在那里恢复。剧集列表会保留。`,
+                                    okText: '移入回收站',
+                                    danger: true,
+                                    onOk: async () => {
+                                      const r = await window.electronAPI.deleteSeriesFiles(s.series_id);
+                                      if (r && r.success) {
+                                        showToast(`${r.count} 个文件已移入回收站`);
+                                        await loadDetail(activeSeriesId);
+                                        refreshCacheInfo();
+                                      } else {
+                                        showToast((r && r.error) || '移入回收站失败');
+                                      }
+                                    },
+                                  });
+                                })();
                               }}
                             >
                               <Trash2 size={15} />
@@ -843,20 +867,21 @@ function Player({ target, onNavigate }) {
               <button
                 className="btn btn-outline btn-sm btn-danger-text"
                 title="删除所有已下载的本地文件"
-                onClick={() => {
+                onClick={async () => {
+                  const preview = await window.electronAPI.previewAllDownloaded();
                   setConfirmAsk({
-                    title: '删除全部本地文件',
-                    message: `将删除所有已下载的剧集文件，共 ${storageTotal.files} 个文件、${fmtSize(storageTotal.bytes)}。\n剧集列表与分集信息会保留，之后仍可在线播放或重新下载。`,
-                    okText: '全部删除',
+                    title: '移入回收站',
+                    message: `全部剧集共 ${preview?.count || 0} 个文件，合计 ${fmtSize(preview?.bytes || 0)}。\n文件将移入 Windows 回收站，可以在那里恢复。剧集列表与分集信息会保留。`,
+                    okText: '全部移入回收站',
                     danger: true,
                     onOk: async () => {
                       const r = await window.electronAPI.deleteAllDownloaded();
                       if (r && r.success) {
-                        showToast(`已删除 ${r.count} 个文件，释放 ${fmtSize(r.freed)}`);
+                        showToast(`${r.count} 个文件已移入回收站`);
                         await loadDetail(activeSeriesId);
                         refreshCacheInfo();
                       } else {
-                        showToast((r && r.error) || '删除失败');
+                        showToast((r && r.error) || '移入回收站失败');
                       }
                     },
                   });
