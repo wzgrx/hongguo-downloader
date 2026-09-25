@@ -229,32 +229,32 @@ npm run zip               # 仅重新压缩已有的 win-unpacked
 
 | 产物 | 大小 | 说明 |
 |---|---|---|
-| `红果短剧下载器-1.0.0-win-x64.zip` | ~158 MB | **绿色版 zip**：解压即用，启动最快，**推荐分发** |
-| `红果短剧下载器-Setup-1.0.0.exe` | ~116 MB | **NSIS 安装包**：建快捷方式、可改安装目录、可卸载 |
-| `红果短剧下载器-1.0.0-便携版.exe` | ~108 MB | **便携单文件**：双击即用，但每次启动要自解压，较慢 |
+| `红果短剧下载器-1.1.0-win-x64.zip` | ~158 MB | **绿色版 zip**：解压即用，启动最快，**推荐分发** |
+| `红果短剧下载器-Setup-1.1.0.exe` | ~116 MB | **NSIS 安装包**：建快捷方式、可改安装目录、可卸载 |
+| `红果短剧下载器-1.1.0-便携版.exe` | ~108 MB | **便携单文件**：双击即用，但每次启动要自解压，较慢 |
 | `win-unpacked/` | ~421 MB | 未压缩的绿色版目录（zip 的来源） |
 
-> zip 内已套好顶层文件夹 `红果短剧下载器-1.0.0/`，解压不会把文件散落一地。
+> zip 内已套好顶层文件夹 `红果短剧下载器-1.1.0/`，解压不会把文件散落一地。
 
 ### 发布到 GitHub Release
 
 **注意**：GitHub 的 Release 资产接口会**过滤掉文件名里的非 ASCII 字符**，
-中文产物名 `红果短剧下载器-1.0.0-win-x64.zip` 上传后会变成 `-1.0.0-win-x64.zip`
+中文产物名 `红果短剧下载器-1.1.0-win-x64.zip` 上传后会变成 `-1.1.0-win-x64.zip`
 （gh CLI 与直连 API 都一样）。所以上传前要先复制成 ASCII 文件名：
 
 ```powershell
 node scripts/prepare-release-assets.js      # 生成 dist/release/（ASCII 命名）
-gh release create v1.0.0 `
-  --title "红果短剧下载器 v1.0.0" `
+gh release create v1.1.0 `
+  --title "红果短剧下载器 v1.1.0" `
   --notes-file release-notes.md `
   dist/release/*
 ```
 
 | 本地产物（中文） | Release 资产名（ASCII） |
 |---|---|
-| `红果短剧下载器-1.0.0-win-x64.zip` | `hongguo-downloader-1.0.0-win-x64.zip` |
-| `红果短剧下载器-Setup-1.0.0.exe` | `hongguo-downloader-1.0.0-Setup.exe` |
-| `红果短剧下载器-1.0.0-便携版.exe` | `hongguo-downloader-1.0.0-portable.exe` |
+| `红果短剧下载器-1.1.0-win-x64.zip` | `hongguo-downloader-1.1.0-win-x64.zip` |
+| `红果短剧下载器-Setup-1.1.0.exe` | `hongguo-downloader-1.1.0-Setup.exe` |
+| `红果短剧下载器-1.1.0-便携版.exe` | `hongguo-downloader-1.1.0-portable.exe` |
 
 ---
 
@@ -285,12 +285,19 @@ Chromium 对超长 HEVC 视频的 seek 支持有限。合并文件本身是完�
 
 解决办法（任选其一）：
 
-1. **推荐**：`node scripts/setup-winCodeSign.js` 预解压到固定目录，再打包时带上环境变量：
+1. **推荐**：把缓存目录指到已预解压好的 `.eb-cache`（仓库内已备好，
+   `scripts/setup-winCodeSign.js` 也是往这里解压）。electron-builder 认的环境变量是
+   `ELECTRON_BUILDER_CACHE`：
    ```powershell
-   $env:DSH_WINCODESIGN_DIR='<项目路径>\.eb-cache\winCodeSign\winCodeSign-2.6.0'
+   node scripts/setup-winCodeSign.js      # 若 .eb-cache 已就绪会直接跳过
+   $env:ELECTRON_BUILDER_CACHE = "$PWD\.eb-cache\"
    npm run build
    ```
    （macOS 符号链接缺失不影响 Windows 打包，实际只用 `windows-10/` 与 `rcedit-*.exe`）
+
+   > 注意：每个新的终端窗口都要重新设置该环境变量，
+   > 否则 electron-builder 会回到默认缓存目录 `%LOCALAPPDATA%\electron-builder\Cache`
+   > 重新解压并再次失败。
 2. 以管理员身份运行终端，或开启 Windows「开发者模式」后直接打包。
 
 ### 打包报错 `Access is denied`
